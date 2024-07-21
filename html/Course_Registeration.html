@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>한국외국어대학교 모의수강신청</title>
+        <meta charset="UTF-8">
+		<link href="../css/style.css" rel="stylesheet" type="text/css">
+		<script>
+            function notEntry(){ //notice, 수강신청 및 수정/삭제, 개발자 소개 외의 버튼 눌렀을 때 실행
+                alert("사용 불가능한 기능입니다.")
+            }
+        </script>
+    </head>
+    <body>
+        <div class="half"> <!--메뉴(왼쪽)와 정보(오른쪽) 나눔(display: grid)-->
+            <div class="left"> <!--화면의 왼쪽 메뉴에 해당, HUFS Blue(위)과 HUFS GOLD(아래) 나눔(display: grid)-->
+                <div class="hufsBlue"> <!--HUFS Blue-->
+                    <h1 id='title'></h1>
+					<p id='practiceMode'></p>
+                </div>
+                <div class="hufsGold"> <!--HUFS GOLD부분-->
+                    <button class = "button" onclick="location.href='../index.html'">메인 페이지</button>
+                    <button id="noticeButton" onclick="location.href='basicMode.html'">Notice</button>
+                    <button id="sugang" class = "button" onclick="location.href='Course_Registeration.html'">수강신청 및 수정/삭제</button>
+                    <button class = "button" onclick="notEntry()">수강신청열람</button>
+                    <button class = "button" onclick="notEntry()">시간표조회</button>
+                    <button class = "button" onclick="notEntry()">강의시간표조회</button>
+                </div>
+            </div>
+            <div class="Course_Registeration_right"> <!--화면의 오른쪽 정보 출력에 해당, 내용 가운데 배치를 위해 grid 사용-->
+                <div><h2>수강신청 및 수정/삭제(Course Registeration[Adding/Deleting])</h2><br>
+                    <div class="menuContainer"> <!--예비수강신청함, 전공, 교차수강, 교양 박스 (display: grid)-->
+                        <div></div>
+                        <div class="menu">
+                            <div></div>
+                            <div>
+                                <input type="radio" name="수강유형" checked="checked"/>예비수강신청함
+                                <button id="Search" onclick="pyoDisplay()">Search</button>
+                            </div>
+                            <div>
+                                <input type="radio" name="수강유형"/>전공
+                            </div>
+                            <div>
+                                <input type="radio" name="수강유형"/>교차수강
+                            </div>
+                            <div>
+                                <input type="radio" name="수강유형"/>교양
+                            </div>
+                            <div></div>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div id="pyo"> 
+                        <div></div>
+                        <div>
+                            <table> <!--예비수강신청함 차트-->
+                                <tr class="title">
+                                    <th>No.</th>
+                                    <th>선택</th>
+                                    <th>구분</th>
+                                    <th>학수번호</th>
+                                    <th>강좌유형</th>
+                                    <th>교과목명</th>
+                                    <th>학년</th>
+                                    <th>학점</th>
+                                    <th>담당교수</th>
+                                    <th>강의시간/강의실</th>
+                                    <th>신청/제한</th>
+                                    <th>재수강</th>
+                                    <th>비고</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td><button class="register" onClick="register1Click()" id="a-1"></button></td>
+                                    <td>전공</td>
+                                    <td>T01234567</td>
+                                    <td>F</td>
+                                    <td>MacOS</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>Bill Gates</td>
+                                    <td>월 1 2 3 ( )</td>
+                                    <td>0 / 100</td>
+                                    <td><input type="checkbox"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><button class="register" onClick="register2Click()" id="a-2"></button></td>
+                                    <td>전공</td>
+                                    <td>T87654321</td>
+                                    <td>F</td>
+                                    <td>How to use Facebook</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>Mark Zuckerberg</td>
+                                    <td>수 1 2 3 ( )</td>
+                                    <td>0 / 60</td>
+                                    <td><input type="checkbox"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td><button class="register" onClick="register3Click()" id="a-3"></button></td>
+                                    <td>전공</td>
+                                    <td>S20212223</td>
+                                    <td></td>
+                                    <td>애플학개론</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>이재용</td>
+                                    <td>수 4 5 ( )</td>
+                                    <td>0 / 23</td>
+                                    <td><input type="checkbox"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td><button class="register" onClick="register4Click()" id="a-4"></button></td>
+                                    <td>전공</td>
+                                    <td>I23398948</td>
+                                    <td></td>
+                                    <td>프론트엔드의 모든 것</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>임창용</td>
+                                    <td>화 7 8 ( )</td>
+                                    <td>0 / 14</td>
+                                    <td><input type="checkbox"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td><button class="register" onClick="register5Click()" id="a-5"></button></td>
+                                    <td>과기</td>
+                                    <td>T35140000</td>
+                                    <td>F</td>
+                                    <td>Tesla Mechanism</td>
+                                    <td>-</td>
+                                    <td>2</td>
+                                    <td>Elon Musk</td>
+                                    <td>월 7 8 ( )</td>
+                                    <td>0 / 100</td>
+                                    <td><input type="checkbox"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td><button class="register" onClick="register6Click()" id="a-6"></button></td>
+                                    <td>생활</td>
+                                    <td>U19900905</td>
+                                    <td></td>
+                                    <td>체육(피겨)</td>
+                                    <td>-</td>
+                                    <td>1</td>
+                                    <td>김연아</td>
+                                    <td>금 3 4 ( )</td>
+                                    <td>0 / 50</td>
+                                    <td><input type="checkbox"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td><button class="register" onClick="register7Click()" id="a-7"></button></td>
+                                    <td>인성</td>
+                                    <td>B20230213</td>
+                                    <td></td>
+                                    <td>밥상머리인성교육</td>
+                                    <td>-</td>
+                                    <td>2</td>
+                                    <td></td>
+                                    <td>금 5 6 ( )</td>
+                                    <td>0 / 10</td>
+                                    <td><input type="checkbox"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td><button class="register" onClick="register8Click()" id="a-8"></button></td>
+                                    <td>사철</td>
+                                    <td>H19540420</td>
+                                    <td></td>
+                                    <td>한국외국어대학교사</td>
+                                    <td>-</td>
+                                    <td>2</td>
+                                    <td>박정운</td>
+                                    <td>화 5 6 ( )</td>
+                                    <td>0 / 20</td>
+                                    <td><input type="checkbox"></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div></div>
+                        
+                    </div>
+                </div>
+                <div id="pyopyo">
+                    <div></div>
+                    <div>
+                        <table style="margin: 0;"> <!--수강신청 완료된 차트, 필요없는 margin 삭제-->
+                            <caption class="doneUp">F : 원어강의(Foreign language Instruction) / O : 온라인강의(On-line)</caption>
+                                <thead>
+                                    <tr class="title" >
+                                        <th>No.</th>
+                                        <th>선택</th>
+                                        <th>구분</th>
+                                        <th>학수번호</th>
+                                        <th>강좌유형</th>
+                                        <th>교과목명</th>
+                                        <th>학년</th>
+                                        <th>학점</th>
+                                        <th>담당교수</th>
+                                        <th>강의시간/강의실</th>
+                                        <th>신청/제한</th>
+                                        <th>재수강</th>
+                                        <th>비고</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="done"></tbody>
+                        </table>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <script src="../js/Course_Registeration.js"></script>
+    </body>
+</html>

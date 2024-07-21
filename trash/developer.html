@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>한국외국어대학교 모의수강신청</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="한국외국어대학교 모의수강신청 사이트입니다. 수강신청을 사전에 연습할 수 있고, 시간을 측정할 수 있습니다.">
+        <meta name="keyword" content="한국외국어대학교 모의수강신청, HUFS, HUFS수강연습, 외대수강연습, HUFS연습, 외대연습, 수강연습, 한국외대, 한국외대 수강신청, 한국외대 수강신청 연습, 수강신청 연습, 한국외국어대학교, 외대, 외대 수강신청, 외대 수강신청 연습, 수강신청, 수강신청 모의연습, 한국외대 수강신청 모의연습, 한국외대 수강신청 연습, 외대 수강신청 모의연습, sugangpractice, vsugangpractice, 한국외국어대학교 수강신청 모의연습">
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <script>
+            function notEntry(){ //notice, 수강신청 및 수정/삭제, 개발자 소개 외의 버튼 눌렀을 때 실행
+                alert("개발자 후원 세션의 경우 메인 페이지를 제외한 모든 버튼이 비활성화 됩니다.")
+            }
+        </script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4120209556823700"
+    crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <script>
+            (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
+        
+            ChannelIO('boot', {
+            "pluginKey": "a11b52a2-f14b-4ee3-9f5a-5a5c3f5f413d"
+            });
+        </script>
+        <div class="half"> <!--메뉴(왼쪽)와 정보(오른쪽) 나눔(display: grid)-->
+            <div class="left"> <!--화면의 왼쪽 메뉴에 해당, HUFS Blue(위)과 HUFS GOLD(아래) 나눔(display: grid)-->
+                <div class="hufsBlue"> <!--HUFS Blue부분-->
+                    <h1>2024 - 2학기 모의수강신청</h1>
+                    <p>학번 : </p>
+                    <p>성명 : 모의수강신청</p>
+                    <p>캠퍼스 : 서울/글로벌</p>
+                    <p>수강학과 : </p>
+                    <p>수강학년 : </p>
+                    <p>수강가능학점 : </p>
+                </div>
+                <div class="hufsGold"> <!--HUFS GOLD부분-->
+                    <div><button class = "button" onclick="location.href='../index.html'">메인 페이지</button></div>
+                    <div><button id="noticeButton" onclick="notEntry()">Notice</button></div>
+                    <div><button class = "button" onclick="notEntry()">수강신청 및 수정/삭제</button></div>
+                    <div><button class = "button" onclick="notEntry()">수강신청열람</button></div>
+                    <div><button class = "button" onclick="notEntry()">시간표조회</button></div>
+                    <div><button class = "button" onclick="notEntry()">강의시간표조회</button></div>
+                    <div><button class = "button" onclick="location.href='developer.html'">개발자 소개</button></div>
+                </div>
+            </div>
+            <div id="developerRight"> <!--화면의 오른쪽 정보 출력에 해당, 내용 가운데 배치를 위해 grid 사용-->
+                <div></div>
+                <div>
+                    <p id="notice-small">Main Developer: dlacked (<a href="https://cord-postage-549.notion.site/dlacked-536254fac9104d82b267a82b59e3db25?pvs=74" target='_blank'>Notion</a>)</p>
+                    <p id="notice-small">Contributor: ZetBe (<a href="https://github.com/ZetBe" target='_blank'>GitHub</a>)</p>
+                </div>
+                <div></div>
+                <div>
+                    <ins class="kakao_ad_area" style="display:none;" data-ad-unit = "DAN-b3RfXepcKF3cMeyf" data-ad-width = "728" data-ad-height = "90"></ins>
+                    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+                </div>
+                <div>
+                    <hr>
+                    Copyright 2023-2024. dlacked All rights reserved.
+                    <p style="padding-top: 0.5%;">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

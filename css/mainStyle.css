@@ -1,0 +1,206 @@
+html, body{
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    margin: 0;
+    background-image: url('../img/indexBackground.jpg');
+    background-size: cover;
+    background-blend-mode: multiply;
+    color:white;
+	font-family: Noto Sans;
+	font-weight: bold;
+
+}
+
+#pageGrid{
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    height: 100vh;
+    
+}
+
+#yeobaekGrid{
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+}
+
+#ad{
+    background-color: #002d56;
+    width: 100%;
+	color: white;
+	padding: 5px 0px;
+	text-align: center;
+}
+
+#ad img {
+	height: 40.75px;
+}
+
+#ad p{
+	margin: 0px;
+	height: 22px;
+	font-size: 15px;
+}
+
+h1{
+	font-family: '외대얇';
+	font-weight: 100;
+	font-size: 50px;
+	text-align: center;
+}
+
+#buttonGrid{
+	display: grid;
+	padding: 8vh 0;
+	grid-template-rows: repeat(2, 290px);
+	grid-template-columns: repeat(4, 290px);
+	grid-template-areas:
+		'b b t t'
+		'b b s set';
+	justify-content: center;
+}
+
+#buttonGrid div{
+	font-size: 40px;
+	margin: 10px;
+	padding: 20px;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 30px;
+	overflow: hidden;
+	position: relative;
+}
+
+#buttonGrid div p{
+	font-size: 1vw;
+}
+
+#tiltedClock{
+	position: absolute;
+	bottom: -60px;
+	right: -60px;
+	width: 250px;
+}
+
+#tiltedButton{
+	position: absolute;
+	bottom: -20px;
+	left: -40px;
+	width: 400px;
+}
+
+#basicMode{
+	background-color: #8d704f;
+	grid-area: b;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+#basicMode:hover{
+	background-color: #54432f;
+	transition: 0.3s;
+}
+
+#selectMode{
+	background-color: #002d56;
+	grid-area: s;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+#selectMode:hover{
+	background-color: #001b33;
+	transition: 0.3s;
+}
+
+#timeMode{
+	background-color: #008294;
+	grid-area: t;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+#timeMode:hover{
+	background-color: #004e58;
+	transition: 0.3s;
+}
+
+#settings{
+	background-color: #777777;
+	grid-area: set;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+#settings:hover{
+	background-color: #474747;
+	transition: 0.3s;
+}
+
+@font-face {
+    font-family: '외대얇';
+    src: url(../fonts/hufsM.ttf);
+}
+
+@font-face {
+    font-family: '외대굵';
+    src: url(../fonts/hufsB.ttf);
+}
+  
+@font-face {
+    font-family: 'Pretendard';
+    src: url(../fonts/PretendardVariable.ttf);
+}
+
+@media (max-width: 1450px) {
+	#buttonGrid{
+		grid-template-rows: repeat(2, 250px);
+		grid-template-columns: repeat(4, 250px);
+	}
+	
+	h1{
+		font-size: 40px;
+	}
+	
+	#buttonGrid div{
+		font-size: 30px;
+	}
+
+	#buttonGrid div p{
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 1000px) {
+	#buttonGrid{
+		padding: 0vh 0;
+		grid-template-rows: repeat(3, 250px);
+		grid-template-columns: repeat(2, 250px);
+		grid-template-areas:
+			'b b'
+			's t'
+			'set t';
+	}
+	h1{
+		font-size: 38px;
+	}
+	
+	#buttonGrid div{
+		font-size: 30px;
+	}
+
+	#buttonGrid div p{
+		font-size: 12px;
+	}
+	
+	#ad{
+		display: none;
+	}
+	
+	#tiltedButton{
+		position: absolute;
+		bottom: -20px;
+		left: -40px;
+		width: 300px;
+		opacity: 0.4;
+	}
+}
