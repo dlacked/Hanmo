@@ -1,5 +1,6 @@
 let DarkModeCounter = 0;
 const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+let isPhone = false;
 
 if (isDarkMode === true) {
 	lightDarkModeSetter({
@@ -19,6 +20,7 @@ window.onload = function deviceCheck() {
 	const startPractice = document.getElementById('startPractice');
 	
 	if ( user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) {
+		isPhone = true;
 		startPractice.removeAttribute('onclick');
 		startPractice.innerText = '데스크탑을 사용해주세요.'
 		startPractice.style.backgroundColor = '#f4f4f4';
@@ -84,41 +86,49 @@ window.addEventListener('scroll', (event)=> {
 	let countB = 1;
 	let countC = 50;
 	
-	if (scrollY >= 2200 && scrollY <= 2400 && counted === false){
-		countA = 100
-		let counterA = setInterval(function() {
-			document.getElementsByClassName('counter')[0].innerText = `${countA}`
-			countA += 11;
-			if (countA >= 13500){
-				clearInterval(counterA);
-			document.getElementsByClassName('counter')[0].innerText = `13.5K+`
-
-			}
-		}, 1)
-
-		countB = 1
-		let counterB = setInterval(function() {
-			document.getElementsByClassName('counter')[1].innerText = `${countB}`
-			countB++;
-			if (countB >= 40){
-				clearInterval(counterB);
-			document.getElementsByClassName('counter')[1].innerText = `40+`
-
-			}
-		}, 50)
-
-		countC = 50
-		let counterC = setInterval(function() {
-			document.getElementsByClassName('counter')[2].innerText = `${countC}`
-			countC += 11;
-			if (countC >= 2070){
-				clearInterval(counterC);
-			document.getElementsByClassName('counter')[2].innerText = `2K+`
-
-			}
-		}, 20)
+	if ((scrollY >= 2200 && counted === false && isPhone === true) || (scrollY >= 2350 && counted === false && isPhone === false)){
+		countValue({
+			classNum: 0,
+			valueCount: 100,
+			howMuchCount: 11,
+			lastCount: 13500,
+			showLastCount: '13.5K+',
+			howMuchDelay: 1
+			
+		})
+		
+		countValue({
+			classNum: 1,
+			valueCount: 1,
+			howMuchCount: 1,
+			lastCount: 40,
+			showLastCount: '40+',
+			howMuchDelay: 50
+			
+		})
+		
+		countValue({
+			classNum: 2,
+			valueCount: 50,
+			howMuchCount: 11,
+			lastCount: 2070,
+			showLastCount: '2K+',
+			howMuchDelay: 20
+			
+		})
 		counted = true;
 		
 	}
 })
+
+function countValue(obj){
+	let valueCounter = setInterval(function() {
+		document.getElementsByClassName('counter')[obj.classNum].innerText = `${obj.valueCount}`;
+		obj.valueCount += obj.howMuchCount;
+		if (obj.valueCount >= obj.lastCount){
+			clearInterval(valueCounter);
+			document.getElementsByClassName('counter')[obj.classNum].innerText = `${obj.showLastCount}`;
+		}
+	}, obj.howMuchDelay)
+}
 
