@@ -14,12 +14,6 @@ const title = document.getElementById('title');
 const today = new Date();
 const subjectValue = document.getElementById('subjectValue');
 
-if (localStorage.getItem('subjectValue')){
-	subjectValue.setAttribute('value', localStorage.getItem('subjectValue'));
-	settedSubjectValue.innerText = `과목 수를 ${localStorage.getItem('subjectValue')}개로 지정할게요.`
-}
-
-
 let c = 0;
 setInterval(() => {
     if (c === 0){
@@ -46,16 +40,24 @@ function goPractice(val) {
 	}
 }
 
+if (localStorage.getItem('subjectValue')){
+	subjectValue.setAttribute('value', localStorage.getItem('subjectValue'));
+	if (localStorage.getItem('subjectValue') < 1 || localStorage.getItem('subjectValue') > 15 || !Number(localStorage.getItem('subjectValue'))) {
+		settedSubjectValue.innerText = 
+			`과목 수를 다시 지정해주세요.`
+		settedSubjectValue.style.color = 'red';
+	} else{
+		settedSubjectValue.innerText = `과목 수를 ${localStorage.getItem('subjectValue')}개로 지정할게요.`
+	}
+}
+
 function printSubjectValue() {
 	const subjectValue = document.getElementById('subjectValue').value;
 	const settedSubjectValue = document.getElementById('settedSubjectValue')
-	if (!Number(subjectValue)) {
-		settedSubjectValue.innerText = `과목 수를 다시 지정해주세요.`
+	if (subjectValue < 1 || subjectValue > 15 || !Number(subjectValue)) {
+		settedSubjectValue.innerText = 
+			`과목 수를 다시 지정해주세요.`
 		settedSubjectValue.style.color = 'red';
-	} else if (subjectValue < 1 || subjectValue > 15){
-		settedSubjectValue.innerText = `1 ~ 15 사이의 값을 입력해주세요.`
-		settedSubjectValue.style.color = 'red';
-		
 	} else{
 		settedSubjectValue.innerText = `과목 수를 ${subjectValue}개로 지정할게요.`
 		settedSubjectValue.style.color = 'white';
