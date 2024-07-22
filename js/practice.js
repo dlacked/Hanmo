@@ -5,7 +5,7 @@ const title = document.getElementById('title');
 const today = new Date();
 let hakgi = 2;
 
-today.getMonth() >= 2 && today.getMonth() <= 7 ? hakgi = 1 : NaN;
+today.getMonth() >= 2 && today.getMonth() <= 5 ? hakgi = 1 : NaN;
 
 title.innerText = `${today.getFullYear()}-${hakgi}학기 모의수강신청`;
 

@@ -7,15 +7,23 @@ window.onload = function deviceCheck() {
 }
 
 const practiceValue = localStorage.getItem('practiceSetter');
+const subjectValue = localStorage.getItem('subjectValue');
+
+for (var i = Number(subjectValue) + 1; i <= 8; i++){
+	document.getElementById(`subject${i}`).style.display = 'none';
+}
+
 const practiceMode = document.getElementById('practiceMode');
 const title = document.getElementById('title');
 const today = new Date();
+let hakgi = 2;
 
-today.getMonth() >= 2 && today.getMonth() <= 7 ? hakgi = 1 : NaN;
+today.getMonth() >= 0 && today.getMonth() <= 5 ? hakgi = 1 : NaN;
 
 title.innerText = `${today.getFullYear()}-${hakgi}학기 모의수강신청`;
 
 practiceValue == 1 ? practiceMode.innerText = '연습 모드: BASIC MODE' : practiceMode.innerText = '연습 모드: SELECT MODE'
+
 
 function pyoDisplay() {
 	//Search 버튼 눌렀을 때 표 표시
@@ -33,7 +41,7 @@ function notEntry() {
 function registerClick(val) {
 	//첫 번째 과목 클릭 시 실행되는 함수
 	var TorF = confirm('과목을 수강신청 하시겠습니까?')
-	if (TorF == true) {
+	if (TorF === true) {
     	if (rc[val-1] === true) {
 			alert('201 : 이미 신청된 교과목을 신청하였습니다.\n 다시확인하시고 신청해 주십시오.')
 		} else {
@@ -42,7 +50,7 @@ function registerClick(val) {
 			rc[val-1] = true
 			done(val)
 
-			if (count === 8) {
+			if (count == subjectValue) {
 				stopStopwatch()
 			}
 		}
@@ -347,5 +355,5 @@ function done(clicked) {
 var noObject = {} //key: 담겨진 과목의 No., value: 예비수강신청함의 No.
 var count = 0 
 let cnt = 0 //done()함수용 count 위랑 다릅니다
-var rc = [false, false, false, false, false, false, false, false]
+var rc = new Array(subjectValue);
 var today1 = new Date() //수강신청 및 수정/삭제 페이지 들어오자마자의 시간

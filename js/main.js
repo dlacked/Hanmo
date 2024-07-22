@@ -12,7 +12,12 @@ const timeMode = document.getElementById('timeMode');
 const selectMode = document.getElementById('selectMode');
 const title = document.getElementById('title');
 const today = new Date();
+const subjectValue = document.getElementById('subjectValue');
 
+if (localStorage.getItem('subjectValue')){
+	subjectValue.setAttribute('value', localStorage.getItem('subjectValue'));
+	settedSubjectValue.innerText = `과목 수를 ${localStorage.getItem('subjectValue')}개로 지정할게요.`
+}
 
 
 let c = 0;
@@ -27,7 +32,8 @@ setInterval(() => {
 }, 3000);
 
 let hakgi = 2
-if (today.getMonth() >= 2 && today.getMonth() <= 7){
+if (today.getMonth() >= 0 && today.getMonth() <= 5){
+	console.log(today.getMonth())
 	hakgi = 1;
 }
 title.innerText = `${today.getFullYear()}-${hakgi}학기 한국외국어대학교 모의수강신청`;
@@ -40,13 +46,14 @@ function goPractice(val) {
 function printSubjectValue() {
 	const subjectValue = document.getElementById('subjectValue').value;
 	const settedSubjectValue = document.getElementById('settedSubjectValue')
-	if (subjectValue < 1 || subjectValue > 20 || !Number(subjectValue)) {
+	if (subjectValue < 1 || subjectValue > 8 || !Number(subjectValue)) {
 		settedSubjectValue.innerText = `과목 수를 다시 지정해주세요.`
 		settedSubjectValue.style.color = 'red';
 	} else{
 		settedSubjectValue.innerText = `과목 수를 ${subjectValue}개로 지정할게요.`
 		settedSubjectValue.style.color = 'white';
 		localStorage.setItem('subjectValue', subjectValue)
+		console.log(subjectValue)
 	}
 	
 }
