@@ -103,18 +103,6 @@ p {
   background-color: #5d5d5d;
 }
 
-#notice-big {
-  /*index.html의 오른쪽 부분 폰트 크기 설정*/
-  font-size: 50px;
-  font-family: '외대굵';
-}
-
-#notice-small {
-  /*index.html의 오른쪽 부분 폰트 크기 설정*/
-  font-size: 20px;
-  font-family: 'pretendard';
-  line-height: 30px;
-}
 
 .menuContainer {
   /*Course.Registeration.html 오른쪽 상단 메뉴 바*/
@@ -272,19 +260,4 @@ hr{
   text-align: center;
   display: grid;
   grid-template-rows: 1fr auto 1fr auto;
-}
-
-@font-face {
-  font-family: '외대얇';
-  src: url(../fonts/한국외대체M.ttf);
-}
-
-@font-face {
-  font-family: '외대굵';
-  src: url(../fonts/한국외대체B.ttf);
-}
-
-@font-face{
-  font-family: 'pretendard';
-  src: url(../fonts/PretendardVariable.ttf);
 }

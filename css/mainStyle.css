@@ -6,7 +6,7 @@ html, body{
     background-size: cover;
     background-blend-mode: multiply;
     color:white;
-	font-family: Noto Sans;
+	font-family: 'NotoSans';
 	font-weight: bold;
 
 }
@@ -141,18 +141,13 @@ h1{
 }
 
 @font-face {
-    font-family: '외대얇';
-    src: url(../fonts/hufsM.ttf);
+  font-family: 'NotoSans';
+  src: url(../fonts/NotoSans.ttf);
 }
 
 @font-face {
-    font-family: '외대굵';
-    src: url(../fonts/hufsB.ttf);
-}
-  
-@font-face {
-    font-family: 'Pretendard';
-    src: url(../fonts/PretendardVariable.ttf);
+    font-family: '외대얇';
+    src: url(../fonts/hufsM.ttf);
 }
 
 @media (max-width: 1450px) {

@@ -23,7 +23,7 @@ window.onload = function deviceCheck() {
 		startPractice.innerText = '데스크탑을 사용해주세요.'
 		startPractice.style.backgroundColor = '#f4f4f4';
 		startPractice.style.color = 'black';
-		}
+	}
 }
 
 
