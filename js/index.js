@@ -23,8 +23,7 @@ window.onload = function deviceCheck() {
 		startPractice.innerText = '데스크탑을 사용해주세요.'
 		startPractice.style.backgroundColor = '#f4f4f4';
 		startPractice.style.color = 'black';
-		document.getElementById('fixed').style.display = 'none';
-	}
+		}
 }
 
 
@@ -120,16 +119,6 @@ window.addEventListener('scroll', (event)=> {
 		}, 20)
 		counted = true;
 		
-	}
-	if (scrollY >= 2820){
-		document.getElementById('fixed').style.boxShadow = '0px 0px 0px';
-	} else{
-		document.getElementById('fixed').style.boxShadow = '0px 4px 4px #777777';
-	}
-	if (scrollY >= 0 && scrollY <= 700){
-		document.getElementById('fixed').style.display = 'none';
-	} else{
-		document.getElementById('fixed').style.display = 'flex';
 	}
 })
 

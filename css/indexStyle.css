@@ -158,33 +158,8 @@ a{
 	grid-template-columns: auto 1040px auto;
 }
 
-#fixed{
-	position: fixed;
-	display: flex;
-	width: 80px;
-	height: 80px;
-	border-radius: 30px;
-	background-color: #0b106a;
-	right: 50px;
-	bottom: 50px;
-	margin-top: 50%;
-	color: white;
-	font-weight: bold;
-	align-items: center;
-	justify-content: center;
-	box-shadow: 0px 4px 4px #777777;
-	cursor: pointer;
-	text-align: center;
-	transition: 0.3s;
-}
-
 
 #startPractice:hover{
-	background-color: #06093f;
-	transition: 0.3s;
-}
-
-#fixed:hover{
 	background-color: #06093f;
 	transition: 0.3s;
 }
@@ -243,9 +218,6 @@ a{
 }
 
 @media (max-width: 890px){
-	#fixed{
-		display: none;
-	}
 	
 	#mainPageText h2{
 		font-size: 4vw;
