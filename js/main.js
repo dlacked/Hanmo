@@ -33,14 +33,17 @@ setInterval(() => {
 
 let hakgi = 2
 if (today.getMonth() >= 0 && today.getMonth() <= 5){
-	console.log(today.getMonth())
 	hakgi = 1;
 }
 title.innerText = `${today.getFullYear()}-${hakgi}학기 한국외국어대학교 모의수강신청`;
 
 function goPractice(val) {
-	localStorage.setItem('practiceSetter', val);
-	location.href='practice.html';
+	if (localStorage.getItem('subjectValue') < 1 || localStorage.getItem('subjectValue') > 15 || !Number(localStorage.getItem('subjectValue'))){
+		alert('셋팅 값을 확인해주세요.')
+	} else{
+		localStorage.setItem('practiceSetter', val);
+		location.href='practice.html';
+	}
 }
 
 function printSubjectValue() {
@@ -56,8 +59,8 @@ function printSubjectValue() {
 	} else{
 		settedSubjectValue.innerText = `과목 수를 ${subjectValue}개로 지정할게요.`
 		settedSubjectValue.style.color = 'white';
-		localStorage.setItem('subjectValue', subjectValue)
-		console.log(subjectValue)
 	}
+	
+	localStorage.setItem('subjectValue', subjectValue)
 	
 }

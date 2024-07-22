@@ -79,8 +79,6 @@ function stopStopwatch() {
 	if (practiceValue == 1) {
 		if(localStorage.getItem('duringTime')){
 			var duringTimeData = localStorage.getItem('duringTime');
-			//console.log(duringTimeData)
-			//console.log((today2-today1)/1000)
 			total = parseFloat(duringTimeData) + parseFloat((today2 - today1) / 1000)
 			alert(`[보고서]\nTIME: ${duringTimeData}s\nSIGN UP: ${(today2-today1)/1000}s\n총 ${total.toFixed(3)}s 걸렸습니다.`) //스톱워치 종료시간에서 페이지 입장 시간을 뺌
 			

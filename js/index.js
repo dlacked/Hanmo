@@ -81,7 +81,6 @@ let counted = false;
 
 window.addEventListener('scroll', (event)=> {
 	let scrollY = this.scrollY;
-	console.log(scrollY);
 	let countA = 100;
 	let countB = 1;
 	let countC = 50;
@@ -126,6 +125,11 @@ window.addEventListener('scroll', (event)=> {
 		document.getElementById('fixed').style.boxShadow = '0px 0px 0px';
 	} else{
 		document.getElementById('fixed').style.boxShadow = '0px 4px 4px #777777';
+	}
+	if (scrollY >= 0 && scrollY <= 700){
+		document.getElementById('fixed').style.display = 'none';
+	} else{
+		document.getElementById('fixed').style.display = 'flex';
 	}
 })
 
