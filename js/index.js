@@ -77,6 +77,7 @@ function fGoPractice() {
 }
 
 
+let counted = false;
 
 window.addEventListener('scroll', (event)=> {
 	let scrollY = this.scrollY;
@@ -85,7 +86,7 @@ window.addEventListener('scroll', (event)=> {
 	let countB = 1;
 	let countC = 50;
 	
-	if (scrollY >= 2200 && scrollY <= 2300){
+	if (scrollY >= 2200 && scrollY <= 2400 && counted === false){
 		countA = 100
 		let counterA = setInterval(function() {
 			document.getElementsByClassName('counter')[0].innerText = `${countA}`
@@ -114,10 +115,12 @@ window.addEventListener('scroll', (event)=> {
 			countC += 11;
 			if (countC >= 2070){
 				clearInterval(counterC);
-			document.getElementsByClassName('counter')[2].innerText = `2,070+`
+			document.getElementsByClassName('counter')[2].innerText = `2K+`
 
 			}
 		}, 20)
+		counted = true;
+		
 	}
 	if (scrollY >= 2820){
 		document.getElementById('fixed').style.boxShadow = '0px 0px 0px';

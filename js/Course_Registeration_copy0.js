@@ -18,180 +18,35 @@ title.innerText = `${today.getFullYear()}-${hakgi}학기 모의수강신청`;
 practiceValue == 1 ? practiceMode.innerText = '연습 모드: BASIC MODE' : practiceMode.innerText = '연습 모드: SELECT MODE'
 
 function pyoDisplay() {
-  //Search 버튼 눌렀을 때 표 표시
-  const pyo = document.getElementById('pyo')
-  if (pyo.style.visibility !== 'hidden') {
-    pyo.style.visibility = 'visible'
-  }
+	//Search 버튼 눌렀을 때 표 표시
+	const pyo = document.getElementById('pyo')
+	if (pyo.style.visibility !== 'hidden') {
+		pyo.style.visibility = 'visible'
+	}
 }
 
 function notEntry() {
-  //notice, 수강신청 및 수정/삭제, 개발자 소개 외의 버튼 눌렀을 때 실행
-  alert("해당 버튼은 사용이 불가능합니다.")
+	//notice, 수강신청 및 수정/삭제, 개발자 소개 외의 버튼 눌렀을 때 실행
+	alert("해당 버튼은 사용이 불가능합니다.")
 }
 
-function register1Click() {
-  //첫 번째 과목 클릭 시 실행되는 함수
-  var TorF = confirm('과목을 수강신청 하시겠습니까?')
-  if (TorF == true) {
-    if (rc1 + 1 == 2) {
-      alert(
-        '201 : 이미 신청된 교과목을 신청하였습니다.\n 다시확인하시고 신청해 주십시오.'
-      )
-    } else {
-      alert('수강신청이 저장완료되었습니다.')
-      count++
-      rc1++
-      done(1)
+function registerClick(val) {
+	//첫 번째 과목 클릭 시 실행되는 함수
+	var TorF = confirm('과목을 수강신청 하시겠습니까?')
+	if (TorF == true) {
+    	if (rc[val-1] === true) {
+			alert('201 : 이미 신청된 교과목을 신청하였습니다.\n 다시확인하시고 신청해 주십시오.')
+		} else {
+			alert('수강신청이 저장완료되었습니다.')
+			count++
+			rc[val-1] = true
+			done(val)
 
-      if (count === 8) {
-        stopStopwatch()
-      }
-    }
-  }
-}
-
-function register2Click() {
-  //두 번째 과목 클릭 시 실행되는 함수
-  var TorF = confirm('과목을 수강신청 하시겠습니까?')
-  if (TorF == true) {
-    if (rc2 + 1 == 2) {
-      alert(
-        '201 : 이미 신청된 교과목을 신청하였습니다.\n 다시확인하시고 신청해 주십시오.'
-      )
-    } else {
-      alert('수강신청이 저장완료되었습니다.')
-      count++
-      rc2++
-      done(2)
-
-      if (count === 8) {
-        stopStopwatch()
-      }
-    }
-  }
-}
-
-function register3Click() {
-  //세 번째 과목 클릭 시 실행되는 함수
-  var TorF = confirm('과목을 수강신청 하시겠습니까?')
-  if (TorF == true) {
-    if (rc3 + 1 == 2) {
-      alert(
-        '201 : 이미 신청된 교과목을 신청하였습니다.\n 다시확인하시고 신청해 주십시오.'
-      )
-    } else {
-      alert('수강신청이 저장완료되었습니다.')
-      count++
-      rc3++
-      done(3)
-
-      if (count === 8) {
-        stopStopwatch()
-      }
-    }
-  }
-}
-
-function register4Click() {
-  //네 번째 과목 클릭 시 실행되는 함수
-  var TorF = confirm('과목을 수강신청 하시겠습니까?')
-  if (TorF == true) {
-    if (rc4 + 1 == 2) {
-      alert(
-        '201 : 이미 신청된 교과목을 신청하였습니다.\n 다시확인하시고 신청해 주십시오.'
-      )
-    } else {
-      alert('수강신청이 저장완료되었습니다.')
-      count++
-      rc4++
-      done(4)
-
-      if (count === 8) {
-        stopStopwatch()
-      }
-    }
-  }
-}
-function register5Click() {
-  //다섯 번째 과목 클릭 시 실행되는 함수
-  var TorF = confirm('과목을 수강신청 하시겠습니까?')
-  if (TorF == true) {
-    if (rc5 + 1 == 2) {
-      alert(
-        '201 : 이미 신청된 교과목을 신청하였습니다.\n 다시확인하시고 신청해 주십시오.'
-      )
-    } else {
-      alert('수강신청이 저장완료되었습니다.')
-      count++
-      rc5++
-      done(5)
-
-      if (count === 8) {
-        stopStopwatch()
-      }
-    }
-  }
-}
-function register6Click() {
-  //여섯 번째 과목 클릭 시 실행되는 함수
-  var TorF = confirm('과목을 수강신청 하시겠습니까?')
-  if (TorF == true) {
-    if (rc6 + 1 == 2) {
-      alert(
-        '201 : 이미 신청된 교과목을 신청하였습니다.\n 다시확인하시고 신청해 주십시오.'
-      )
-    } else {
-      alert('수강신청이 저장완료되었습니다.')
-      count++
-      rc6++
-      done(6)
-
-      if (count === 8) {
-        stopStopwatch()
-      }
-    }
-  }
-}
-function register7Click() {
-  //일곱 번째 과목 클릭 시 실행되는 함수
-  var TorF = confirm('과목을 수강신청 하시겠습니까?')
-  if (TorF == true) {
-    if (rc7 + 1 == 2) {
-      alert(
-        '201 : 이미 신청된 교과목을 신청하였습니다.\n 다시확인하시고 신청해 주십시오.'
-      )
-    } else {
-      alert('수강신청이 저장완료되었습니다.')
-      count++
-      rc7++
-      done(7)
-
-      if (count === 8) {
-        stopStopwatch()
-      }
-    }
-  }
-}
-function register8Click() {
-  //여덟 번째 과목 클릭 시 실행되는 함수
-  var TorF = confirm('해당 과목을 수강신청 하시겠습니까?')
-  if (TorF == true) {
-    if (rc8 + 1 == 2) {
-      alert(
-        '201 : 이미 신청된 교과목을 신청하였습니다.\n 다시확인하시고 신청해 주십시오.'
-      )
-    } else {
-      alert('수강신청이 저장완료되었습니다.')
-      count++
-      rc8++
-      done(8)
-
-      if (count === 8) {
-        stopStopwatch()
-      }
-    }
-  }
+			if (count === 8) {
+				stopStopwatch()
+			}
+		}
+	}
 }
 
 function stopStopwatch() {
@@ -218,32 +73,8 @@ function deleteDone(nowCnt) {
   var torf = confirm('해당 과목을 삭제 하시겠습니까?')
   if (torf === true) { 
     cnt-- //삭제 후 추가시 번호가 8이 넘어가는 현상을 막기 위함
-    switch (noObject[nowCnt]){ //어떤 과목의 DELETE 버튼을 눌렀냐에 따라 그 과목에 대한 REGISTER 버튼이 재활성화됨.
-      case 1:
-        rc1--
-        break
-      case 2:
-        rc2--
-        break
-      case 3:
-        rc3--
-        break
-      case 4:
-        rc4--
-        break
-      case 5:
-        rc5--
-        break
-      case 6:
-        rc6--
-        break
-      case 7:
-        rc7--
-        break
-      case 8:
-        rc8--
-        break
-    }
+	rc[noObject[nowCnt]-1] = false
+    
     const parent = document.getElementById('done')
     parent.deleteRow(nowCnt - 1)
     const children = parent.childNodes
@@ -516,12 +347,5 @@ function done(clicked) {
 var noObject = {} //key: 담겨진 과목의 No., value: 예비수강신청함의 No.
 var count = 0 
 let cnt = 0 //done()함수용 count 위랑 다릅니다
-var rc1 = 0
-var rc2 = 0
-var rc3 = 0
-var rc4 = 0
-var rc5 = 0
-var rc6 = 0
-var rc7 = 0
-var rc8 = 0
+var rc = [false, false, false, false, false, false, false, false]
 var today1 = new Date() //수강신청 및 수정/삭제 페이지 들어오자마자의 시간

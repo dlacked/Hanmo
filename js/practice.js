@@ -1,3 +1,4 @@
+
 const practiceValue = localStorage.getItem('practiceSetter');
 const practiceMode = document.getElementById('practiceMode');
 const title = document.getElementById('title');
@@ -7,6 +8,7 @@ let hakgi = 2;
 today.getMonth() >= 2 && today.getMonth() <= 7 ? hakgi = 1 : NaN;
 
 title.innerText = `${today.getFullYear()}-${hakgi}학기 모의수강신청`;
+
 
 
 if (practiceValue == 3){
@@ -29,11 +31,16 @@ if (practiceValue == 3){
 	let clickedSugang = document.getElementById('sugang');
 	var startTime, duringTime;
 
-	window.onload = function(){ //사이트 열자마자 실행되는 함수
+	window.onload = function deviceCheck(){ 
+		const user = navigator.userAgent;
+		
+		if ( user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) {
+			location.replace('../index.html');
+		}//사이트 열자마자 실행되는 함수
+		
 		interval = setInterval(startTimer, 1000);
 		setTimeout(function(){
 			startTime = new Date()
-			console.log(startTime);
 		}, 10000)
 	}
 

@@ -50,6 +50,9 @@ body {
   width: 85%;
 }
 
+table{
+	background-color: white;
+}
 h1 {
   font-size: 13px;
   margin-top: 5px;

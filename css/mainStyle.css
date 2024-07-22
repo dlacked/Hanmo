@@ -136,6 +136,10 @@ h1{
 	transition: 0.3s;
 }
 
+#settings hr{
+	margin-bottom: 0px;
+}
+
 @font-face {
     font-family: '외대얇';
     src: url(../fonts/hufsM.ttf);

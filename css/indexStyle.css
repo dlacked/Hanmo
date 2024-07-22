@@ -188,6 +188,16 @@ a{
 	background-color: #06093f;
 	transition: 0.3s;
 }
+
+#vsugang{
+	border-radius: 20px;
+	box-shadow: 0px 4px 4px #777777;
+	transition: 0.5s;
+}
+#vsugang:hover{
+	box-shadow: 0px 4px 20px #777777;
+	transition: 0.5s;
+}
 @media (max-width: 1440px){
 	
 	#mainPageText h2{
@@ -204,6 +214,7 @@ a{
 	
 	.pageText h2{
 		font-size: 40px;
+		margin-right: 0;
 	}
 	
 	.pageText p{
@@ -222,7 +233,6 @@ a{
 		grid-template-columns: auto 600px auto;
 	}
 	
-
 	.counterBlock p{
 		font-size: 15px;
 	}
@@ -309,3 +319,148 @@ a{
 	
 }
 
+@media (max-width: 450px) {
+	
+	.page{
+		grid-template-columns: auto 360px auto;
+	}
+	
+	#mainPageText h2{
+		font-size: 20px;
+	}
+
+	#mainPageText h1{
+		font-size: 70px;
+	}
+	
+	.pageText h2{
+		font-size: 30px;
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+	
+	.pageText p{
+		font-size: 15px;
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+	
+	.pageText img{
+		margin: auto;
+		margin-top: 10px;
+		width: 80%;
+	}
+	
+	#counterBlocks{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.counterBlock{
+		padding: 0;
+		height: 80px;
+		width: 300px;
+	}
+	.counterBlock p{
+		font-size: 13px;
+		margin-left: 20px;
+	}
+	
+	.counter{
+		font-size: 30px;
+	}
+	
+	li{
+		font-size: 15px;
+		margin-right: 30px;
+	}
+	
+	#startPractice{
+		width: 300px;
+		height: 80px;
+		font-size: 22px;
+	}
+	
+	#lastPage{
+		grid-template-columns: auto 360px auto;
+		
+	}
+}
+
+@media (max-width: 300px) {
+	
+	.page{
+		grid-template-columns: auto 240px auto;
+	}
+	
+	#mainPageText h2{
+		font-size: 21px;
+	}
+
+	#mainPageText h1{
+		font-size: 60px;
+	}
+	
+	.pageText h2{
+		margin-top: 50px;
+		font-size: 20px;
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+	
+	.pageText p{
+		font-size: 10px;
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+	
+	.pageText img{
+		margin: auto;
+		margin-top: 10px;
+		width: 80%;
+	}
+	
+	#counterBlocks{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.counterBlock{
+		padding: 0;
+		height: 60px;
+		width: 175px;
+	}
+	.counterBlock p{
+		font-size: 10px;
+		margin-left: 20px;
+	}
+	
+	.counter{
+		font-size: 20px;
+	}
+	
+	li{
+		font-size: 10px;
+		margin-right: 20px;
+	}
+	
+	#startPractice{
+		width: 240px;
+		height: 60px;
+		font-size: 18px;
+	}
+	
+	#lastPage{
+		grid-template-columns: auto 240px auto;
+		
+	}
+	
+	nav img{
+		padding: 20px;
+		width: 40px;
+	}
+}
