@@ -22,10 +22,10 @@ if (localStorage.getItem('subjectValue')){
 
 let c = 0;
 setInterval(() => {
-    if (c == 0){
+    if (c === 0){
         ad.innerHTML="<img src='../img/dlacked_logo.png' /><p>dlacked</p>";
         ++c
-    }else{
+    }else if (c === 1) {
         ad.innerHTML="<img src='../img/hufs70.png' /><p>한국외국어대학교 70주년</p>";
         --c
     }
@@ -46,9 +46,13 @@ function goPractice(val) {
 function printSubjectValue() {
 	const subjectValue = document.getElementById('subjectValue').value;
 	const settedSubjectValue = document.getElementById('settedSubjectValue')
-	if (subjectValue < 1 || subjectValue > 8 || !Number(subjectValue)) {
+	if (!Number(subjectValue)) {
 		settedSubjectValue.innerText = `과목 수를 다시 지정해주세요.`
 		settedSubjectValue.style.color = 'red';
+	} else if (subjectValue < 1 || subjectValue > 15){
+		settedSubjectValue.innerText = `1 ~ 15 사이의 값을 입력해주세요.`
+		settedSubjectValue.style.color = 'red';
+		
 	} else{
 		settedSubjectValue.innerText = `과목 수를 ${subjectValue}개로 지정할게요.`
 		settedSubjectValue.style.color = 'white';

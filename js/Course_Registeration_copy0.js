@@ -8,9 +8,26 @@ window.onload = function deviceCheck() {
 
 const practiceValue = localStorage.getItem('practiceSetter');
 const subjectValue = localStorage.getItem('subjectValue');
+const subjectTable = document.querySelector('#subjectTable');
 
-for (var i = Number(subjectValue) + 1; i <= 8; i++){
-	document.getElementById(`subject${i}`).style.display = 'none';
+for (var i = 1; i <= Number(subjectValue); i++){
+	subjectTable.insertAdjacentHTML('beforeend', 
+		`<tr id='subject${i}'>
+		<td>${i}</td>
+		<td><button class="register" onClick="registerClick(${i})"></button></td>
+		<td>연습</td>
+		<td>HANMO${i}</td>
+		<td></td>
+		<td>한국외대모의수강신청${i}</td>
+		<td>1</td>
+		<td>1</td>
+		<td>dlacked teacher${i}</td>
+		<td>월 1 2 3 ( )</td>
+		<td>0 / 100</td>
+		<td><input type="checkbox"></td>
+		<td></td>
+		</tr>`
+   )
 }
 
 const practiceMode = document.getElementById('practiceMode');
@@ -105,251 +122,59 @@ function deleteDone(nowCnt) {
 
 //리스트 map을 통해 해당
 function done(clicked) {
-  //노드를 이용해 추후 삭제할 노드를 삭제
-  //몇번을 클릭했느냐에 따라 함수 호출
-  cnt += 1 //몇번째로 클릭했느냐에 따라 번호 출력
-  // tr부분 요소
-  let td = [] // td부분 요소
-  let tr = document.createElement('tr')
-  for (i = 0; i < 13; i++) {
-    td.push(document.createElement('td'))
-  }
-  let text = [] //td에 저장할 텍스트
-  let nowCnt = cnt
-  //텍스트가 아닌 html요소 button을 입력하는 변수
-  let btn = document.createElement('button')
-  btn.setAttribute('class', 'delete')
-  btn.setAttribute('onClick', `deleteDone(${nowCnt})`)
-  let ipt = document.createElement('input')
-  ipt.setAttribute('type', 'checkbox')
-
-  if (clicked === 1) {
-    noObject[cnt] = clicked;
-    //숫자인 변수를 저장하기위해 백틱`${}`사용
-    text.push(document.createTextNode(`${cnt}`))
-    //button들어갈 곳
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode('전공'))
-    text.push(document.createTextNode('T01234567'))
-    text.push(document.createTextNode('F'))
-    text.push(document.createTextNode('MacOS'))
-    text.push(document.createTextNode('2'))
-    text.push(document.createTextNode('3'))
-    text.push(document.createTextNode('Bill Gates'))
-    text.push(document.createTextNode('월 1 2 3 ( )'))
-    text.push(document.createTextNode('0 / 100'))
-    //input들어갈 곳
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode(''))
-    for (i = 0; i < text.length; i++) {
-      if (i === 1) {
-        td[i].appendChild(btn)
-      }
-      if (i === 11) {
-        td[i].appendChild(ipt)
-      }
-      if (i !== 1 && i !== 11) {
-        td[i].appendChild(text[i])
-      }
-    }
-  }
-  if (clicked === 2) {
-    noObject[cnt] = clicked;
-    text.push(document.createTextNode(`${cnt}`))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode('전공'))
-    text.push(document.createTextNode('T87654321'))
-    text.push(document.createTextNode('F'))
-    text.push(document.createTextNode('How to use Facebook'))
-    text.push(document.createTextNode('2'))
-    text.push(document.createTextNode('3'))
-    text.push(document.createTextNode('Mark Zuckerberg'))
-    text.push(document.createTextNode('수 1 2 3 ( )'))
-    text.push(document.createTextNode('0 / 60'))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode(''))
-    for (i = 0; i < text.length; i++) {
-      if (i === 1) {
-        td[i].appendChild(btn)
-      }
-      if (i === 11) {
-        td[i].appendChild(ipt)
-      }
-      if (i !== 1 && i !== 11) {
-        td[i].appendChild(text[i])
-      }
-    }
-  }
-  if (clicked === 3) {
-    noObject[cnt] = clicked;
-    text.push(document.createTextNode(`${cnt}`))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode('전공'))
-    text.push(document.createTextNode('S20212223'))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode('애플학개론'))
-    text.push(document.createTextNode('2'))
-    text.push(document.createTextNode('3'))
-    text.push(document.createTextNode('이재용'))
-    text.push(document.createTextNode('수 4 5 ( )'))
-    text.push(document.createTextNode('0 / 23'))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode(''))
-    for (i = 0; i < text.length; i++) {
-      if (i === 1) {
-        td[i].appendChild(btn)
-      }
-      if (i === 11) {
-        td[i].appendChild(ipt)
-      }
-      if (i !== 1 && i !== 11) {
-        td[i].appendChild(text[i])
-      }
-    }
-  }
-  if (clicked === 4) {
-    noObject[cnt] = clicked;
-    text.push(document.createTextNode(`${cnt}`))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode('전공'))
-    text.push(document.createTextNode('I23398948'))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode('프론트엔드의 모든 것'))
-    text.push(document.createTextNode('2'))
-    text.push(document.createTextNode('2'))
-    text.push(document.createTextNode('임창용'))
-    text.push(document.createTextNode('화 7 8 ( )'))
-    text.push(document.createTextNode('0 / 14'))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode(''))
-    for (i = 0; i < text.length; i++) {
-      if (i === 1) {
-        td[i].appendChild(btn)
-      }
-      if (i === 11) {
-        td[i].appendChild(ipt)
-      }
-      if (i !== 1 && i !== 11) {
-        td[i].appendChild(text[i])
-      }
-    }
-  }
-  if (clicked === 5) {
-    noObject[cnt] = clicked;
-    text.push(document.createTextNode(`${cnt}`))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode('과기'))
-    text.push(document.createTextNode('T35140000'))
-    text.push(document.createTextNode('F'))
-    text.push(document.createTextNode('Tesla Mechanism'))
-    text.push(document.createTextNode('-'))
-    text.push(document.createTextNode('2'))
-    text.push(document.createTextNode('Elon Musk'))
-    text.push(document.createTextNode('월 7 8 ( )'))
-    text.push(document.createTextNode('0 / 100'))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode(''))
-    for (i = 0; i < text.length; i++) {
-      if (i === 1) {
-        td[i].appendChild(btn)
-      }
-      if (i === 11) {
-        td[i].appendChild(ipt)
-      }
-      if (i !== 1 && i !== 11) {
-        td[i].appendChild(text[i])
-      }
-    }
-  }
-  if (clicked === 6) {
-    noObject[cnt] = clicked;
-    text.push(document.createTextNode(`${cnt}`))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode('생활'))
-    text.push(document.createTextNode('U19900905'))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode('체육(피겨)'))
-    text.push(document.createTextNode('-'))
-    text.push(document.createTextNode('1'))
-    text.push(document.createTextNode('김연아'))
-    text.push(document.createTextNode('금 3 4 ( )'))
-    text.push(document.createTextNode('0 / 50'))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode(''))
-    for (i = 0; i < text.length; i++) {
-      if (i === 1) {
-        td[i].appendChild(btn)
-      }
-      if (i === 11) {
-        td[i].appendChild(ipt)
-      }
-      if (i !== 1 && i !== 11) {
-        td[i].appendChild(text[i])
-      }
-    }
-  }
-  if (clicked === 7) {
-    noObject[cnt] = clicked;
-    text.push(document.createTextNode(`${cnt}`))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode('인성'))
-    text.push(document.createTextNode('B20230213'))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode('밥상머리인성교육'))
-    text.push(document.createTextNode('-'))
-    text.push(document.createTextNode('2'))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode('금 5 6 ( )'))
-    text.push(document.createTextNode('0 / 10'))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode(''))
-    for (i = 0; i < text.length; i++) {
-      if (i === 1) {
-        td[i].appendChild(btn)
-      }
-      if (i === 11) {
-        td[i].appendChild(ipt)
-      }
-      if (i !== 1 && i !== 11) {
-        td[i].appendChild(text[i])
-      }
-    }
-  }
-  if (clicked === 8) {
-    noObject[cnt] = clicked;
-    text.push(document.createTextNode(`${cnt}`))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode('사철'))
-    text.push(document.createTextNode('H19540420'))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode('한국외국어대학교사'))
-    text.push(document.createTextNode('-'))
-    text.push(document.createTextNode('2'))
-    text.push(document.createTextNode('박정운'))
-    text.push(document.createTextNode('화 5 6 ( )'))
-    text.push(document.createTextNode('0 / 20'))
-    text.push(document.createTextNode(''))
-    text.push(document.createTextNode(''))
-    for (i = 0; i < text.length; i++) {
-      if (i === 1) {
-        td[i].appendChild(btn)
-      }
-      if (i === 11) {
-        td[i].appendChild(ipt)
-      }
-      if (i !== 1 && i !== 11) {
-        td[i].appendChild(text[i])
-      }
-    }
-  }
-
-  for (i = 0; i < 13; i++) {
+	//노드를 이용해 추후 삭제할 노드를 삭제
+	//몇번을 클릭했느냐에 따라 함수 호출
+	cnt += 1 //몇번째로 클릭했느냐에 따라 번호 출력
+	// tr부분 요소
+	let td = [] // td부분 요소
+	let tr = document.createElement('tr')
+	for (i = 0; i < 13; i++) {
+	td.push(document.createElement('td'))
+	}
+	let text = [] //td에 저장할 텍스트
+	let nowCnt = cnt
+	//텍스트가 아닌 html요소 button을 입력하는 변수
+	let btn = document.createElement('button')
+	btn.setAttribute('class', 'delete')
+	btn.setAttribute('onClick', `deleteDone(${nowCnt})`)
+	let ipt = document.createElement('input')
+	ipt.setAttribute('type', 'checkbox')
+	
+	noObject[cnt] = clicked;
+	//숫자인 변수를 저장하기위해 백틱`${}`사용
+	text.push(document.createTextNode(`${cnt}`))
+	//button들어갈 곳
+	text.push(document.createTextNode(''))
+	text.push(document.createTextNode('연습'))
+	text.push(document.createTextNode(`HANMO${clicked}`))
+	text.push(document.createTextNode(''))
+	text.push(document.createTextNode(`한국외대모의수강신청${clicked}`))
+	text.push(document.createTextNode('1'))
+	text.push(document.createTextNode('1'))
+	text.push(document.createTextNode(`dlacked teacher${clicked}`))
+	text.push(document.createTextNode('월 1 2 3 ( )'))
+	text.push(document.createTextNode('0 / 100'))
+	//input들어갈 곳
+	text.push(document.createTextNode(''))
+	text.push(document.createTextNode(''))
+	for (i = 0; i < text.length; i++) {
+		if (i === 1) {
+			td[i].appendChild(btn)
+		}
+		if (i === 11) {
+			td[i].appendChild(ipt)
+		}
+		if (i !== 1 && i !== 11) {
+			td[i].appendChild(text[i])
+		}
+	}
+	for (i = 0; i < 13; i++) {
     //td에 저장한 노드들을 tr의 자식노드로 전달
-    tr.appendChild(td[i])
-  }
-  tr.setAttribute('id', `${cnt}`)
-  //마지막으로 id='done'이라는 태그 밑에 자식 노드로 tr을 전달
-  document.getElementById('done').appendChild(tr)
+    	tr.appendChild(td[i])
+  	}
+  	tr.setAttribute('id', `${cnt}`)
+  	//마지막으로 id='done'이라는 태그 밑에 자식 노드로 tr을 전달
+  	document.getElementById('done').appendChild(tr)
 }
 
 var noObject = {} //key: 담겨진 과목의 No., value: 예비수강신청함의 No.
