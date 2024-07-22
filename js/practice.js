@@ -13,7 +13,6 @@ title.innerText = `${today.getFullYear()}-${hakgi}학기 모의수강신청`;
 
 if (practiceValue == 3){
 	practiceMode.innerText = '연습 모드: SELECT MODE'
-	console.log(practiceValue)
 	document.getElementById('timer').innerHTML = '<span>X</span>'
 
 } else{
@@ -61,8 +60,6 @@ if (practiceValue == 3){
 			}
 			
 		}
-		//location.replace('index.html');
-		//console.log(noObject)
 	}
 
 	function startTimer(){
