@@ -1,6 +1,7 @@
 let DarkModeCounter = 0;
 const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 let isPhone = false;
+const today = new Date();
 
 if (isDarkMode === true) {
 	lightDarkModeSetter({
@@ -16,7 +17,6 @@ if (isDarkMode === true) {
 
 window.onload = function deviceCheck() {
 	const user = navigator.userAgent;
-	
 	const startPractice = document.getElementById('startPractice');
 	
 	if ( user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) {
@@ -25,6 +25,12 @@ window.onload = function deviceCheck() {
 		startPractice.innerText = '데스크탑을 사용해주세요.'
 		startPractice.style.backgroundColor = '#f4f4f4';
 		startPractice.style.color = 'black';
+	} else if (today.getFullYear() <= 2024 && today.getMonth() <= 6 && today.getDate() < 29) {
+		startPractice.removeAttribute('onclick');
+		startPractice.innerText = '7/29 공개 예정'
+		startPractice.style.backgroundColor = '#f4f4f4';
+		startPractice.style.color = 'black';
+		
 	}
 }
 
@@ -86,7 +92,7 @@ window.addEventListener('scroll', (event)=> {
 	let countB = 1;
 	let countC = 50;
 	
-	if ((scrollY >= 2200 && counted === false && isPhone === true) || (scrollY >= 2350 && counted === false && isPhone === false)){
+	if ((scrollY >= 2100 && counted === false && isPhone === true) || (scrollY >= 2350 && counted === false && isPhone === false)){
 		countValue({
 			classNum: 0,
 			valueCount: 100,
