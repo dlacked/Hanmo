@@ -86,7 +86,7 @@ window.addEventListener('scroll', (event)=> {
 	let countB = 1;
 	let countC = 50;
 	
-	if ((scrollY >= 2200 && counted === false && isPhone === true) || (scrollY >= 2350 && counted === false && isPhone === false)){
+	if ((scrollY >= 2100 && counted === false && isPhone === true) || (scrollY >= 2350 && counted === false && isPhone === false)){
 		countValue({
 			classNum: 0,
 			valueCount: 100,
