@@ -40,7 +40,7 @@ title.innerText = `${today.getFullYear()}-${hakgi}학기 한국외국어대학�
 // practice.html 넘어갈 때 어떤 버튼을 눌렀는지 판별하기 위해 버튼마다 주어진 val 값을 localStorage에 저장 및 practice.js에 전송
 function goPractice(val) {
 	console.log(val)
-	if ((localStorage.getItem('subjectValue') < 1 || localStorage.getItem('subjectValue') > 15 || !Number(localStorage.getItem('subjectValue'))) & !(val === 2)){
+	if ((localStorage.getItem('subjectValue') < 1 || localStorage.getItem('subjectValue') > 15 || !Number(localStorage.getItem('subjectValue'))) && !(val === 2)){
 		alert('셋팅 값을 확인해주세요.')
 	} else{
 		localStorage.setItem('practiceSetter', val);
