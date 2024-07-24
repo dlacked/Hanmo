@@ -25,12 +25,6 @@ window.onload = function deviceCheck() {
 		startPractice.innerText = '데스크탑을 사용해주세요.'
 		startPractice.style.backgroundColor = '#f4f4f4';
 		startPractice.style.color = 'black';
-	} else if (today.getFullYear() <= 2024 && today.getMonth() <= 6 && today.getDate() < 29) {
-		startPractice.removeAttribute('onclick');
-		startPractice.innerText = '7/29 공개 예정'
-		startPractice.style.backgroundColor = '#f4f4f4';
-		startPractice.style.color = 'black';
-		
 	}
 }
 
