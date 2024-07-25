@@ -96,10 +96,10 @@ window.addEventListener('scroll', (event)=> {
 		countValue({
 			classNum: 0,
 			valueCount: 100,
-			howMuchCount: 11,
+			howMuchCount: 21,
 			lastCount: 13500,
 			showLastCount: '13.5K+',
-			howMuchDelay: 1
+			howMuchDelay: 5
 			
 		})
 		

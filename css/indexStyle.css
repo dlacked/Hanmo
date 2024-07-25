@@ -1,6 +1,6 @@
 html, body{
 	margin: 0;
-	font-family: 'NotoSans';
+	font-family: 'NotoSans', 'Apple SD Gothic Neo', Sans-serif;
 	transition: 1s;
 }
 
@@ -142,6 +142,7 @@ a{
 #copyright img{
 	width: 30px;
 	padding: 20px;
+	cursor: pointer;
 }
 
 #copyright p{
@@ -220,7 +221,7 @@ a{
 
 @font-face {
   font-family: 'NotoSans';
-  src: url(../fonts/NotoSans.ttf);
+  src: url('../fonts/NotoSans.ttf') format('truetype');
 }
 
 @media (max-width: 890px){

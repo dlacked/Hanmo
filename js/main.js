@@ -21,7 +21,7 @@ let c = 0;
 
 setInterval(() => {
     if (c === 0){
-        ad.innerHTML="<img src='../img/dlacked_logo.png' /><p>dlacked</p>";
+        ad.innerHTML="<a href='https://cord-postage-549.notion.site/dlacked-536254fac9104d82b267a82b59e3db25'><img src='../img/dlacked_logo.png' /><p>dlacked</p></a>";
         ++c
     }else if (c === 1) {
         ad.innerHTML="<img src='../img/hufs70.png' /><p>한국외국어대학교 70주년</p>";

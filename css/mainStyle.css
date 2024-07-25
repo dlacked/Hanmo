@@ -6,9 +6,14 @@ html, body{
     background-size: cover;
     background-blend-mode: multiply;
     color:white;
-	font-family: 'NotoSans';
+	font-family: 'NotoSans', 'Apple SD Gothic Neo', Sans-serif;
 	font-weight: bold;
 
+}
+
+a{
+	all: unset;
+	cursor: pointer;
 }
 
 #pageGrid{
@@ -42,7 +47,7 @@ html, body{
 }
 
 h1{
-	font-family: '외대얇';
+	font-family: '외대얇', 'Apple SD Gothic Neo', Sans-serif;;
 	font-weight: 100;
 	font-size: 50px;
 	text-align: center;
@@ -142,12 +147,12 @@ h1{
 
 @font-face {
   font-family: 'NotoSans';
-  src: url(../fonts/NotoSans.ttf);
+  src: url(../fonts/NotoSans.ttf) format('truetype');;
 }
 
 @font-face {
     font-family: '외대얇';
-    src: url(../fonts/hufsM.ttf);
+    src: url(../fonts/hufsM.ttf) format('truetype');;
 }
 
 @media (max-width: 1450px) {
