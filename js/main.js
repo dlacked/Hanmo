@@ -18,16 +18,21 @@ const subjectValue = document.getElementById('subjectValue');
 
 // setInterval을 사용해 메인 페이지 상단 배너 3초에 한 번 내용 수정
 let c = 0;
-
 setInterval(() => {
-    if (c === 0){
+    if (c === 1){
         ad.innerHTML="<a href='https://cord-postage-549.notion.site/dlacked-536254fac9104d82b267a82b59e3db25'><img src='../img/dlacked_logo.png' /><p>dlacked</p></a>";
-        ++c
-    }else if (c === 1) {
-        ad.innerHTML="<img src='../img/hufs70.png' /><p>한국외국어대학교 70주년</p>";
-        --c
+        ad.style.backgroundColor = 'rgba(11, 16, 106, 0.7)';
+		++c;
+    }else if (c === 0) {
+        ad.innerHTML="<a href='https://hufs.ac.kr'><img src='../img/hufs70.png' /><p>한국외국어대학교 70주년</p></a>";
+        ad.style.backgroundColor = 'rgba(0, 45, 86, 0.7)';
+		++c;
+    }else if (c === 2) {
+        ad.innerHTML="<img src='../img/caution.png' /><p>실제 수강신청 사이트가 아닙니다.</p></a>";
+        ad.style.backgroundColor = 'rgba(237, 220, 30, 0.7)';
+		c = 0;
     }
-}, 3000);
+}, 5000);
 
 // 날짜에 따라 title 자동 수정할 수 있도록 셋팅
 let hakgi = 2
@@ -39,7 +44,6 @@ title.innerText = `${today.getFullYear()}-${hakgi}학기 한국외국어대학�
 // 모드 버튼 선택 시 필요한 조건문 셋팅
 // practice.html 넘어갈 때 어떤 버튼을 눌렀는지 판별하기 위해 버튼마다 주어진 val 값을 localStorage에 저장 및 practice.js에 전송
 function goPractice(val) {
-	console.log(val)
 	if ((localStorage.getItem('subjectValue') < 1 || localStorage.getItem('subjectValue') > 15 || !Number(localStorage.getItem('subjectValue'))) && !(val === 2)){
 		alert('셋팅 값을 확인해주세요.')
 	} else{
