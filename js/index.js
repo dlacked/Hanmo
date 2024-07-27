@@ -12,8 +12,6 @@ if (isDarkMode === true) {
 		innerText: '라이트 모드',
 		countBackgroundColor: '#242424',
 		counterColor: 'white',
-		mainButtonBackgroundColor: '#242424',
-		mainButtonColor: 'white'
 	})
 
 	++DarkModeCounter;
@@ -27,7 +25,7 @@ window.onload = function deviceCheck() {
 	if ( user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) {
 		isPhone = true;
 		startPractice.removeAttribute('onclick');
-		startPractice.innerText = '데스크탑을 사용해주세요.'
+		startPractice.innerText = '데스크탑을 사용해주세요'
 		startPractice.style.backgroundColor = '#f4f4f4';
 		startPractice.style.color = 'black';
 	} 
@@ -35,10 +33,9 @@ window.onload = function deviceCheck() {
 	//날짜 제한, 중요 코드
 	else if (today.getFullYear() <= 2024 && today.getMonth() <= 6 && today.getDate() < 29) {
 		startPractice.removeAttribute('onclick');
-		startPractice.innerText = '7/29 공개 예정'
+		startPractice.innerText = '7/29 공개 예정';
 		startPractice.style.backgroundColor = '#f4f4f4';
 		startPractice.style.color = 'black';
-		
 	} 
 }
 
@@ -63,8 +60,6 @@ function lightDarkModeSetter(settingValues) {
 		counterBlock[i].style.backgroundColor = settingValues.countBackgroundColor;
 		counter[i].style.color = settingValues.counterColor;
 	}
-	startPractice.style.backgroundColor = settingValues.mainButtonBackgroundColor;
-	startPractice.style.color = settingValues.mainButtonColor;
 	
 }
 
@@ -76,10 +71,8 @@ function fDarkMode() {
 			mainPageBackgroundImage: "url('./img/bg_global_light.png')",
 			spansColor: 'black',
 			innerText: '다크 모드',
-			countBackgroundColor: '#e5e5e5',
+			countBackgroundColor: '#f4f4f4',
 			counterColor: '#0b106a',
-			mainButtonBackgroundColor: '#e5e5e5',
-			mainButtonColor: '#0b106a'
 		})
 		--DarkModeCounter;
 	} 
@@ -94,8 +87,6 @@ function fDarkMode() {
 			innerText: '라이트 모드',
 			countBackgroundColor: '#242424',
 			counterColor: 'white',
-			mainButtonBackgroundColor: '#242424',
-			mainButtonColor: 'white'
 		})
 		
 		++DarkModeCounter;
