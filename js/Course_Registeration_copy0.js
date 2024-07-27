@@ -16,12 +16,12 @@ for (var i = 1; i <= Number(subjectValue); i++){
 		<td>${i}</td>
 		<td><button class="register" onClick="registerClick(${i})"></button></td>
 		<td>연습</td>
-		<td>HANMO${i}</td>
+		<td>H00000000</td>
 		<td></td>
-		<td>한국외대모의수강신청${i}</td>
+		<td>한국외국어대학교 모의수강신청${i}</td>
 		<td>1</td>
 		<td>1</td>
-		<td>Professor dlacked${i}</td>
+		<td>Hankuk University of F.S. Professor ${i}</td>
 		<td>월 1 2 3 ( )</td>
 		<td>0 / 100</td>
 		<td><input type="checkbox"></td>
@@ -144,12 +144,12 @@ function done(clicked) {
 	//button들어갈 곳
 	text.push(document.createTextNode(''))
 	text.push(document.createTextNode('연습'))
-	text.push(document.createTextNode(`HANMO${clicked}`))
+	text.push(document.createTextNode(`H00000000`));
 	text.push(document.createTextNode(''))
-	text.push(document.createTextNode(`한국외대모의수강신청${clicked}`))
+	text.push(document.createTextNode(`한국외국어대학교 모의수강신청${clicked}`))
 	text.push(document.createTextNode('1'))
 	text.push(document.createTextNode('1'))
-	text.push(document.createTextNode(`Professor dlacked${clicked}`))
+	text.push(document.createTextNode(`Hankuk University of F.S. Professor ${clicked}`))
 	text.push(document.createTextNode('월 1 2 3 ( )'))
 	text.push(document.createTextNode('0 / 100'))
 	//input들어갈 곳

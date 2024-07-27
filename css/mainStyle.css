@@ -29,11 +29,13 @@ a{
 }
 
 #ad{
-    background-color: #002d56;
+    background-color: rgba(237, 220, 30, 0.7);
     width: 100%;
 	color: white;
 	padding: 5px 0px;
 	text-align: center;
+	backdrop-filter: blur(10px);
+	transition: 0.5s;
 }
 
 #ad img {
@@ -73,6 +75,7 @@ h1{
 	border-radius: 30px;
 	overflow: hidden;
 	position: relative;
+	backdrop-filter: blur(10px);
 }
 
 #buttonGrid div p{
@@ -94,7 +97,7 @@ h1{
 }
 
 #basicMode{
-	background-color: #8d704f;
+	background-color: rgba(141, 112, 79, 0.7);
 	grid-area: b;
 	cursor: pointer;
 	transition: 0.3s;
@@ -106,7 +109,7 @@ h1{
 }
 
 #selectMode{
-	background-color: #002d56;
+	background-color: rgba(0, 45, 86, 0.7);
 	grid-area: s;
 	cursor: pointer;
 	transition: 0.3s;
@@ -118,7 +121,7 @@ h1{
 }
 
 #timeMode{
-	background-color: #008294;
+	background-color: rgba(0, 130, 148, 0.7);
 	grid-area: t;
 	cursor: pointer;
 	transition: 0.3s;
@@ -130,7 +133,7 @@ h1{
 }
 
 #settings{
-	background-color: #777777;
+	background-color: rgba(119, 119, 119, 0.7);
 	grid-area: set;
 	cursor: pointer;
 	transition: 0.3s;
