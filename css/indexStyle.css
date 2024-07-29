@@ -2,12 +2,15 @@ html, body{
 	margin: 0;
 	font-family: 'NotoSans', 'Apple SD Gothic Neo', Sans-serif;
 	transition: 1s;
+	height: auto;
 }
 
 nav{
 	display:flex;
 	align-items: center;
 	font-weight: medium;
+	animation: navFadeIn 1s ease-in;
+	
 }
 
 hr{
@@ -15,6 +18,7 @@ hr{
 	background: #cccccc;
 	border: 0;
 	margin: 0;
+	animation: navFadeIn 1s ease-in;
 }
 
 nav img{
@@ -42,7 +46,6 @@ a{
 }
 
 #startPractice{
-	display: flex;
 	all: unset;
 	background-color: #0b106a;
 	color: white;
@@ -57,6 +60,7 @@ a{
 	font-weight: bold;
 	cursor: pointer;
 	transition: 0.3s;
+	animation: buttonFadeIn 2.2s ease-in;
 }
 
 #mainPageText h2{
@@ -89,8 +93,8 @@ a{
 
 .page{
 	display:grid;
-	height: 100vh;
 	grid-template-columns: auto 1040px auto;
+	margin-bottom: 300px;
 }
 
 .pageText .pageImage {
@@ -110,7 +114,7 @@ a{
 }
 
 .pageText img{
-	width: auto;
+	height: auto;
 }
 
 #counterBlocks{
@@ -175,6 +179,53 @@ a{
 	transition: 0.5s;
 }
 
+#subTitle {
+	animation: textFadeIn 1.5s ease-in;
+}
+
+#title{
+	animation: textFadeIn 1.7s ease-in;
+	
+}
+
+@keyframes textFadeIn{
+	0%{
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+	60%{
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes navFadeIn{
+	0%{
+		opacity: 0;
+	}
+	70%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+@keyframes buttonFadeIn{
+	0%{
+		opacity: 0;
+	}
+	70%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
 @media (max-width: 1440px){
 	
 	#mainPageText h2{
@@ -211,7 +262,7 @@ a{
 	}
 	
 	.counterBlock p{
-		font-size: 15px;
+		font-size: 13px;
 	}
 	
 	.counter{
@@ -239,6 +290,9 @@ a{
 		font-size: 28px;
 	}
 	
+	.counterBlock p{
+		font-size: 10px;
+	}
 }
 
 @media (max-width: 665px){
@@ -265,26 +319,29 @@ a{
 	}
 	
 	#counterBlocks{
-		display: grid;
-		grid-template-rows: 1fr 1fr 1fr;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.counterBlock p{
 		font-size: 15px;
 	}
 	
-	.counter{
-		color: #0b106a;
-		font-size: 30px;
-		margin: 0;
+	.counterBlock{
+		padding: 0;
+		height: 80px;
+		width: 100%;
 	}
 	
 	.counterBlock p{
-		font-size: 10px;
+		font-size: 13px;
+		margin-left: 20px;
 	}
 	
 	.counter{
-		font-size: 25px;
+		font-size: 30px;
 	}
 	
 	nav img{
@@ -350,6 +407,8 @@ a{
 	.counter{
 		font-size: 30px;
 	}
+	
+	
 	
 	li{
 		font-size: 15px;
