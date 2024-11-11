@@ -21,7 +21,7 @@ const setNotice = setInterval(function(){
 }, 3000);
 
 const setGrid = setInterval(function() {
-	$GRID1.style.gridTemplateRows = `${Number(Math.random())*1000}px 1fr`;
-	$GRID2.style.gridTemplateRows = `${Number(Math.random())*1000}px 1fr`;
-	$GRID3.style.gridTemplateRows = `${Number(Math.random())*1000}px 1fr`;
+	$GRID1.style.gridTemplateRows = `${Number(Math.random())*100}fr ${Number(Math.random())*100}fr`;
+	$GRID2.style.gridTemplateRows = `${Number(Math.random())*100}fr ${Number(Math.random())*100}fr`;
+	$GRID3.style.gridTemplateRows = `${Number(Math.random())*100}fr ${Number(Math.random())*100}fr`;
 }, 2000);
