@@ -144,17 +144,17 @@ main {
 
 .grid1{
 	right: 100px;
-	grid-template-rows: 200px 1fr;
+	grid-template-rows: 44fr 28fr;
 }
 
 .grid2{
 	right: 150px;
-	grid-template-rows: 700px 1fr;
+	grid-template-rows: 15fr 83fr;
 }
 
 .grid3{
 	right: 200px;
-	grid-template-rows: 500px 1fr;
+	grid-template-rows: 72fr 7fr;
 }
 
 section {
