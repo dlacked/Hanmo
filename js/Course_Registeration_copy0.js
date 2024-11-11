@@ -10,11 +10,12 @@ const practiceValue = localStorage.getItem('practiceSetter');
 const subjectValue = localStorage.getItem('subjectValue');
 const subjectTable = document.querySelector('#subjectTable');
 
+console.log(subjectTable);
 for (var i = 1; i <= Number(subjectValue); i++){
 	subjectTable.insertAdjacentHTML('beforeend', 
 		`<tr id='subject${i}'>
 		<td>${i}</td>
-		<td><button class="register" onClick="registerClick(${i})"></button></td>
+		<td><button class="register" onClick="registerClick(${i})" tabIndex="-1"></button></td>
 		<td>연습</td>
 		<td>H00000000</td>
 		<td></td>

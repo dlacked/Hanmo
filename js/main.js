@@ -8,6 +8,12 @@ window.onload = function deviceCheck() {
 	}
 }
 
+if (localStorage.getItem('userInfo')){
+	document.getElementById('loginout').innerText = 'logout';
+	alert(localStorage.getItem('userInfo'))
+}
+
+console.log(localStorage.getItem('userInfo'))
 const ad = document.getElementById('ad');
 const basicMode = document.getElementById('basicMode');
 const timeMode = document.getElementById('timeMode');

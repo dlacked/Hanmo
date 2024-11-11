@@ -3,10 +3,13 @@
 	<head>
 		<title>한모 - 한국외국어대학교 모의수강신청</title>
 		<meta charset='UTF-8'>
-		<meta name="description" content="한국외대에서 즐거운 새 학기를 맞이할 준비, 한모">
+		<meta name="description" content="한모로 수강신청을 완벽하게 준비할 수 있어요. 생각보다 다양한 모드를 지원한답니다. 우선 들어와보세요!">
         <meta name="keyword" content="한모, 한국외국어대학교 모의수강신청, HUFS, HUFS수강연습, 외대수강연습, HUFS연습, 외대연습, 수강연습, 한국외대, 한국외대 수강신청, 한국외대 수강신청 연습, 수강신청 연습, 한국외국어대학교, 외대, 외대 수강신청, 외대 수강신청 연습, 수강신청, 수강신청 모의연습, 한국외대 수강신청 모의연습, 한국외대 수강신청 연습, 외대 수강신청 모의연습, sugangpractice, vsugangpractice, 한국외국어대학교 수강신청 모의연습">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
-		<link href="./css/indexStyle.css" rel="stylesheet" type="text/css">
+		<link href="./css/index/gnb.css" rel="stylesheet" type="text/css">
+		<link href="./css/normalize.css" rel="stylesheet" type="text/css">
+		<link href="./css/index/style.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<script>
@@ -14,79 +17,104 @@
         
             ChannelIO('boot', {
             "pluginKey": "a11b52a2-f14b-4ee3-9f5a-5a5c3f5f413d"
-            });
+            }); 
         </script>
-		<div id='mainPage'>
+		<header class='show'>
+			<img class="hanmoLogo" src='./img/index/hanmo_logo.svg'>
 			<nav>
-				<img src='./img/hanmo_logo.png' />
 				<ul>
-					<li><a href="https://cord-postage-549.notion.site/dlacked-536254fac9104d82b267a82b59e3db25">개발자 정보</a>
-					<li id='darkMode' onclick='fDarkMode()'>다크 모드</li>
+					<li>
+						<a href="#">수강신청 연습하기</a>
+						<div class='mega megaPink'>
+							<h2>수강신청 연습하기</h2>
+							<p>수강신청 진행 과정을 미리 연습할 수 있어요.</p>
+							<img src='./img/index/dlackedLogo.svg'>
+						</div>
+					</li>
+					<li>
+						<a href="#">개발자 소개</a>
+						<div class='mega megaBlue'>
+							<h2>개발자 소개</h2>
+							<p>한모를 만든 개발자의 신상을 파악할 수 있어요.</p>
+							<img src='./img/index/dlackedLogo.svg'>
+						</div>
+					</li>
 				</ul>
 			</nav>
-			<hr>
-			<div id='mainPageText'>
-				<h2 id ='subTitle'>한국외대에서 즐거운 새 학기를 맞이할 준비</h2>
-				<h1 id='title'>한모</h1>
-			</div>
-			<div id='mainPageButtonArea'>
-				<button id='startPractice' onclick="location.href='./html/main.html'">수강신청 연습 시작하기</button>
-			</div>
-		</div>
-		<div class='page'>
-			<div></div>
-			<div class='pageText'>
-				<h2>실제 수강신청 페이지와 비슷한 환경에서 연습하기.</h2>
+		</header>
+		<main class='page1'>
+			<div class='container'>
+				<h1>
+					다양한 모드로<br>수강신청 연습하기.
+				</h1>
 				<p>
-					한모는 <span style='color: black'>한국외대 수강신청 페이지와 최대한 비슷하게 만든 한국외대 수강신청 연습 사이트입니다.</span> 요소 하나라도 다르면 실제 수강신청에서 혼란이 생길 수 있으므로, 개발자가 심혈을 담아 똑같이 디자인했습니다. 너무 똑같아서 실제 수강신청 페이지와 헷갈릴 수도 있지 않냐고요? 걱정하지 마세요. <span style='color: black'>수강신청 페이지와 헷갈리지 않도록 개발자가 장치를 만들어두었으니까요.</span>
+					한모에서 지원하는 다양한 모드를 통해 수강신청을 준비해보세요!<br><span>한국외국어대학교 재학생</span>을 위해 만든 특별한 사이트입니다.
 				</p>
-				<div class='pageImage'>
-					<img src='./img/vsugang.png' id='vsugang' />
+				<div class='button'>
+					수강신청 연습하기
+				</div>
+				<div class='notice'>
+					<p>
+						NOTICE
+					</p>
+					<ul class='noticeList'>
+					</ul>
 				</div>
 			</div>
-			<div></div>
-		</div>
-		<div class='page'>
-			<div></div>
-			<div class='pageText'>
-				<h2>수강신청 연습도 효율적으로.</h2>
-				<p>
-					한모는 <span style='color: black'>세 가지 연습 모드를 지원</span>하여 수강신청 과정에서 취약한 부분을 집중적으로 개선할 수 있도록 도움을 드리고 있습니다. <span style='color: black'>BASIC MODE는 수강신청의 전 과정을 연습할 수 있습니다.</span> 신입생분들에게 가장 추천해 드리는 모드이기도 하죠. 세 가지 연습 모드 모두 여러분의 성공적인 올클을 위해 존재합니다.
-				</p>
-				<div class='pageImage'>
-					<img src='./img/mode_info.png' />
+		</main>
+		<main class='page'>
+			<div class='grid grid1'>
+				<div></div>
+				<div></div>
+			</div>
+			<div class='grid grid2'>
+				<div></div>
+				<div></div>
+			</div>
+			<div class='grid grid3'>
+				<div></div>
+				<div></div>
+			</div>
+			<h1>주요 실적</h1>
+			<div class='container'>
+				<div class='counter'>
+					<ul>총 한모 방문자 수
+						<li>22,500+</li>
+					</ul>
+					<ul>한모 언급 게시물 수
+						<li>40+</li>
+					</ul>
+					<ul>한모 언급 게시물 스크랩 수
+						<li>4,200+</li>
+					</ul>
 				</div>
 			</div>
-			<div></div>
-		</div>
-		<div id='lastPage'>
-			<div></div>
-			<div class='pageText'>
-				<h2>한국외대 학우님이 인정한 '한모'</h2>
-				<p>
-					한모는 <span style='color: black'>수많은 한국외대 학우님이 인정한 수강신청 연습 플랫폼입니다.</span> 2023년 2월 ‘한국외국어대학교 모의수강신청’ 이란 이름으로 릴리즈한 후 <span style='color: black'>1.35만 명이 사용해 주셨어요.</span> 한국외대 수강신청 올클은 한모에게 맡기세요! 
-				</p>
-				<div id='counterBlocks'>
-					<div class='counterBlock'>
-						<p>사이트 방문자 수<br> <span class='counter'>0</span></p>
-					</div>
-					<div class='counterBlock'>
-						<p>한모 언급 게시물 수<br> <span class='counter'>0</span></p>
-					</div>
-					<div class='counterBlock'>
-						<p>한모 총 스크랩 수<br> <span class='counter'>0</span></p>
-					</div>
-				</div>
-			</div>
-			<div></div>
-		</div>
-		<div id='copyright'>
-			<a href="https://cord-postage-549.notion.site/dlacked-536254fac9104d82b267a82b59e3db25"><img src='./img/dlacked_logo.png' /></a>
+		</main>
+		<section class='move1 moveleft'>
 			<p>
-				Developed by dlacked.<br>
-				Copyright 2023-2024. dlacked All rights reserved.
+				당신의 새 학기를 준비하세요 당신의 새 학기를 준비하세요 &nbsp;
 			</p>
-		</div>
+			<p>
+				당신의 새 학기를 준비하세요 당신의 새 학기를 준비하세요 &nbsp;
+			</p>
+		</section>
+		<section class='move2 moveright'>
+			<p>
+				Get ready for your new semester Get ready for your new semester &nbsp;
+			</p>
+			<p>
+				Get ready for your new semester Get ready for your new semester &nbsp;
+			</p>
+		</section>
+		<section class='move3 moveleft'>
+			<p>
+				한모와 함께. with Hanmo. 한모와 함께. with Hanmo. &nbsp;
+			</p>
+			<p>
+				한모와 함께. with Hanmo. 한모와 함께. with Hanmo. &nbsp;
+			</p>
+		</section>
 	</body>
-	<script src='./js/index.js'></script>
+	<script src='./js/index/gnb.js'></script>
+	<script src='./js/index/script.js'></script>
 </html>

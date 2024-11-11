@@ -1,0 +1,79 @@
+header{
+	z-index: 9;
+	display: flex;
+	align-items: center;
+	transition: 1s;
+	position: fixed;
+	width: 100%;
+}
+
+header > img {
+	height: 20px;
+	margin-left: 30px;
+}
+
+.show {
+	top: 0px;
+}
+
+.hide {
+	top: -52px;
+}
+
+nav > ul {
+	display: flex;
+	padding-left: 30px;
+	font-size: 14px;
+}
+
+nav > ul > li{
+	padding: 16px 30px;
+	cursor: pointer;
+}
+
+.mega{
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	top: 51px;
+	height: 0px;
+	overflow: hidden;
+	background: white;
+	color: black;
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-size: 800px;
+	transition: 1s;
+}
+
+.megaBlue {
+	background-image: url('../../img/index/megaBlue.svg');
+}
+
+.megaPink {
+	background-image: url('../../img/index/megaPink.svg');
+}
+.mega > h2{
+	padding: 70px 0px 0px 110px;
+	font-weight: bold;
+	font-size: 70px;
+}
+
+.mega > p{
+	padding-left: 110px;
+	font-size: 24px;
+}
+
+.mega > img {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	margin: 20px;
+	height: 218px;
+	opacity: 0.2;
+}
+
+
+nav > ul > li:hover .mega{
+	height: 350px;
+}

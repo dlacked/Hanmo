@@ -8,6 +8,7 @@ html, body{
     color:white;
 	font-family: 'NotoSans', 'Apple SD Gothic Neo', Sans-serif;
 	font-weight: bold;
+	height: auto;
 
 }
 
@@ -19,7 +20,6 @@ a{
 #pageGrid{
     display: grid;
     grid-template-rows: auto auto 1fr;
-    height: 100vh;
     
 }
 
@@ -58,8 +58,8 @@ h1{
 #buttonGrid{
 	display: grid;
 	padding: 8vh 0;
-	grid-template-rows: repeat(2, 290px);
-	grid-template-columns: repeat(4, 290px);
+	grid-template-rows: repeat(2, 30vh);
+	grid-template-columns: repeat(4, 30vh);
 	grid-template-areas:
 		'b b t t'
 		'b b s set';
@@ -79,7 +79,7 @@ h1{
 }
 
 #buttonGrid div p{
-	font-size: 1vw;
+	font-size: 1.5vh;
 }
 
 #tiltedClock{
@@ -148,6 +148,10 @@ h1{
 	margin-bottom: 0px;
 }
 
+#settedSubjectValue{
+	color: red;
+}
+
 @font-face {
   font-family: 'NotoSans';
   src: url(../fonts/NotoSans.ttf) format('truetype');;
@@ -158,7 +162,7 @@ h1{
     src: url(../fonts/hufsM.ttf) format('truetype');;
 }
 
-@media (max-width: 1450px) {
+@media (max-width: 1450px) or (max-height: 900px) {
 	#buttonGrid{
 		grid-template-rows: repeat(2, 250px);
 		grid-template-columns: repeat(4, 250px);
