@@ -10,6 +10,7 @@ header{
 header > img {
 	height: 20px;
 	margin-left: 30px;
+	cursor: pointer;
 }
 
 .show {
@@ -53,6 +54,7 @@ nav > ul > li{
 .megaPink {
 	background-image: url('../../img/index/megaPink.svg');
 }
+
 .mega > h2{
 	padding: 70px 0px 0px 110px;
 	font-weight: bold;
@@ -64,12 +66,16 @@ nav > ul > li{
 	font-size: 24px;
 }
 
+.mega > h2 > img {
+	height: 20px;
+	margin-left: 8px;	
+}
 .mega > img {
 	position: absolute;
 	bottom: 0px;
 	right: 0px;
 	margin: 20px;
-	height: 218px;
+	height: 10vw;
 	opacity: 0.2;
 }
 

@@ -26,7 +26,7 @@ const subjectValue = document.getElementById('subjectValue');
 let c = 0;
 setInterval(() => {
     if (c === 1){
-        ad.innerHTML="<a href='https://cord-postage-549.notion.site/dlacked-536254fac9104d82b267a82b59e3db25'><img src='../img/dlacked_logo.png' /><p>dlacked</p></a>";
+        ad.innerHTML="<img src='../img/dlackedLogo.svg' /><p>dlacked</p>";
         ad.style.backgroundColor = 'rgba(11, 16, 106, 0.7)';
 		++c;
     }else if (c === 0) {

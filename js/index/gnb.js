@@ -9,7 +9,7 @@ window.addEventListener('scroll', function() {
 		$GNB.style.background = 'white';
 	} else{
 		$GNB.style.color = 'white';
-		$GNB.style.background = '#000d18';
+		$GNB.style.background = 'transparent';
 	}
 	if (nowScroll > lastScroll) {
 		$GNBclass.classList.add('hide');
@@ -30,7 +30,7 @@ $GNB.addEventListener('mouseenter', function() {
 
 $GNB.addEventListener('mouseleave', function() {
 	if (nowScroll === 0 || nowScroll === undefined) {
-		$GNB.style.background = '#000d18';
+		$GNB.style.background = 'transparent';
 		$GNB.style.color = 'white';
 	}
 })
