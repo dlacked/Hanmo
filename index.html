@@ -23,7 +23,7 @@
 			<img class="hanmoLogo" src='./img/index/hanmo_logo.svg' onclick="location.href='https://vsugangpractice.com/'">
 			<nav>
 				<ul>
-					<li>
+					<li class='mobileHide'>
 						<a href="./html/main.html">수강신청 연습하기</a>
 						<div class='mega megaPink' onclick="location.href='./html/main.html'">
 							<h2>수강신청 연습하기<img src='./img/index/link.png'></h2>
@@ -33,7 +33,7 @@
 					</li>
 					<li>
 						<a target='_blank' href="https://cord-postage-549.notion.site/dlacked-536254fac9104d82b267a82b59e3db25?pvs=74">개발자 소개</a>
-						<div class='mega megaBlue' onclick="window.open('https://cord-postage-549.notion.site/dlacked-536254fac9104d82b267a82b59e3db25?pvs=74')">
+						<div class='mega megaBlue mobileHide' onclick="window.open('https://cord-postage-549.notion.site/dlacked-536254fac9104d82b267a82b59e3db25?pvs=74')">
 							<h2>개발자 소개<img src='./img/index/link.png'></h2>
 							<p>한모를 만든 개발자의 정보를 확인할 수 있어요.</p>
 							<img src='./img/index/hanmoWhite.svg'>
@@ -50,10 +50,10 @@
 				<p>
 					한모에서 지원하는 다양한 모드를 통해 수강신청을 준비해보세요!<br><span>한국외국어대학교 재학생</span>을 위해 만든 특별한 사이트입니다.
 				</p>
-				<div class='button' onclick="location.href='./html/main.html'">
+				<div class='button mobileHide' onclick="location.href='./html/main.html'">
 					수강신청 연습하기
 				</div>
-				<div class='notice'>
+				<div class='notice mobileHide'>
 					<p>
 						NOTICE
 					</p>
@@ -87,12 +87,14 @@
 			</p>
 		</section>
 		<main class='page'>
-			<h1>
-				한국외대에서의 즐거운 캠퍼스 생활,<br>한모에서 준비하세요.
-			</h1>
-			<div class='earthContainer'>
-				<div class='earth'>
-					<img src='./img/index/glove.svg'>
+			<div class='container'>
+				<h1>
+					한국외대에서의 즐거운 캠퍼스 생활,<br>한모에서 준비하세요.
+				</h1>
+				<div class='earthContainer'>
+					<div class='earth'>
+						<img src='./img/index/glove.svg'>
+					</div>
 				</div>
 			</div>
 		</main>

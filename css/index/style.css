@@ -29,6 +29,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	width: 80%;
+	height: 100%;
 }
 
 .page1 h1 {
@@ -108,9 +109,9 @@ main {
 	align-items: center;
 }
 
-.page > h1 {
+.page h1 {
 	margin-top: 100px;
-	font-size: 50px;
+	font-size: 40px;
 	text-align: center;
 }
 
@@ -263,6 +264,61 @@ footer > div{
 	margin-left: 10px;
 	align-items: end;
 }
+
 footer p {
 	font-size: 5px;
+}
+
+@media (max-width: 700px) {
+	main {
+		height: 900px;
+	}
+	
+	.page1 h1{
+		font-size: 50px;
+		line-height: 55px;
+	}
+	
+	.page1 .container > p {
+		font-size: 16px;
+		line-height: 20px;
+	}
+	
+	.page h1 {
+		font-size: 30px;
+	}
+	
+	.grid {
+		display: none;
+	}
+	
+	.counter ul {
+		font-size: 16px;
+	}
+	
+	.counter > ul li{
+		font-size: 50px;
+		margin-top: -10px;
+	}
+	
+	.earth {
+		width: 300px;
+		height: 300px;
+	}
+}
+
+@media (max-width: 350px) {
+	.page1 h1{
+		font-size: 30px;
+		line-height: 35px;
+	}
+	
+	.page h1 {
+		font-size: 25px;
+	}
+	
+	.earth {
+		width: 150px;
+		height: 150px;
+	}
 }

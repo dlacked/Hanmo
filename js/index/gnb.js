@@ -1,6 +1,18 @@
 const $GNB = document.getElementsByTagName('header')[0];
 const $GNBclass = document.getElementsByClassName('show')[0];
+const $mobileHide = document.getElementsByClassName('mobileHide');
 var lastScroll, nowScroll;
+
+window.onload = function deviceCheck() {
+	const user = navigator.userAgent;
+	
+	if ( user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) {
+		for (var i = 0; i < $mobileHide.length; i++){
+			$mobileHide[i].style.display = 'none';
+		}
+	}
+}
+
 window.addEventListener('scroll', function() {
 	lastScroll = nowScroll;
 	nowScroll = window.scrollY;

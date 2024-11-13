@@ -83,3 +83,10 @@ nav > ul > li{
 nav > ul > li:hover .mega{
 	height: 350px;
 }
+
+
+@media (max-width: 350px) {
+	header img {
+		height: 15px;
+	}
+}
