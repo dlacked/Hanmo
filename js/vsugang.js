@@ -13,11 +13,14 @@ checkDevice = () => {
 }
 
 setValue = () => {
-	if (localStorage.getItem('subjectValue') >= 1 || localStorage.getItem('subjectValue') <= 20) {
+	//console.log(isSettedValue)
+	if ((localStorage.getItem('subjectValue') >= 1 || localStorage.getItem('subjectValue') <= 20) && Number(localStorage.getItem('subjectValue'))) {
 		printValue.innerText = `과목 수를 ${localStorage.getItem('subjectValue')}개로 설정했어요.`
 		printValue.style.color = 'white';
 		isSettedValue = true;
 	}
+	//console.log(isSettedValue)
+	//console.log(localStorage.getItem('subjectValue'))
 }
 
 checkDate = () => {

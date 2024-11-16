@@ -4,12 +4,7 @@
         <title>한모 - 한국외국어대학교 모의수강신청</title>
         <meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
-		<link href="../css/style.css" rel="stylesheet" type="text/css">
-        <script>
-            function notEntry(){ //notice, 수강신청 및 수정/삭제, 개발자 소개 외의 버튼 눌렀을 때 실행
-                alert("사용 불가능한 기능입니다.")
-            }
-        </script>
+		<link href="../css/practice.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div class="half"> <!--메뉴(왼쪽)와 정보(오른쪽) 나눔(display: grid)-->
@@ -19,9 +14,9 @@
 					<p id='practiceMode'></p>
                 </div>
                 <div class="hufsGold"> <!--HUFS GOLD부분-->
-                    <button class = "button" onclick="location.href='main.html'">메인 페이지</button>
+                    <button class = "button" onclick="location.href='vsugang.html'">메인 페이지</button>
                     <button id="noticeButton" onclick="location.href='practice.html'">Notice</button>
-                    <button id="sugang" class = "button" onclick="location.href='Course_Registeration.html'">수강신청 및 수정/삭제</button>
+                    <button id="sugang" class = "button" onclick="location.href='selectZone.html'">수강신청 및 수정/삭제</button>
                     <button class = "button" onclick="notEntry()">수강신청열람</button>
                     <button class = "button" onclick="notEntry()">시간표조회</button>
                     <button class = "button" onclick="notEntry()">강의시간표조회</button>

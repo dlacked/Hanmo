@@ -202,7 +202,7 @@ footer > div{
 }
 
 footer p {
-	font-size: 5px;
+	font-size: 10px;
 }
 
 @media (max-width: 700px) {

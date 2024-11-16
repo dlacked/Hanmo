@@ -8,7 +8,8 @@ today.getMonth() >= 2 && today.getMonth() <= 5 ? hakgi = 1 : NaN;
 
 title.innerText = `${today.getFullYear()}-${hakgi}학기 모의수강신청`;
 
-
+localStorage.setItem('TIMEtime', '0.000');
+localStorage.setItem('SELECTtime', '0.000');
 
 if (practiceValue == 3){
 	practiceMode.innerText = '연습 모드: SELECT MODE'
@@ -50,12 +51,12 @@ if (practiceValue == 3){
 			duringTime = (endTime - startTime) / 1000
 			if (practiceValue == 1){
 				//duringTime = (endTime - startTime) / 1000 //스톱워치 종료시간에서 페이지 입장 시간을 뺌
-				localStorage.setItem('duringTime', duringTime);
-				location.replace('./Course_Registeration.html');
+				localStorage.setItem('TIMEtime', duringTime);
+				location.replace('./selectZone.html');
 			} else{
 				 //스톱워치 종료시간에서 페이지 입장 시간을 뺌
-				alert(`${duringTime}s 걸렸습니다.`)
-				location.replace('./main.html');
+				localStorage.setItem('TIMEtime', duringTime);
+				location.replace('./result.html');
 			}
 			
 		}

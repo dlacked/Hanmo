@@ -1,9 +1,4 @@
-html, body{
-	font-family: 'NotoSans', 'Apple SD Gothic Neo', Sans-serif;
-}
-
 main {
-	
     background-image: url('../img/background.svg');
     background-size: cover;
 	background-position: right;

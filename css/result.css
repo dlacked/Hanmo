@@ -1,0 +1,63 @@
+main {
+    background-image: url('../img/resultBackground.svg');
+    background-size: cover;
+	background-position: center;
+}
+
+.vh100page{
+	height: 100vh;
+}
+
+.resultContainer {
+	display: flex;
+	position: absolute;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	gap: 80px;
+}
+
+.subject {
+	text-align: center;
+	font-size: 36px;
+}
+
+.timeBox{
+	display: flex;
+	flex-direction: column;
+	font-size: 80px;
+	text-align: right;
+	gap: 20px;
+	font-weight: bold;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 120px;
+	background: linear-gradient(90deg, #62b7ff 0%, #ff74fd 100%);
+	border: none;
+	font-size: 22px;
+	font-weight: bold;
+	color: white;
+	cursor: pointer;
+	position: absolute;
+	bottom: 0px;
+	font-size: 40px;
+	animation: footerup 1s linear infinite;
+}
+
+
+.button:hover{
+	filter: brightness(90%);
+}
+
+p > span {
+	font-size: 30px;
+	font-weight: normal;
+	opacity: 0.5;
+	margin-right: 50px;
+}
