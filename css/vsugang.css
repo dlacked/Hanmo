@@ -1,0 +1,86 @@
+html, body{
+	font-family: 'NotoSans', 'Apple SD Gothic Neo', Sans-serif;
+}
+
+main {
+	
+    background-image: url('../img/background.svg');
+    background-size: cover;
+	background-position: right;
+}
+
+.vh100page {
+	height: 100vh;
+}
+
+.grid {
+	display: grid;
+	margin-top: 50px;
+	grid-template-rows: repeat(2, 35vh);
+	grid-template-columns: repeat(4, 35vh);
+	grid-template-areas:
+		'b b t t'
+		'b b s set';
+	justify-content: center;
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+.grid div{
+	background: #06111c;
+	border: solid 1px #000912;
+	transition: 0.3s;
+}
+
+.grid div h2 {
+	margin: 10px 20px;
+	font-size: 40px;
+	font-weight: 100;
+}
+
+.grid:has(:hover) > div:not(:hover){
+	background: #000a13;
+}
+
+.setting p{
+	margin-top: 20px;
+	margin-left: 20px;
+	font-size: 40px;
+	font-weight: 100;
+	color: red;
+}
+
+@media (max-width: 1450px) or (max-height: 900px) {
+	.grid{
+		margin: 120px;
+		grid-template-rows: repeat(2, 250px);
+		grid-template-columns: repeat(4, 250px);
+	}
+	
+	h1{
+		font-size: 30px;
+	}
+	
+	.grid div p{
+		font-size: 30px;
+	}
+}
+
+@media (max-width: 1000px) {
+	.grid{
+		margin: 50px;
+		grid-template-rows: repeat(3, 220px);
+		grid-template-columns: repeat(2, 220px);
+		grid-template-areas:
+			'b b'
+			's t'
+			'set t';
+	}
+	h1{
+		font-size: 28px;
+	}
+
+	.grid div p{
+		font-size: 28px;
+	}
+}

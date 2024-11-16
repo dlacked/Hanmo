@@ -1,35 +1,9 @@
-html, body{
-	font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', Sans-serif;
-	transition: 1s;
-	height: auto;
-	background: #000d18;
-	color: white;
-	height: auto;
-	width: 100%;
-	user-select: none;
-}
-
-body::-webkit-scrollbar {
-	display: none;
-}
-
-main {
-	height: 100dvh;
-	width: 100%;
-}
-
 .page1 {
-	background-image: url('../../img/index/background.svg');
+	background-image: url('../img/background.svg');
 	background-position: right;
 	display: flex;
 	justify-content: center;
-}
-
-.container {
-	display: flex;
-	flex-direction: column;
-	width: 80%;
-	height: 100%;
+	background-size: cover;
 }
 
 .page1 h1 {
@@ -101,18 +75,6 @@ main {
 
 .page1 .notice li {
 	margin: 50px 0px;
-}
-
-.page {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.page h1 {
-	margin-top: 100px;
-	font-size: 40px;
-	text-align: center;
 }
 
 .earthContainer {
@@ -197,35 +159,9 @@ section {
 	color: white;
 }
 
-.grid{
-	position: absolute;
-	z-index: 1;
-	/*overflow: hidden;*/
-	display: grid;
-	row-gap: 20px;
-	height: 100vh;
-	width: 30px;
-	transition: 1s;
-}
-
-.grid > div {
-	background: #8d704f;
-	width: 100%;
-}
-
-.grid1{
-	right: 100px;
-	grid-template-rows: 3fr 1fr;
-}
-
-.grid2{
-	right: 150px;
-	grid-template-rows: 3fr 1fr;
-}
-
-.grid3{
-	right: 200px;
-	grid-template-rows: 3fr 1fr;
+.page3 {
+	background: url('../img/page3.svg');
+	background-size: cover;
 }
 
 @keyframes moveleft{

@@ -1,4 +1,3 @@
-
 const practiceValue = localStorage.getItem('practiceSetter');
 const practiceMode = document.getElementById('practiceMode');
 const title = document.getElementById('title');

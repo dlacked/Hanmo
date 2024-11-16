@@ -9,7 +9,7 @@ header{
 
 header > img {
 	height: 20px;
-	margin-left: 30px;
+	margin-left: 20px;
 	cursor: pointer;
 }
 
@@ -48,11 +48,11 @@ nav > ul > li{
 }
 
 .megaBlue {
-	background-image: url('../../img/index/megaBlue.svg');
+	background-image: url('../img/megaBlue.svg');
 }
 
 .megaPink {
-	background-image: url('../../img/index/megaPink.svg');
+	background-image: url('../img/megaPink.svg');
 }
 
 .mega > h2{
