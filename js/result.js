@@ -1,5 +1,14 @@
 const $timeBox = document.querySelector('.timeBox');
 
+checkDevice = () => {
+	const user = navigator.userAgent;
+	
+	if ( user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) { 
+		alert('잘못된 접근입니다.')
+		location.replace('../index.html');
+	}
+}
+
 timeCheck = () => {
 	var subjectValue = localStorage.getItem('subjectValue');
 	const TIMEtime = localStorage.getItem('TIMEtime');
@@ -15,4 +24,5 @@ timeCheck = () => {
 					<p class='time'><span>총 소요 시간</span>${TOTALtime}초</p>`);
 }
 
+checkDevice();
 timeCheck();

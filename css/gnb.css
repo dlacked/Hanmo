@@ -1,13 +1,20 @@
 header{
 	z-index: 9;
 	display: flex;
-	align-items: center;
-	transition: 1s;
+	flex-direction: column;
 	position: fixed;
 	width: 100%;
+	transition: 1s;
 }
 
-header > img {
+.gnb {
+	display: flex;
+	background: #000d18;
+	align-items: center;
+	transition: 1s;
+}
+
+.gnb > img {
 	height: 20px;
 	margin-left: 20px;
 	cursor: pointer;
@@ -36,7 +43,7 @@ nav > ul > li{
 	position: absolute;
 	left: 0px;
 	width: 100%;
-	top: 51px;
+	top: 52px;
 	height: 0px;
 	overflow: hidden;
 	background: white;
@@ -79,11 +86,21 @@ nav > ul > li{
 	opacity: 0.2;
 }
 
-
 nav > ul > li:hover .mega{
-	height: 350px;
+	height: 400px;
 }
 
+.headerNotice{
+	display: none;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background: yellow;
+	color: black;
+	font-size: 16px;
+	height: 40px;
+	font-weight: 300;
+}
 
 @media (max-width: 350px) {
 	header img {

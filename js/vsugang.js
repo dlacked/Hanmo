@@ -4,17 +4,18 @@ const printValue = document.getElementsByClassName('printValue')[0];
 const setting = document.getElementsByClassName('setting')[0];
 var isSettedValue = false;
 
+
+// 모바일 감지 시 index.html로 강제 이동 (모바일 접속을 막기 위함)
 checkDevice = () => {
 	const user = navigator.userAgent;
 	
 	if ( user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) { 
+		alert('잘못된 접근입니다.')
 		location.replace('../index.html');
-		// 모바일 감지 시 index.html로 강제 이동 (모바일 접속을 막기 위함)
 	}
 }
 
 setValue = () => {
-	//console.log(isSettedValue)
 	if ((localStorage.getItem('subjectValue') >= 1 || localStorage.getItem('subjectValue') <= 20) && Number(localStorage.getItem('subjectValue'))) {
 		printValue.innerText = `과목 수를 ${localStorage.getItem('subjectValue')}개로 설정했어요.`
 		printValue.style.color = 'white';
@@ -23,8 +24,6 @@ setValue = () => {
 	} else{
 		setting.style.background = '#120000';
 	}
-	//console.log(isSettedValue)
-	//console.log(localStorage.getItem('subjectValue'))
 }
 
 checkDate = () => {

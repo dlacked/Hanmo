@@ -1,16 +1,18 @@
-window.onload = function deviceCheck() {
-	const user = navigator.userAgent;
-	
-	if ( user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) {
-		location.replace('../index.html');
-	}
-}
-
 const practiceValue = localStorage.getItem('practiceSetter');
 const subjectValue = localStorage.getItem('subjectValue');
 const subjectTable = document.querySelector('#subjectTable');
 
-console.log(subjectTable);
+checkDevice = () => {
+	const user = navigator.userAgent;
+	
+	if ( user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) { 
+		alert('잘못된 접근입니다.')
+		location.replace('../index.html');
+	}
+}
+
+checkDevice();
+
 for (var i = 1; i <= Number(subjectValue); i++){
 	subjectTable.insertAdjacentHTML('beforeend', 
 		`<tr id='subject${i}'>

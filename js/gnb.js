@@ -1,9 +1,11 @@
-const $GNB = document.getElementsByTagName('header')[0];
+const $GNB = document.getElementsByClassName('gnb')[0];
 const $GNBclass = document.getElementsByClassName('show')[0];
 const $mobileHide = document.getElementsByClassName('mobileHide');
+const $headerNotice = document.getElementsByClassName('headerNotice')[0];
 var lastScroll, nowScroll;
+const now = new Date();
 
-window.onload = function deviceCheck() {
+checkDevice = () => {
 	const user = navigator.userAgent;
 	
 	if ( user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) {
@@ -13,6 +15,18 @@ window.onload = function deviceCheck() {
 	}
 }
 
+checkTime = () => {
+	if ((now.getHours() === 9 && now.getMinutes() >= 58) || (now.getHours() === 10 && now.getMinutes() <= 5)){
+		location.href = 'https://vsugangpractice.com/html/disable.html'
+	}
+	else if (now.getHours() === 9 && (now.getMinutes() >= 50)){
+		$headerNotice.style.display = 'flex';
+	}
+}
+
+checkDevice();
+checkTime();
+
 window.addEventListener('scroll', function() {
 	lastScroll = nowScroll;
 	nowScroll = window.scrollY;
@@ -21,7 +35,7 @@ window.addEventListener('scroll', function() {
 		$GNB.style.background = 'white';
 	} else{
 		$GNB.style.color = 'white';
-		$GNB.style.background = 'transparent';
+		$GNB.style.background = '#000d18';
 	}
 	if (nowScroll > lastScroll) {
 		$GNBclass.classList.add('hide');
@@ -42,7 +56,8 @@ $GNB.addEventListener('mouseenter', function() {
 
 $GNB.addEventListener('mouseleave', function() {
 	if (nowScroll === 0 || nowScroll === undefined) {
-		$GNB.style.background = 'transparent';
+		$GNB.style.background = '#000d18';
 		$GNB.style.color = 'white';
 	}
 })
+

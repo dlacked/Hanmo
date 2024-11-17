@@ -11,6 +11,17 @@ title.innerText = `${today.getFullYear()}-${hakgi}학기 모의수강신청`;
 localStorage.setItem('TIMEtime', '0.000');
 localStorage.setItem('SELECTtime', '0.000');
 
+checkDevice = () => {
+	const user = navigator.userAgent;
+	
+	if ( user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) { 
+		alert('잘못된 접근입니다.')
+		location.replace('../index.html');
+	}
+}
+
+checkDevice();
+
 if (practiceValue == 3){
 	practiceMode.innerText = '연습 모드: SELECT MODE'
 	document.getElementById('timer').innerHTML = '<span>X</span>'
@@ -30,13 +41,7 @@ if (practiceValue == 3){
 	let clickedSugang = document.getElementById('sugang');
 	var startTime, duringTime;
 
-	window.onload = function deviceCheck(){ 
-		const user = navigator.userAgent;
-		
-		if ( user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) {
-			location.replace('../index.html');
-		}//사이트 열자마자 실행되는 함수
-		
+	window.onload = function deviceCheck(){
 		interval = setInterval(startTimer, 1000);
 		setTimeout(function(){
 			startTime = new Date()
