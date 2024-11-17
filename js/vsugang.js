@@ -1,6 +1,7 @@
 const title = document.getElementsByClassName('title')[0];
 const today = new Date();
 const printValue = document.getElementsByClassName('printValue')[0];
+const setting = document.getElementsByClassName('setting')[0];
 var isSettedValue = false;
 
 checkDevice = () => {
@@ -17,7 +18,10 @@ setValue = () => {
 	if ((localStorage.getItem('subjectValue') >= 1 || localStorage.getItem('subjectValue') <= 20) && Number(localStorage.getItem('subjectValue'))) {
 		printValue.innerText = `과목 수를 ${localStorage.getItem('subjectValue')}개로 설정했어요.`
 		printValue.style.color = 'white';
+		setting.style.background = '#001203';
 		isSettedValue = true;
+	} else{
+		setting.style.background = '#120000';
 	}
 	//console.log(isSettedValue)
 	//console.log(localStorage.getItem('subjectValue'))
@@ -48,10 +52,12 @@ function goPractice(val) {
 //SETTING 버튼 작동 함수
 function inputValue() {
 	const val = prompt('수강신청 연습에 사용하실 과목 수를 입력해주세요.');
-	if (val < 1 || val > 20 || !Number(val)) {
+	if (val === null){
+		null;
+	} else if (val < 1 || val > 20 || !Number(val)) {
 		alert('1 ~ 20 사이의 값만 입력 가능해요.');
 		inputValue();
-	} else{
+	}else{
 		localStorage.setItem('subjectValue', val);
 		setValue();
 	}

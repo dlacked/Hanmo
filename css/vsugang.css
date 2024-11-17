@@ -22,9 +22,9 @@ main {
 }
 
 .grid div{
-	background: #06111c;
 	border: solid 1px #000912;
 	transition: 0.3s;
+	background: #06111c;
 }
 
 .grid div h2 {
@@ -33,18 +33,17 @@ main {
 	font-weight: 100;
 }
 
+.grid p {
+	margin: 0px 20px;
+}
+
 .grid:has(:hover) > div:not(:hover){
 	background: #000a13;
 }
 
-.setting p{
-	margin-top: 20px;
-	margin-left: 20px;
-	font-size: 40px;
-	font-weight: 100;
+.setting p {
 	color: red;
 }
-
 @media (max-width: 1450px) or (max-height: 900px) {
 	.grid{
 		margin: 120px;
@@ -53,10 +52,6 @@ main {
 	}
 	
 	h1{
-		font-size: 30px;
-	}
-	
-	.grid div p{
 		font-size: 30px;
 	}
 }
@@ -72,10 +67,6 @@ main {
 			'set t';
 	}
 	h1{
-		font-size: 28px;
-	}
-
-	.grid div p{
 		font-size: 28px;
 	}
 }
