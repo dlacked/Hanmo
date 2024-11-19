@@ -136,11 +136,11 @@ section {
 }
 
 .moveleft > p {
-	animation: 35s infinite linear moveleft;
+	animation: 180s infinite linear moveleft;
 }
 
 .moveright > p {
-	animation: 35s infinite linear moveright;
+	animation: 180s infinite linear moveright;
 }
 
 .counter {
