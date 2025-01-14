@@ -1,16 +1,29 @@
 main {
-    background-image: url('../img/background.svg');
-    background-size: cover;
+	background-image: url('../img/background.svg');
 	background-position: right;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+	user-select: none;
 }
 
-.vh100page {
-	height: 100vh;
+h1 {
+	text-align: center;
+}
+
+.container {
+	position: relative;
+	top: 80px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .grid {
 	display: grid;
-	margin-top: 50px;
+	margin-top: 20px;
 	grid-template-rows: repeat(2, 35vh);
 	grid-template-columns: repeat(4, 35vh);
 	grid-template-areas:
@@ -44,29 +57,27 @@ main {
 .setting p {
 	color: red;
 }
+
+.adfit {
+	position: absolute;
+	bottom: 10px;
+}
+
 @media (max-width: 1450px) or (max-height: 900px) {
 	.grid{
-		margin: 120px;
 		grid-template-rows: repeat(2, 250px);
 		grid-template-columns: repeat(4, 250px);
 	}
 	
-	h1{
-		font-size: 30px;
-	}
 }
 
 @media (max-width: 1000px) {
 	.grid{
-		margin: 50px;
 		grid-template-rows: repeat(3, 220px);
 		grid-template-columns: repeat(2, 220px);
 		grid-template-areas:
 			'b b'
 			's t'
 			'set t';
-	}
-	h1{
-		font-size: 28px;
 	}
 }

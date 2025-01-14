@@ -1,188 +1,126 @@
-.page1 {
+main {
 	background-image: url('../img/background.svg');
 	background-position: right;
 	display: flex;
-	justify-content: center;
-	background-size: cover;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	height: 100vh;
+	user-select: none;
 }
 
-.page1 h1 {
-	margin-top: 150px;
-	font-weight: bold;
-	font-size: 70px;
-	line-height: 75px;
+h1 {
+	text-align: center;
 }
 
-.page1 .container > p {
-	margin-top: 30px;
-	font-size: 24px;
-	line-height: 40px;
-	color: rgba(255, 255, 255, 0.5)
-}
-
-.page1 .button {
+.container {
+	position: relative;
+	top: 80px;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 220px;
-	height: 54px;
-	border-radius: 15px;
-	background: linear-gradient(90deg, #62b7ff 0%, #ff74fd 100%);
-	border: none;
-	font-size: 22px;
-	font-weight: bold;
-	color: white;
-	margin-top: 30px;
-	cursor: pointer;
 }
 
-.page1 .button:hover{
-	filter: brightness(90%);
-}
-
-.page1 span {
-	color: white;
-}
-
-.page1 .notice {
-	height: 130px;
+.noticeContainer {
 	display: flex;
 	align-items: center;
 	background: #06111c;
 	opacity: 0.8;
 	border-radius: 15px;
-	overflow: hidden;
-	user-select: none;
-	margin-top: 170px;
 	
 }
 
-.page1 .notice > p {
-	margin: 0px 50px;
-	font-size: 24px;
+.notice{
+	height: 60px;
+	width: 800px;
+	margin-top: 20px;
+	overflow: hidden;
+}
+
+.mainNotice{
+	height: 350px;
+	width: 800px;
+	margin-top: 20px;
+	
+}
+
+.notice > p {
+	margin: 0px 25px;
+	font-size: 18px;
 	font-weight: bold;
 	color: rgba(255, 255, 255, 0.5)
 }
 
-.page1 .notice ul {
+.notice ul {
 	position: relative;
 	margin: 0px 50px;
 	height: 130px;
-	font-size: 20px;
+	font-size: 16px;
 	transition: 1s;
 	bottom: 0px;
+	text-align: left;
 }
 
 
-.page1 .notice li {
-	margin: 50px 0px;
+.notice li {
+	margin: 53px 0px;
 }
 
-.earthContainer {
-	height: 100%;
+.mainNotice {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.mainNotice span{
+	margin-left: 50px;
+}
+
+.mainNotice p {
+	line-height: 40px;
+}
+
+.buttonContainer {
+	display: flex;
+	gap: 20px;
+}
+.button {
+	width: 195px;
+	height: 52px;
+	background: #b9b9b9;
+	color: #000d18;
+	font-size: 20px;
+	font-weight: bold;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border-radius: 15px;
+	margin-top: 20px;
 }
 
-.earth {
-	height: 500px;
-	width: 500px;
-	background: radial-gradient(at 0% 20%, #624e37 70%, #2a2117 100%);
-	border-radius: 250px;
-	overflow: hidden;
-	box-shadow: 0 0 30px 10px #262626;
+.goGitHub {
+	background: #06111c;
+	color: #bdbdbd;
+	width: 130px;
 }
 
-.earth > img {
-	height: 100%;
-	animation: moveEarth 15s linear infinite;
-	z-index: 1;
+.button:hover{
+	opacity: 0.8;
+	cursor: pointer;
 }
 
-@keyframes moveEarth {
-	0% {
-		transform: translate3d(0, 0, 0);
-	}
-	100% {
-		transform: translate3d(-58.7%, 0, 0);
-	}
+.adfit {
+	position: absolute;
+	bottom: 10px;
 }
 
-section {
-	white-space: nowrap;
-	display: flex;
-	overflow: hidden;
-	height: 150px;
-	font-size: 80px;
-	align-items: center;
-	font-weight: bold;
-}
-
-.move1{
-	background: #008294;
-	justify-content: flex-end;
-}
-
-.move2{
-	background: #dadad3;
-	-webkit-text-stroke: 2px #949492;
-	color: #dadad3;
-}
-
-.move3{
-	background: #8d704f;
-	justify-content: flex-end;
-}
-
-.moveleft > p {
-	animation: 180s infinite linear moveleft;
-}
-
-.moveright > p {
-	animation: 180s infinite linear moveright;
-}
-
-.counter {
-	margin-top: 350px;
-}
-
-.counter > ul{
-	font-size: 20px;
-	color: rgba(255, 255, 255, 0.5);
-	margin: 20px 0; 
-}
-
-.counter > ul > li {
-	margin-top: -20px;
-	font-size: 80px;
-	font-weight: bold;
-	color: white;
-}
-
-.page3 {
-	background: url('../img/page3.svg');
-	background-size: cover;
-}
-
-@keyframes moveleft{
-	0% {
-		transform: translate3d(0, 0, 0);
-	}
-	
-	100% {
-		transform: translate3d(-100%, 0, 0);
-	}
-}
-
-@keyframes moveright{
-	0% {
-		transform: translate3d(0, 0, 0);
-	}
-	
-	100% {
-		transform: translate3d(100%, 0, 0);
-	}
+hr {
+	margin: 20px 0px;
+	width: 60%;
+	border: 0;
+	height: 1px;
+	background: #bdbdbd;
 }
 
 footer {
@@ -204,58 +142,4 @@ footer > div{
 
 footer p {
 	font-size: 10px;
-}
-
-@media (max-width: 700px) {
-	main {
-		height: 900px;
-	}
-	
-	.page1 h1{
-		font-size: 50px;
-		line-height: 55px;
-	}
-	
-	.page1 .container > p {
-		font-size: 16px;
-		line-height: 20px;
-	}
-	
-	.page h1 {
-		font-size: 30px;
-	}
-	
-	.grid {
-		display: none;
-	}
-	
-	.counter ul {
-		font-size: 16px;
-	}
-	
-	.counter > ul li{
-		font-size: 50px;
-		margin-top: -10px;
-	}
-	
-	.earth {
-		width: 300px;
-		height: 300px;
-	}
-}
-
-@media (max-width: 350px) {
-	.page1 h1{
-		font-size: 30px;
-		line-height: 35px;
-	}
-	
-	.page h1 {
-		font-size: 25px;
-	}
-	
-	.earth {
-		width: 150px;
-		height: 150px;
-	}
 }

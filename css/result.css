@@ -1,7 +1,8 @@
 main {
-    background-image: url('../img/resultBackground.svg');
+    background-image: url('../img/background.svg');
     background-size: cover;
 	background-position: center;
+	color: #bdbdbd;
 }
 
 .vh100page{
@@ -38,11 +39,11 @@ main {
 	align-items: center;
 	width: 100%;
 	height: 120px;
-	background: linear-gradient(90deg, #62b7ff 0%, #ff74fd 100%);
+	background: #bdbdbd;
 	border: none;
 	font-size: 22px;
 	font-weight: bold;
-	color: white;
+	color: #000d18;
 	cursor: pointer;
 	position: absolute;
 	bottom: 0px;
