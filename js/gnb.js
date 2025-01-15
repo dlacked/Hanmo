@@ -4,8 +4,8 @@ var lastScroll, nowScroll;
 const thisTime = new Date();
 
 checkTime = () => {
-	if (thisTime.getHours() === 9 && thisTime.getMinutes() >= 40){
-	//if(true){
+	//if (thisTime.getHours() === 9 && thisTime.getMinutes() >= 40){
+	if(thisTime.getHours() === 22 && thisTime.getMinutes() >= 40){
 		$headerNotice.style.top = '0px';
 	}
 }

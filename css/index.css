@@ -24,7 +24,7 @@ main {
 }
 
 .mainNotice{
-	height: 350px;
+	height: 200px;
 	width: 800px;
 	margin-top: 20px;
 	
@@ -77,17 +77,17 @@ main {
 	color: #000d18;
 	font-size: 20px;
 	font-weight: bold;
-	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 15px;
 	margin-top: 20px;
+	display: flex;
 }
 
-.goGitHub {
+.refresh {
 	background: #06111c;
 	color: #bdbdbd;
-	width: 130px;
+	width: 120px;
 }
 
 .button:hover{
@@ -98,6 +98,14 @@ main {
 .adfit {
 	position: absolute;
 	bottom: 10px;
+}
+
+.available{
+	display: flex;
+}
+
+.unavailable{
+	display: none;
 }
 
 hr {
