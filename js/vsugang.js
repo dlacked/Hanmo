@@ -1,19 +1,9 @@
-const title = document.getElementsByClassName('title')[0];
-const today = new Date();
 const printValue = document.getElementsByClassName('printValue')[0];
 const setting = document.getElementsByClassName('setting')[0];
 var isSettedValue = false;
 
 
 // 모바일 감지 시 index.html로 강제 이동 (모바일 접속을 막기 위함)
-checkDevice = () => {
-	const user = navigator.userAgent;
-	
-	if ( user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) { 
-		alert('잘못된 접근입니다.')
-		location.replace('../index.html');
-	}
-}
 
 setValue = () => {
 	if ((localStorage.getItem('subjectValue') >= 1 || localStorage.getItem('subjectValue') <= 20) && Number(localStorage.getItem('subjectValue'))) {
@@ -26,18 +16,7 @@ setValue = () => {
 	}
 }
 
-checkDate = () => {
-	let hakgi = 2
-	if (today.getMonth() >= 0 && today.getMonth() <= 5){
-		hakgi = 1;
-	}
-	title.innerText = `${today.getFullYear()}-${hakgi}학기 한국외국어대학교 모의수강신청`;
-
-}
-
-checkDevice();
 setValue();
-checkDate();
 
 function goPractice(val) {
 	if (isSettedValue === false){

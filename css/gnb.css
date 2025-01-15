@@ -12,6 +12,7 @@
 	transition: 1s;
 	top: -45px;
 	overflow: hidden;
+	font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', Sans-serif;
 }
 
 .headerNotice ul {

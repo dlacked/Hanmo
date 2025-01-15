@@ -12,19 +12,24 @@
   <lastmod>2024-07-22T05:56:54+00:00</lastmod>
 </url>
 <url>
-  <loc>https://vsugangpractice.com/html/main.html</loc>
+  <loc>https://vsugangpractice.com/html/vsugang.html</loc>
   <lastmod>2024-07-22T05:56:54+00:00</lastmod>
-  <priority>0.8</priority>
+  <priority>0.5</priority>
 </url>
 <url>
   <loc>https://vsugangpractice.com/html/practice.html</loc>
   <lastmod>2024-07-22T05:56:54+00:00</lastmod>
-  <priority>0.8</priority>
+  <priority>0.5</priority>
 </url>
 <url>
-  <loc>https://vsugangpractice.com/html/Course_Registeration.html</loc>
+  <loc>https://vsugangpractice.com/html/result.html</loc>
   <lastmod>2024-07-22T05:56:54+00:00</lastmod>
-  <priority>0.8</priority>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>https://vsugangpractice.com/html/selectZone.html</loc>
+  <lastmod>2024-07-22T05:56:54+00:00</lastmod>
+  <priority>0.5</priority>
 </url>
 
 </urlset>

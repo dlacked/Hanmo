@@ -2,63 +2,56 @@ main {
     background-image: url('../img/background.svg');
     background-size: cover;
 	background-position: center;
-	color: #bdbdbd;
-}
-
-.vh100page{
 	height: 100vh;
-}
-
-.resultContainer {
-	display: flex;
-	position: absolute;
-	height: 100vh;
-	justify-content: center;
-	align-items: center;
-	flex-direction: row;
-	gap: 80px;
-}
-
-.subject {
-	text-align: center;
-	font-size: 36px;
-}
-
-.timeBox{
 	display: flex;
 	flex-direction: column;
-	font-size: 80px;
+	align-items: center;
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+	font-size: 16px;
 	text-align: right;
 	gap: 20px;
-	font-weight: bold;
-}
-
-.button {
-	display: flex;
+	margin-top: 20px;
+	background: #06111c;
+	width: 800px;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
-	height: 120px;
-	background: #bdbdbd;
-	border: none;
-	font-size: 22px;
+	border-radius: 15px;
 	font-weight: bold;
-	color: #000d18;
-	cursor: pointer;
-	position: absolute;
-	bottom: 0px;
-	font-size: 40px;
-	animation: footerup 1s linear infinite;
 }
 
+.time{
+	height: 250px;
+}
+
+.result{
+	height: 100px;
+}
+
+.button{
+	height: 50px;
+	background: #bdbdbd;
+	color: #000d18;
+	font-size: 20px;
+	cursor: pointer;
+}
 
 .button:hover{
-	filter: brightness(90%);
+	opacity: 0.8;
 }
 
-p > span {
-	font-size: 30px;
+.box p > span {
+	font-size: 36px;
 	font-weight: normal;
-	opacity: 0.5;
-	margin-right: 50px;
+	margin-left: 50px;
+	text-align: end;
+	font-weight: bold;
+}
+
+.adfit {
+	position: absolute;
+	bottom: 10px;
 }

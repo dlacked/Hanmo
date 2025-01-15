@@ -1,14 +1,11 @@
 const $headerNotice = document.getElementsByClassName('headerNotice')[0];
 const $HEADERNOTICELIST = document.getElementsByClassName('headerNoticeList')[0];
 var lastScroll, nowScroll;
-const now = new Date();
+const thisTime = new Date();
 
 checkTime = () => {
-	if ((now.getHours() === 9 && now.getMinutes() >= 58) || (now.getHours() === 10 && now.getMinutes() <= 5)){
-		location.href = 'https://vsugangpractice.com/html/disable.html'
-	}
-	else if (now.getHours() === 9 && now.getMinutes() >= 40){
-//	else if (true){
+	if (thisTime.getHours() === 9 && thisTime.getMinutes() >= 40){
+	//if(true){
 		$headerNotice.style.top = '0px';
 	}
 }

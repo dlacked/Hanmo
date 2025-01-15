@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <title>한모 - 한국외국어대학교 모의수강신청</title>
+        <title>한모 - 모의수강신청</title>
         <meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
 		<link href="../css/practice.css" rel="stylesheet" type="text/css">
+		<link href="../css/normalize.css" rel="stylesheet" type="text/css">
+    	<link href="../css/gnb.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 		<script>
             function notEntry(){ //notice, 수강신청 및 수정/삭제, 개발자 소개 외의 버튼 눌렀을 때 실행
                 alert("사용 불가능한 기능입니다.")
@@ -12,6 +15,12 @@
         </script>
     </head>
     <body>
+		<header class='headerNotice'>
+			<ul class='headerNoticeList'>
+				<li>한모 Part 1 이용 시간이 곧 마감될 예정이예요.</li>
+				<li><a href='https://hufs.ac.kr'>여기</a>를 클릭하면 수강신청 사이트로 빠르게 이동할 수 있어요.</li>
+			</ul>
+		</header>
         <div class="half"> <!--메뉴(왼쪽)와 정보(오른쪽) 나눔(display: grid)-->
             <div class="left"> <!--화면의 왼쪽 메뉴에 해당, HUFS Blue(위)과 HUFS GOLD(아래) 나눔(display: grid)-->
                 <div class="hufsBlue"> <!--HUFS Blue-->
@@ -104,6 +113,8 @@
                 </div>
             </div>
         </div>
+		<script src="../js/gnb.js"></script>
         <script src="../js/selectZone.js"></script>
+		<script src='./js/checkEnvironment.js'></script>
     </body>
 </html>

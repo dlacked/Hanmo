@@ -1,4 +1,5 @@
-const $timeBox = document.querySelector('.timeBox');
+const $timeBox = document.querySelector('.time');
+const $resultBox = document.querySelector('.result');
 
 checkDevice = () => {
 	const user = navigator.userAgent;
@@ -17,11 +18,11 @@ timeCheck = () => {
 	if (SELECTtime === '0.000') {
 		subjectValue = 0;
 	}
-	$timeBox.insertAdjacentHTML('afterbegin', `<p class='subject'><span>연습한 과목 수</span>${subjectValue}개</p>
-					<p class='time'><span>TIME 부분 소요 시간</span>${TIMEtime}초</p>
-					<p class='time'><span>SELECT 부분 소요 시간</span>${SELECTtime}초</p>
-					<hr>
-					<p class='time'><span>총 소요 시간</span>${TOTALtime}초</p>`);
+	$timeBox.insertAdjacentHTML('afterbegin', `<p>연습한 과목 수 ${subjectValue}개</p>
+					<p>TIME 부분 소요 시간<span>${TIMEtime}초</span></p>
+					<p>SELECT 부분 소요 시간<span>${SELECTtime}초</span></p>`);
+	$resultBox.insertAdjacentHTML('afterbegin', `
+					<p>총 소요 시간<span>${TOTALtime}초</span></p>`);
 }
 
 checkDevice();
