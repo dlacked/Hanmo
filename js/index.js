@@ -1,6 +1,7 @@
 const $NOTICELIST = document.getElementsByClassName('noticeList')[0];
 const $NOTICELISTQUERY = document.querySelector(".noticeList");
 const $SUGANGBUTTON = document.getElementsByClassName('button')[0];
+const $GANEUNG = document.getElementsByClassName('ganeung')[0];
 const $JEHAN = document.getElementsByClassName('jehan')[0];
 
 const nowTime = new Date();
@@ -29,11 +30,14 @@ const setNotice = setInterval(() => {
 }, 3000);
 
 check = () => {
-	//if((nowTime.getHours() === 23 && nowTime.getMinutes() >= 15)){
+	//if(true){
 	if ((nowTime.getHours() === 9 && nowTime.getMinutes() >= 58) || (nowTime.getHours() === 10 && nowTime.getMinutes() <= 9)){
 		$SUGANGBUTTON.classList.add('unavailable');
 		$SUGANGBUTTON.classList.remove('available');
 		$JEHAN.style.color = 'red';
+		$JEHAN.style.fontWeight = 'bold';
+		$GANEUNG.style.color = 'white';
+		$GANEUNG.style.fontWeight = 'normal';
 	}else if (user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) { 
 		location.href = 'https://vsugangpractice.com/html/disable.html';
 	} 

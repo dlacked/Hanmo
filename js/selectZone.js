@@ -2,17 +2,6 @@ const practiceValue = localStorage.getItem('practiceSetter');
 const subjectValue = localStorage.getItem('subjectValue');
 const subjectTable = document.querySelector('#subjectTable');
 
-checkDevice = () => {
-	const user = navigator.userAgent;
-	
-	if ( user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) { 
-		alert('잘못된 접근입니다.')
-		location.replace('../index.html');
-	}
-}
-
-checkDevice();
-
 for (var i = 1; i <= Number(subjectValue); i++){
 	subjectTable.insertAdjacentHTML('beforeend', 
 		`<tr id='subject${i}'>
@@ -34,13 +23,6 @@ for (var i = 1; i <= Number(subjectValue); i++){
 }
 
 const practiceMode = document.getElementById('practiceMode');
-const title = document.getElementById('title');
-const today = new Date();
-let hakgi = 1;
-
-today.getMonth() >= 2 && today.getMonth() <= 7 ? hakgi = 2 : NaN;
-
-title.innerText = `${today.getFullYear()}-${hakgi}학기 모의수강신청`;
 
 practiceValue == 1 ? practiceMode.innerText = '연습 모드: BASIC MODE' : practiceMode.innerText = '연습 모드: SELECT MODE'
 

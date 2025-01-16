@@ -1,26 +1,8 @@
 const practiceValue = localStorage.getItem('practiceSetter');
 const practiceMode = document.getElementById('practiceMode');
-const title = document.getElementById('title');
-const today = new Date();
-let hakgi = 1;
-
-today.getMonth() >= 2 && today.getMonth() <= 7 ? hakgi = 2 : NaN;
-
-title.innerText = `${today.getFullYear()}-${hakgi}학기 모의수강신청`;
 
 localStorage.setItem('TIMEtime', '0.000');
 localStorage.setItem('SELECTtime', '0.000');
-
-checkDevice = () => {
-	const user = navigator.userAgent;
-	
-	if ( user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) { 
-		alert('잘못된 접근입니다.')
-		location.replace('../index.html');
-	}
-}
-
-checkDevice();
 
 if (practiceValue == 3){
 	practiceMode.innerText = '연습 모드: SELECT MODE'
