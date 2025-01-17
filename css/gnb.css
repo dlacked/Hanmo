@@ -30,3 +30,7 @@
 .headerNotice a {
 	text-decoration: underline;
 }
+
+li > span {
+	margin-right: 50px;
+}

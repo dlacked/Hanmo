@@ -4,21 +4,17 @@
         <title>한모 - 모의수강신청</title>
         <meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+		<link href="../img/hanmo_color.png" rel="shortcut icon" type="image/x-icon">
 		<link href="../css/practice.css" rel="stylesheet" type="text/css">
 		<link href="../css/normalize.css" rel="stylesheet" type="text/css">
     	<link href="../css/gnb.css" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-		<script>
-            function notEntry(){ //notice, 수강신청 및 수정/삭제, 개발자 소개 외의 버튼 눌렀을 때 실행
-                alert("사용 불가능한 기능입니다.")
-            }
-        </script>
     </head>
     <body>
 		<header class='headerNotice'>
 			<ul class='headerNoticeList'>
-				<li>곧 한모 사이트 접속이 제한될 예정이에요.</li>
-				<li><a href='https://hufs.ac.kr'>여기</a>를 클릭하면 수강신청 사이트로 빠르게 이동할 수 있어요.</li>
+				<li>곧 한모 접속이 제한될 예정이에요.</li>
+				<li>이용 제한 시간<span></span>09:58 ~ 10:10</li>
 			</ul>
 		</header>
         <div class="half"> <!--메뉴(왼쪽)와 정보(오른쪽) 나눔(display: grid)-->
@@ -31,9 +27,9 @@
                     <button class = "button" onclick="location.href='vsugang.html'">메인 페이지</button>
                     <button id="noticeButton" onclick="location.href='practice.html'">Notice</button>
                     <button id="sugang" class = "button" onclick="location.href='Course_Registeration.html'">수강신청 및 수정/삭제</button>
-                    <button class = "button" onclick="notEntry()">수강신청열람</button>
-                    <button class = "button" onclick="notEntry()">시간표조회</button>
-                    <button class = "button" onclick="notEntry()">강의시간표조회</button>
+                    <button class = "button">수강신청열람</button>
+                    <button class = "button">시간표조회</button>
+                    <button class = "button">강의시간표조회</button>
                 </div>
             </div>
             <div class="Course_Registeration_right"> <!--화면의 오른쪽 정보 출력에 해당, 내용 가운데 배치를 위해 grid 사용-->

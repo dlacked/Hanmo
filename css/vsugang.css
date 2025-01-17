@@ -60,8 +60,8 @@ main {
 
 @media (max-width: 1000px) {
 	.grid{
-		grid-template-rows: repeat(3, 220px);
-		grid-template-columns: repeat(2, 220px);
+		grid-template-rows: repeat(3, 200px);
+		grid-template-columns: repeat(2, 200px);
 		grid-template-areas:
 			'b b'
 			's t'

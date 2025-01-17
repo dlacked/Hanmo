@@ -12,9 +12,16 @@ body::-webkit-scrollbar {
 }
 
 h1 {
-	position: relative;
-	top: 60px;
 	text-align: center;
+	font-size: 32px;
+}
+
+.titleContainer{
+	position: relative;
+	display: flex;
+	top: 60px;
+	flex-direction: column;
+	
 }
 
 .container {
@@ -24,4 +31,30 @@ h1 {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+
+.hanmo span {
+	display: flex;
+	padding: 0 16px;
+	align-items: center;
+	justify-content: center;
+}
+
+.hanmo img {
+	height: 10px;
+	
+}
+.hanmo {
+	display: flex;
+}
+
+.hanmo > hr{
+	width: 100%;
+	border: none;
+	margin: 10px 0px;
+	width: 60%;
+	border: 0;
+	height: 1px;
+	background: #bdbdbd;
 }

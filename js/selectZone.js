@@ -35,11 +35,6 @@ function pyoDisplay() {
 	}
 }
 
-function notEntry() {
-	//notice, 수강신청 및 수정/삭제, 개발자 소개 외의 버튼 눌렀을 때 실행
-	alert("해당 버튼은 사용이 불가능합니다.")
-}
-
 function registerClick(val) {
 	//첫 번째 과목 클릭 시 실행되는 함수
 	var TorF = confirm('과목을 수강신청 하시겠습니까?')
