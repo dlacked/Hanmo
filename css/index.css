@@ -1,33 +1,17 @@
 main {
-	background-image: url('../img/background.svg');
-	background-position: right;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	text-align: center;
-	height: 100vh;
-	user-select: none;
-}
-
-.noticeContainer {
-	display: flex;
-	align-items: center;
-	background: #06111c;
-	border-radius: 15px;
 }
 
 .notice{
-	height: 60px;
 	width: 800px;
 	margin-top: 20px;
 	overflow: hidden;
+	height: 20px;
 }
 
 .mainNotice{
-	height: 250px;
 	width: 800px;
 	margin-top: 20px;
-	
 }
 
 .notice > p {
@@ -39,7 +23,7 @@ main {
 
 .notice ul {
 	position: relative;
-	margin: 0px 50px;
+	margin: 0px 30px;
 	height: 130px;
 	font-size: 16px;
 	transition: 1s;
@@ -66,13 +50,7 @@ main {
 	line-height: 40px;
 }
 
-.buttonContainer {
-	display: flex;
-	gap: 20px;
-}
 .button {
-	width: 195px;
-	height: 52px;
 	background: #b9b9b9;
 	color: #000d18;
 	font-size: 20px;
@@ -80,24 +58,18 @@ main {
 	justify-content: center;
 	align-items: center;
 	border-radius: 15px;
-	margin-top: 20px;
 	display: flex;
+	padding: 10px 20px;
 }
 
-.refresh {
+.anotherB {
 	background: #06111c;
 	color: #bdbdbd;
-	width: 120px;
 }
 
 .button:hover{
 	opacity: 0.8;
 	cursor: pointer;
-}
-
-.adfit {
-	position: absolute;
-	bottom: 10px;
 }
 
 .available{

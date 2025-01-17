@@ -5,7 +5,7 @@ const thisTime = new Date();
 
 checkTime = () => {
 	//if (true){
-	if(thisTime.getHours() === 22 && thisTime.getMinutes() >= 40){
+	if(thisTime.getHours() === 9 && thisTime.getMinutes() >= 53){
 		$headerNotice.style.top = '0px';
 	}
 }

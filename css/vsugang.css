@@ -1,10 +1,7 @@
 main {
-	background-image: url('../img/background.svg');
-	background-position: right;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	height: 100vh;
 }
 
 .grid {
