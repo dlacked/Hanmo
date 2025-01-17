@@ -72,14 +72,6 @@ main {
 	cursor: pointer;
 }
 
-.available{
-	display: flex;
-}
-
-.unavailable{
-	display: none;
-}
-
 .ganeung {
 	font-weight: bold;
 	color: #8d704f;

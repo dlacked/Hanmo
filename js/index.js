@@ -34,7 +34,7 @@ check = () => {
 	if ((nowTime.getHours() === 9 && nowTime.getMinutes() >= 58) || (nowTime.getHours() === 10 && nowTime.getMinutes() <= 9)){
 		$SUGANGBUTTON.classList.add('unavailable');
 		$SUGANGBUTTON.classList.remove('available');
-		$JEHAN.style.color = 'red';
+		$JEHAN.style.color = '#8d704f';
 		$JEHAN.style.fontWeight = 'bold';
 		$GANEUNG.style.color = 'white';
 		$GANEUNG.style.fontWeight = 'normal';
