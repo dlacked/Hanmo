@@ -11,11 +11,27 @@
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 	</head>
     <body>
-		<header class='headerNotice'>
-			<ul class='headerNoticeList'>
-				<li>곧 한모 접속이 제한될 예정이에요.</li>
-				<li>이용 제한 시간<span></span>09:58 ~ 10:10</li>
-			</ul>
+		<script>
+            (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
+        
+            ChannelIO('boot', {
+            "pluginKey": "a11b52a2-f14b-4ee3-9f5a-5a5c3f5f413d"
+            });
+        </script>
+		<header>
+			<section class='deviceCheck'>
+				<ul class='deviceCheckList'>
+					<li>🚫<br>한모를 사용할 수 없는 환경이에요.</li>
+					<li>접속한 장치를 확인하고 있어요.</li>
+					<li>✔️<br>한모를 사용할 수 있는 환경이에요.</li>
+				</ul>
+			</section>
+			<section class='headerNotice'>
+				<ul class='headerNoticeList'>
+					<li>곧 한모 접속이 제한될 예정이에요.</li>
+					<li>이용 제한 시간<span></span>09:58 ~ 10:10</li>
+				</ul>
+			</section>
 		</header>
         <div class="half"> <!--메뉴(왼쪽)와 정보(오른쪽) 나눔(display: grid)-->
             <div class="left"> <!--화면의 왼쪽 메뉴에 해당, HUFS Blue(위)과 HUFS GOLD(아래) 나눔(display: grid)-->
@@ -25,7 +41,7 @@
                 </div>
                 <div class="hufsGold"> <!--HUFS GOLD부분-->
                     <button class = "button" onclick="location.href='vsugang.html'">메인 페이지</button>
-                    <button id="noticeButton" onclick="location.href='practice.html'">Notice</button>
+                    <button id="noticeButton" onclick="location.href='#.html'">Notice</button>
                     <button id="sugang" class = "button" onclick="location.href='selectZone.html'">수강신청 및 수정/삭제</button>
                     <button class = "button">수강신청열람</button>
                     <button class = "button">시간표조회</button>

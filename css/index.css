@@ -1,5 +1,7 @@
 main {
 	text-align: center;
+	overflow: hidden;
+	height: 100svh;
 }
 
 .notice{
@@ -85,23 +87,15 @@ main {
 	background: #091b2c;
 }
 
-footer {
-	background: #0a0a0a;
-	padding: 20px;
-	display: flex;
+.phoneContainer {
+	display: none;
+	align-items: center;
+	height: inherit;
 }
 
-footer img{
-	height: 50px;
-	
+.phoneNotice {
+	font-size: 18px;
+	font-weight: bold;
 }
-
-footer > div{
-	display: flex;
-	margin-left: 10px;
-	align-items: end;
-}
-
-footer p {
-	font-size: 10px;
-}
+/*038003
+333333
