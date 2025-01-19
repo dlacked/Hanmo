@@ -25,7 +25,6 @@ checkDevice = () => {
 				$deviceCheckList.style.bottom = '164px';
 				localStorage.setItem('deviceInfo', true);
 			}
-			console.log(localStorage.getItem('deviceInfo'))
 			setTimeout(function() {
 				$header.style.top = '-64px';
 			}, 3000);
@@ -52,7 +51,6 @@ checkDevice = () => {
 				$deviceCheckList.style.bottom = '164px';
 				localStorage.setItem('deviceInfo', true);
 			}
-			console.log(localStorage.getItem('deviceInfo'))
 			setTimeout(function() {
 				$header.style.top = '-64px';
 			}, 3000);
@@ -64,16 +62,18 @@ checkDevice = () => {
 
 checkDevice();
 
-var headerNoticeCnt = true;
+var headerNoticeCnt = 1;
 
 const setHeaderNotice = setInterval(() => {
-	if (headerNoticeCnt === true) {
+	if (headerNoticeCnt === 1) {
 		headerNoticeBottom = 81;
-		headerNoticeCnt = false;
-	} else {
+		headerNoticeCnt = 2;
+	} else if (headerNoticeCnt === 2) {
+		headerNoticeBottom = 137;
+		headerNoticeCnt = 3;
+	} else{
 		headerNoticeBottom = 25;
-		headerNoticeCnt = true;
-		
+		headerNoticeCnt = 1;
 	}
 	$HEADERNOTICELIST.style.bottom = `${headerNoticeBottom}px`;
 }, 5000);
