@@ -39,15 +39,13 @@ check = () => {
 		$TITLECONTAINER.style.display = 'none';
 		$PHONECONTAINER.style.display = 'flex';
 	} 
-	//if(true){
 	
-	if ((nowTime.getHours() === 9 && nowTime.getMinutes() >= 58) || (nowTime.getHours() === 10 && nowTime.getMinutes() <= 9)){
+	//if(true){
+	if ((nowTime.getHours() === 9 && nowTime.getMinutes() >= 58) || (nowTime.getHours() === 10 && nowTime.getMinutes() <= 10)){
 		$SUGANGBUTTON.classList.add('noDisplay');
 		$SUGANGBUTTON.classList.remove('display');
-		$JEHAN.style.color = '#8d704f';
-		$JEHAN.style.fontWeight = 'bold';
-		$GANEUNG.style.color = 'white';
-		$GANEUNG.style.fontWeight = 'normal';
+		$GANEUNG.classList.remove('thisTime');
+		$JEHAN.classList.add('thisTime');
 	}
 }
 

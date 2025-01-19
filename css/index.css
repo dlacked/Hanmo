@@ -5,14 +5,14 @@ main {
 }
 
 .notice{
-	width: 800px;
+	width: 700px;
 	margin-top: 20px;
 	overflow: hidden;
 	height: 20px;
 }
 
 .mainNotice{
-	width: 800px;
+	width: 700px;
 	margin-top: 20px;
 }
 
@@ -74,9 +74,19 @@ main {
 	cursor: pointer;
 }
 
-.ganeung {
+.thisTime {
 	font-weight: bold;
 	color: #8d704f;
+}
+
+.thisTime::before {
+	content: '▶';
+	margin-right: 20px;
+}
+
+.thisTime::after {
+	content: '◀';
+	margin-left: 20px;
 }
 
 .mainNotice hr {
