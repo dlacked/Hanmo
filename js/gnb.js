@@ -8,8 +8,8 @@ const user = navigator.userAgent;
 const thisTime = new Date();
 
 checkDevice = () => {
-	if((localStorage.getItem('deviceInfo') === null) && false){
-	//if((localStorage.getItem('deviceInfo') === null) && (thisTime.getHours() === 9 && thisTime.getMinutes() >= 53)){
+	//if((localStorage.getItem('deviceInfo') === null) && false){
+	if((localStorage.getItem('deviceInfo') === null) && (thisTime.getHours() === 9 && thisTime.getMinutes() >= 53)){
 		$header.style.top = '0px';
 		$headerNotice.style.display = 'flex';
 		setTimeout(function() {
@@ -17,7 +17,7 @@ checkDevice = () => {
 				$deviceCheck.style.height = '64px';
 				$deviceCheckList.style.bottom = '26px';
 				localStorage.setItem('deviceInfo', false);
-				location.href = 'https://hanmo-qhyyk.run.goorm.site/Hanmo/';
+				location.href = 'https://vsugangpractice.com/';
 			} else {
 				$deviceCheck.style.background = '#038003';
 				$deviceCheck.style.height = '64px';
@@ -31,8 +31,8 @@ checkDevice = () => {
 		}, 1500);
 	} 
 	
-	else if (false){
-	//else if(thisTime.getHours() === 9 && thisTime.getMinutes() >= 53){
+	//else if (false){
+	else if(thisTime.getHours() === 9 && thisTime.getMinutes() >= 53){
 		$header.style.top = '-40px';
 		$headerNotice.style.display = 'flex';
 	}
@@ -44,7 +44,7 @@ checkDevice = () => {
 				$deviceCheck.style.height = '64px';
 				$deviceCheckList.style.bottom = '26px';
 				localStorage.setItem('deviceInfo', false);
-				location.href = 'https://hanmo-qhyyk.run.goorm.site/Hanmo/';
+				location.href = 'https://vsugangpractice.com/';
 			} else {
 				$deviceCheck.style.background = '#038003';
 				$deviceCheck.style.height = '64px';
