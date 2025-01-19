@@ -8,7 +8,8 @@ const user = navigator.userAgent;
 const thisTime = new Date();
 
 checkDevice = () => {
-	//if((localStorage.getItem('deviceInfo') === null) && false){
+	//if(true){
+	//if((localStorage.getItem('deviceInfo') === null) && true){
 	if((localStorage.getItem('deviceInfo') === null) && (thisTime.getHours() === 9 && thisTime.getMinutes() >= 53)){
 		$header.style.top = '0px';
 		$headerNotice.style.display = 'flex';
@@ -31,7 +32,7 @@ checkDevice = () => {
 		}, 1500);
 	} 
 	
-	//else if (false){
+	//else if (true){
 	else if(thisTime.getHours() === 9 && thisTime.getMinutes() >= 53){
 		$header.style.top = '-40px';
 		$headerNotice.style.display = 'flex';
