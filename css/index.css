@@ -97,5 +97,11 @@ main {
 	font-size: 18px;
 	font-weight: bold;
 }
-/*038003
-333333
+
+.display {
+	display: flex;
+}
+
+.noDisplay {
+	display: none;
+}
