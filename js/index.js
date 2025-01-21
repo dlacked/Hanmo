@@ -11,7 +11,7 @@ const $PHONECONTAINER = document.getElementsByClassName('phoneContainer')[0];
 const nowTime = new Date();
 
 /*리스트에 공지사항 내용 적어주세요.*/
-const noticeList = ['한국외대 25학번 학우들의 첫 학기를 응원합니다!', '2025년 1월, 한모 UI 업데이트 완료', '한국외국어대학교 70주년 (1954년 개교)']
+const noticeList = ['한국외대 25학번 학우들의 첫 학기를 응원합니다!', '2025년 1월, 한모 UI 및 기능 업데이트 완료', '한국외국어대학교 70주년 (1954년 개교)']
 
 for (var i = noticeList.length-1; i >= 0; i--) {
 	$NOTICELISTQUERY.insertAdjacentHTML('afterbegin', `<li>${noticeList[i]}</li>`)
@@ -41,6 +41,7 @@ check = () => {
 	} 
 	
 	//if(true){
+	//if ((nowTime.getHours() === 20 && nowTime.getMinutes() >= 58) || (nowTime.getHours() === 21 && nowTime.getMinutes() <= 10)){
 	if ((nowTime.getHours() === 9 && nowTime.getMinutes() >= 58) || (nowTime.getHours() === 10 && nowTime.getMinutes() <= 10)){
 		$SUGANGBUTTON.classList.add('noDisplay');
 		$SUGANGBUTTON.classList.remove('display');

@@ -10,7 +10,8 @@ const thisTime = new Date();
 checkDevice = () => {
 	//if(true){
 	//if((localStorage.getItem('deviceInfo') === null) && true){
-	if((localStorage.getItem('deviceInfo') === null) && (thisTime.getHours() === 9 && thisTime.getMinutes() >= 53)){
+	//if((localStorage.getItem('deviceInfo') === null) && (thisTime.getHours() === 20 && thisTime.getMinutes() >= 53 && thisTime.getMinutes() < 58)){
+	if((localStorage.getItem('deviceInfo') === null) && (thisTime.getHours() === 9 && thisTime.getMinutes() >= 53 && thisTime.getMinutes() < 58)){
 		$header.style.top = '0px';
 		$headerNotice.style.display = 'flex';
 		setTimeout(function() {
@@ -32,7 +33,8 @@ checkDevice = () => {
 	} 
 	
 	//else if (true){
-	else if(thisTime.getHours() === 9 && thisTime.getMinutes() >= 53){
+	//else if(thisTime.getHours() === 20 && thisTime.getMinutes() >= 53 && thisTime.getMinutes() < 58){
+	else if(thisTime.getHours() === 9 && thisTime.getMinutes() >= 53 && thisTime.getMinutes() < 58){
 		$header.style.top = '-40px';
 		$headerNotice.style.display = 'flex';
 	}
