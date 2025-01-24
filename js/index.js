@@ -3,6 +3,7 @@ const $NOTICELISTQUERY = document.querySelector(".noticeList");
 const $SUGANGBUTTON = document.getElementsByClassName('button')[0];
 const $GANEUNG = document.getElementsByClassName('ganeung')[0];
 const $JEHAN = document.getElementsByClassName('jehan')[0];
+const $ADFIT = document.getElementsByClassName('adfit')[0];
 
 const $TITLECONTAINER = document.getElementsByClassName('titleContainer')[0];
 const $CONTAINER = document.getElementsByClassName('container')[0];
@@ -38,6 +39,7 @@ check = () => {
 		$CONTAINER.style.display = 'none';
 		$TITLECONTAINER.style.display = 'none';
 		$PHONECONTAINER.style.display = 'flex';
+		$ADFIT.style.display = 'none';
 	} 
 	
 	//if(true){

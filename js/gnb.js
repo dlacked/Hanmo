@@ -15,11 +15,11 @@ checkDevice = () => {
 		$header.style.top = '0px';
 		$headerNotice.style.display = 'flex';
 		setTimeout(function() {
-			if (user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) { 
+			if (user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) {
+				$deviceCheck.style.background = '#800309'; 
 				$deviceCheck.style.height = '64px';
 				$deviceCheckList.style.bottom = '26px';
 				localStorage.setItem('deviceInfo', false);
-				location.href = 'https://vsugangpractice.com/';
 			} else {
 				$deviceCheck.style.background = '#038003';
 				$deviceCheck.style.height = '64px';
@@ -28,6 +28,7 @@ checkDevice = () => {
 			}
 			setTimeout(function() {
 				$header.style.top = '-64px';
+				location.href = 'https://vsugangpractice.com/';
 			}, 3000);
 		}, 1500);
 	} 
@@ -42,11 +43,11 @@ checkDevice = () => {
 	else if ((localStorage.getItem('deviceInfo') === null)) {
 		$header.style.top = '0px';
 		setTimeout(function() {
-			if (user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) { 
+			if (user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) {
+				$deviceCheck.style.background = '#800309'; 
 				$deviceCheck.style.height = '64px';
 				$deviceCheckList.style.bottom = '26px';
 				localStorage.setItem('deviceInfo', false);
-				location.href = 'https://vsugangpractice.com/';
 			} else {
 				$deviceCheck.style.background = '#038003';
 				$deviceCheck.style.height = '64px';
@@ -55,6 +56,7 @@ checkDevice = () => {
 			}
 			setTimeout(function() {
 				$header.style.top = '-64px';
+				location.href = 'https://vsugangpractice.com/';
 			}, 3000);
 		}, 1500);
 	}
