@@ -20,6 +20,7 @@ checkDevice = () => {
 				$deviceCheck.style.height = '64px';
 				$deviceCheckList.style.bottom = '26px';
 				localStorage.setItem('deviceInfo', false);
+				location.href = 'https://vsugangpractice.com/';
 			} else {
 				$deviceCheck.style.background = '#038003';
 				$deviceCheck.style.height = '64px';
@@ -28,7 +29,6 @@ checkDevice = () => {
 			}
 			setTimeout(function() {
 				$header.style.top = '-64px';
-				location.href = 'https://vsugangpractice.com/';
 			}, 3000);
 		}, 1500);
 	} 
@@ -48,6 +48,7 @@ checkDevice = () => {
 				$deviceCheck.style.height = '64px';
 				$deviceCheckList.style.bottom = '26px';
 				localStorage.setItem('deviceInfo', false);
+				location.href = 'https://vsugangpractice.com/';
 			} else {
 				$deviceCheck.style.background = '#038003';
 				$deviceCheck.style.height = '64px';
@@ -56,7 +57,6 @@ checkDevice = () => {
 			}
 			setTimeout(function() {
 				$header.style.top = '-64px';
-				location.href = 'https://vsugangpractice.com/';
 			}, 3000);
 		}, 1500);
 	}
