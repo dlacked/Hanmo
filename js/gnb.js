@@ -7,6 +7,7 @@ const $header = document.getElementsByTagName('header')[0];
 const user = navigator.userAgent;
 const thisTime = new Date();
 
+
 checkDevice = () => {
 	//if(true){
 	//if((localStorage.getItem('deviceInfo') === null) && true){
@@ -15,7 +16,7 @@ checkDevice = () => {
 		$header.style.top = '0px';
 		$headerNotice.style.display = 'flex';
 		setTimeout(function() {
-			if (user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) {
+			if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) == true) {
 				$deviceCheck.style.background = '#800309'; 
 				$deviceCheck.style.height = '64px';
 				$deviceCheckList.style.bottom = '26px';
@@ -31,7 +32,7 @@ checkDevice = () => {
 				$header.style.top = '-64px';
 			}, 3000);
 		}, 1500);
-	} 
+	}
 	
 	//else if (true){
 	//else if(thisTime.getHours() === 20 && thisTime.getMinutes() >= 53 && thisTime.getMinutes() < 58){
@@ -43,7 +44,7 @@ checkDevice = () => {
 	else if ((localStorage.getItem('deviceInfo') === null)) {
 		$header.style.top = '0px';
 		setTimeout(function() {
-			if (user.indexOf('iPhone') > -1 || user.indexOf('Android') > -1) {
+			if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) == true) {
 				$deviceCheck.style.background = '#800309'; 
 				$deviceCheck.style.height = '64px';
 				$deviceCheckList.style.bottom = '26px';
