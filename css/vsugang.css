@@ -42,11 +42,6 @@ main {
 	color: red;
 }
 
-.adfit {
-	position: absolute;
-	bottom: 10px;
-}
-
 @media (max-width: 1450px) or (max-height: 900px) {
 	.grid{
 		grid-template-rows: repeat(2, 250px);

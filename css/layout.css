@@ -35,15 +35,26 @@ h1 {
 }
 
 .container {
-	position: relative;
-	top: 80px;
 	display: flex;
+	margin-top: 80px;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	z-index: 9;
 }
 
+.f-dirt-down {
+	display: flex;
+	flex-direction: column;
+}
+
+.f-dirt-up {
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: bottom;
+	align-items: center;
+	height: 100%;
+}
 
 .hanmo span {
 	display: flex;
@@ -71,11 +82,6 @@ h1 {
 	background: #bdbdbd;
 }
 
-.adfit {
-	position: absolute;
-	display: flex;
-	bottom: 10px;
-}
 
 .blueBox {
 	display: flex;

@@ -47,51 +47,55 @@
 			</section>
 		</header>
 		<main>
-			<section class='titleContainer' onclick='location.href="https://vsugangpractice.com/"'>
-				<h1><span class='title'></span> 한국외국어대학교 모의수강신청</h1>
-				<div class='hanmo'>
-					<hr>
-					<span><img class='hanmo' src='../img/hanmo_white.svg'></span>
-					<hr>
-				</div>
+			<section class='f-dirt-down'>
+				<section class='titleContainer' onclick='location.href="https://vsugangpractice.com/"'>
+					<h1><span class='title'></span> 한국외국어대학교 모의수강신청</h1>
+					<div class='hanmo'>
+						<hr>
+						<span><img class='hanmo' src='../img/hanmo_white.svg'></span>
+						<hr>
+					</div>
+				</section>
+				<section class='container'>
+					<div class='grid'>
+						<div style='grid-area: b' onclick='goPractice(1)'>
+							<h2>
+								BASIC MODE
+							</h2>
+							<p>
+								수강신청의 전 과정을 연습할 수 있어요.
+							</p>
+						</div>
+						<div style='grid-area: t' onclick='goPractice(2)'>
+							<h2>
+								TIME MODE
+							</h2>
+							<p>
+								수강신청 시작 시간에 맞춰 버튼을 신속하게 누를 수 있도록 연습할 수 있어요.
+							</p>
+						</div>
+						<div style='grid-area: s' onclick='goPractice(3)'>
+							<h2>
+								SELECT<br>MODE
+							</h2>
+							<p>
+								수강신청할 과목을 신속하게 담을 수 있도록 연습할 수 있어요.
+							</p>
+						</div>
+						<div class='setting' style='grid-area: set;' onclick='inputValue()'>
+							<h2>
+								SETTING
+							</h2>
+							<p class='printValue'>과목 수를 지정해주세요.</p>
+						</div>
+					</div>
+				</section>
 			</section>
-			<section class='container'>
-				<div class='grid'>
-					<div style='grid-area: b' onclick='goPractice(1)'>
-						<h2>
-							BASIC MODE
-						</h2>
-						<p>
-							수강신청의 전 과정을 연습할 수 있어요.
-						</p>
-					</div>
-					<div style='grid-area: t' onclick='goPractice(2)'>
-						<h2>
-							TIME MODE
-						</h2>
-						<p>
-							수강신청 시작 시간에 맞춰 버튼을 신속하게 누를 수 있도록 연습할 수 있어요.
-						</p>
-					</div>
-					<div style='grid-area: s' onclick='goPractice(3)'>
-						<h2>
-							SELECT<br>MODE
-						</h2>
-						<p>
-							수강신청할 과목을 신속하게 담을 수 있도록 연습할 수 있어요.
-						</p>
-					</div>
-					<div class='setting' style='grid-area: set;' onclick='inputValue()'>
-						<h2>
-							SETTING
-						</h2>
-						<p class='printValue'>과목 수를 지정해주세요.</p>
-					</div>
-				</div>
-			</section>
-			<section class='adfit'>
-				<ins class="kakao_ad_area" style="display:none;" data-ad-unit = "DAN-b3RfXepcKF3cMeyf" data-ad-width = "728" data-ad-height = "90"></ins>
-				<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+			<section class='f-dirt-up'>
+				<section class='adfit'>
+					<ins class="kakao_ad_area" style="display:none;" data-ad-unit = "DAN-b3RfXepcKF3cMeyf" data-ad-width = "728" data-ad-height = "90"></ins>
+					<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+				</section>
 			</section>
 		</main>
 		<script src="../js/vsugang.js"></script>
