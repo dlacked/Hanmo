@@ -15,22 +15,20 @@ checkDevice = () => {
 	if((localStorage.getItem('deviceInfo') === null) && (thisTime.getHours() === 9 && thisTime.getMinutes() >= 53 && thisTime.getMinutes() < 58)){
 		$header.style.top = '0px';
 		$headerNotice.style.display = 'flex';
+		if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) == true) {
+			$deviceCheck.style.background = '#800309'; 
+			$deviceCheck.style.height = '64px';
+			$deviceCheckList.style.bottom = '26px';
+			localStorage.setItem('deviceInfo', false);
+			location.href = 'https://vsugangpractice.com/';
+		} else {
+			$deviceCheck.style.background = '#038003';
+			$deviceCheck.style.height = '64px';
+			$deviceCheckList.style.bottom = '164px';
+			localStorage.setItem('deviceInfo', true);
+		}
 		setTimeout(function() {
-			if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) == true) {
-				$deviceCheck.style.background = '#800309'; 
-				$deviceCheck.style.height = '64px';
-				$deviceCheckList.style.bottom = '26px';
-				localStorage.setItem('deviceInfo', false);
-				location.href = 'https://vsugangpractice.com/';
-			} else {
-				$deviceCheck.style.background = '#038003';
-				$deviceCheck.style.height = '64px';
-				$deviceCheckList.style.bottom = '164px';
-				localStorage.setItem('deviceInfo', true);
-			}
-			setTimeout(function() {
-				$header.style.top = '-64px';
-			}, 3000);
+			$header.style.top = '-64px';
 		}, 1500);
 	}
 	
@@ -43,22 +41,20 @@ checkDevice = () => {
 	
 	else if ((localStorage.getItem('deviceInfo') === null)) {
 		$header.style.top = '0px';
+		if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) == true) {
+			$deviceCheck.style.background = '#800309'; 
+			$deviceCheck.style.height = '64px';
+			$deviceCheckList.style.bottom = '26px';
+			localStorage.setItem('deviceInfo', false);
+			location.href = 'https://vsugangpractice.com/';
+		} else {
+			$deviceCheck.style.background = '#038003';
+			$deviceCheck.style.height = '64px';
+			$deviceCheckList.style.bottom = '164px';
+			localStorage.setItem('deviceInfo', true);
+		}
 		setTimeout(function() {
-			if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) == true) {
-				$deviceCheck.style.background = '#800309'; 
-				$deviceCheck.style.height = '64px';
-				$deviceCheckList.style.bottom = '26px';
-				localStorage.setItem('deviceInfo', false);
-				location.href = 'https://vsugangpractice.com/';
-			} else {
-				$deviceCheck.style.background = '#038003';
-				$deviceCheck.style.height = '64px';
-				$deviceCheckList.style.bottom = '164px';
-				localStorage.setItem('deviceInfo', true);
-			}
-			setTimeout(function() {
-				$header.style.top = '-64px';
-			}, 3000);
+			$header.style.top = '-64px';
 		}, 1500);
 	}
 	
