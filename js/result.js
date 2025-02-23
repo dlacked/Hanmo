@@ -7,7 +7,7 @@ timeCheck = () => {
 		subjectValue = 0;
 	}
 	const TIMEtime = Number(localStorage.getItem('TIMEtime')).toFixed(3);
-	const SELECTtime = Number(localStorage.getItem('SELECTtime')-(2*subjectValue)).toFixed(3);
+	const SELECTtime = Number(localStorage.getItem('SELECTtime')-((2*subjectValue)+2)).toFixed(3);
 	const TOTALtime = (Math.round((Number(TIMEtime) + Number(SELECTtime))*1000)/1000).toFixed(3);
 	
 	$timeBox.insertAdjacentHTML('afterbegin', `<p>연습한 과목 수 ${subjectValue}개</p>

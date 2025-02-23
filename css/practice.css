@@ -195,7 +195,7 @@ h2 {
 
 
 .table{
-	visibility: hidden;
+	display: none;
 }
 
 .vsugangTable {
@@ -226,6 +226,9 @@ td {
   height: 26px;
 }
 
+tr:hover {
+	background-color: #faf6e2;
+}
 th {
   border-top: 2px solid #003366;
   border-bottom: 2px solid #003366;

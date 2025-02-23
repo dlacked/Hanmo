@@ -28,26 +28,34 @@ const practiceMode = document.getElementsByClassName('practiceMode')[0];
 
 practiceValue == 1 ? practiceMode.innerText = '연습 모드: BASIC MODE' : practiceMode.innerText = '연습 모드: SELECT MODE'
 
+const waitingFunc = () => {
+	window.addEventListener('keydown', (e) => {
+		if(e.keyCode == 13){
+			e.preventDefault();
+		}
+	})
+	waiting.style.display = 'flex';
+	waitingArea.style.display = 'flex';
+}
 
 function pyoDisplay() {
 	//Search 버튼 눌렀을 때 표 표시
 	const pyo = document.getElementsByClassName('table')[0];
-	if (pyo.style.visibility !== 'hidden') {
-		pyo.style.visibility = 'visible'
+	if (pyo.style.display !== 'none') {
+		waitingFunc();
+		setTimeout(() => {
+			waiting.style.display = 'none';
+			waitingArea.style.display = 'none';
+			pyo.style.display = 'table'
+		}, 2000)
 	}
 }
 
 function registerClick(val) {
 	//첫 번째 과목 클릭 시 실행되는 함수
-	var TorF = confirm('과목을 수강신청 하시겠습니까?')
+	var TorF = confirm(`한국외국어대학교 모의수강신청${val}과목을 수강신청 하시겠습니까?`)
 	if (TorF === true) {
-		window.addEventListener('keydown', (e) => {
-			if(e.keyCode == 13){
-				e.preventDefault();
-			}
-		})
-		waiting.style.display = 'flex';
-		waitingArea.style.display = 'flex';
+		waitingFunc();
 		setTimeout(() => {
 			waiting.style.display = 'none';
 			waitingArea.style.display = 'none';
