@@ -41,6 +41,11 @@ function registerClick(val) {
 	//첫 번째 과목 클릭 시 실행되는 함수
 	var TorF = confirm('과목을 수강신청 하시겠습니까?')
 	if (TorF === true) {
+		window.addEventListener('keydown', (e) => {
+			if(e.keyCode == 13){
+				e.preventDefault();
+			}
+		})
 		waiting.style.display = 'flex';
 		waitingArea.style.display = 'flex';
 		setTimeout(() => {
