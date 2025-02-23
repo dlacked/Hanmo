@@ -4,6 +4,7 @@ const $SUGANGBUTTON = document.getElementsByClassName('button')[0];
 const $GANEUNG = document.getElementsByClassName('ganeung')[0];
 const $JEHAN = document.getElementsByClassName('jehan')[0];
 const $ADFIT = document.getElementsByClassName('adfit')[0];
+const title = document.getElementsByClassName('title')[0];
 
 const $TITLECONTAINER = document.getElementsByClassName('titleContainer')[0];
 const $CONTAINER = document.getElementsByClassName('container')[0];
@@ -52,4 +53,15 @@ check = () => {
 	}
 }
 
+setSemester = () => {
+	let hakgi = 1
+	if (nowTime.getMonth() >= 2 && nowTime.getMonth() <= 7){
+		hakgi = 2;
+	}
+	title.innerText = `${nowTime.getFullYear()}-${hakgi}학기`;
+
+}
+
+
+setSemester();
 check();
