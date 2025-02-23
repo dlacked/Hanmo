@@ -8,63 +8,32 @@ body {
   background-size: 250px;
 }
 
-#notice{
-  height: 70vh;
-}
-
+/*공용 구간*/
 .half {
-  display: grid;
-  grid-template-columns: 220px 1fr;
+	display: flex;
+	width: auto;
+	height: 100%;
 }
 
-.left {
-  background-color: #977955;
-  height: 100vh;
-  display: grid;
-  grid-template-rows: 218px 1fr;
-  font-size: 13.4px;
-  letter-spacing: 0px;
-  color: white;
+.navigation {
+	display: flex;
+	flex-direction: column;
+	background-color: #977955;
+	height: 100%;
+	font-size: 13.4px;
+	letter-spacing: 0px;
+	color: white;
+	width: 220px;
+	min-width: 220px;
 }
 
-.right {
-  /*developer.html, index.html의 오른쪽 부분 구성*/
-  display: grid;
-  grid-template-rows: auto 1fr 1fr auto auto;
-  text-align: center;
+.userInfo {
+	background-color: #002d56;
+	padding-left: 10px;
+	height: 218px;
 }
 
-.Course_Registeration_right {
-  /*Course_Registeration.html의 오른쪽 부분 구성*/
-  display: grid;
-  grid-template-rows: auto 0fr;
-  text-align: center;
-}
-
-.hufsBlue {
-  background-color: #002d56;
-  padding-left: 10px;
-}
-
-#logo {
-  width: 85%;
-}
-
-table{
-	background-color: white;
-}
-h1 {
-  font-size: 13px;
-  margin-top: 5px;
-  margin-bottom: 22px;
-}
-
-p {
-  margin: 0;
-  margin-bottom: 12px;
-}
-
-.button {
+button {
   width: 100%;
   height: 35px;
   padding-left: 10px;
@@ -77,15 +46,11 @@ p {
   outline: none;
 }
 
-.button:focus{
-  outline: none;
-}
-
-.button:hover {
+button:hover {
   background-color: #826648;
 }
 
-#noticeButton {
+.noticeButton {
   /*좌측 메뉴 Notice버튼*/
   width: 100%;
   height: 35px;
@@ -98,81 +63,163 @@ p {
   cursor: pointer;
 }
 
-#noticeButton:hover {
+.noticeButton:hover {
   /*좌측 메뉴 Notice버튼 hover*/
   background-color: #5d5d5d;
 }
 
-
-.menuContainer {
-  /*Course.Registeration.html 오른쪽 상단 메뉴 바*/
-  display: grid;
-  grid-template-columns: 1fr 40fr 1fr;
+p {
+  margin: 0;
+  margin-bottom: 12px;
 }
 
-.menu {
-  /*Course.Registeration.html 오른쪽 상단 메뉴 값*/
-  text-align: center;
-  background-color: #eaedf4;
-  border-color: #003366;
-  border-style: solid;
-  border-left-style: none;
-  border-right-style: none;
-  border-width: 2px;
-  margin-top: -6px;
-  padding: 5px;
-  display: grid;
-  grid-template-columns: 1fr 295px 80px 150px 75px 1fr;
+h1 {
   font-size: 13px;
-  font-weight: 800;
+  margin-top: 5px;
+  margin-bottom: 22px;
 }
 
-#Search {
-  /*Search 버튼*/
-  margin-left: 14px;
-  width: 80px;
-  background-color: #3f5a9d;
-  color: white;
-  height: 24px;
-  font-size: 12px;
-  border-style: hidden;
-  cursor: pointer;
+.f-dirt-down {
+	display: flex;
+	flex-direction: column;
 }
 
-#Search:hover {
-  /*Search 버튼*/
-  background-color: #1f326a;
+.f-dirt-up {
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: bottom;
+	align-items: center;
+	height: 100%;
 }
 
-#pyo {
-  /*Search 버튼 누르기 전 예비수강신청함 차트 가리기*/
-  margin-top: 65px;
-  height: 40vh;
-  visibility: hidden;
-  display: grid;
-  grid-template-columns: 1fr 40fr 1fr;
-  overflow: auto;
+
+/*practice.html*/
+.mainArea {
+	width: 100%;
+  /*developer.html, index.html의 오른쪽 부분 구성*/
+	display: flex;
+	flex-direction: column;
+	text-align: center;
 }
 
-#pyopyo {
-  /*수강신청 및 수정/삭제 아래에 있는 차트*/
-  height: 30vh;
-  display: grid;
-  grid-template-columns: 1fr 40fr 1fr;
-  bottom: 0;
-  overflow: auto;
+.timer{
+  margin-top: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-style: solid;
+  border-color: #f7f7f7;
+  font-size: 100px;
+  color: #5D5D5D;
+	width: 650px;
+  background-color: white;
+}
+
+.timerLoc{
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.alert{
+	margin-top: 10px;
+	color: red;
+	font-weight: 900;
+	margin-bottom: 0px;
+}
+
+.seconds{
+  color: #B42949;
+}
+
+/*selectZone.html*/
+.selectZone_mainArea {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+}
+
+
+table{
+	background-color: white;
 }
 
 h2 {
-  font-size: 18px;
-  margin-bottom: 0;
-  color: #ab704f;
+	height: 45px;
+	display: flex;
+	font-size: 18px;
+	margin-bottom: 0;
+	color: #ab704f;
+	justify-content: center;
+	align-items: center;
+}
+
+.tableZone{
+	width: 95.3%;
+}
+
+.menu {
+	display: flex;
+	justify-content: center;
+ 	text-align: center;
+    background-color: #eaedf4;
+	border: 2px solid #003366;
+	border-left-style: none;
+	border-right-style: none;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+.search {
+	margin-left: 14px;
+ 	text-align: center;
+	width: 80px;
+	background-color: #3f5a9d;
+	color: white;
+	height: 24px;
+	font-size: 12px;
+	border-style: hidden;
+	cursor: pointer;
+	text-align: center;
+	padding: 0;
+}
+
+.search:hover {
+	background-color: #1f326a;
+}
+
+
+.table{
+	visibility: hidden;
+}
+
+.vsugangTable {
+	display: flex;
+	flex-direction: column;
+	
+	align-items: center;
+	margin-top: 65px;
+	height: 40vh;
+	overflow: auto;
+}
+
+.vsugangedTable {
+	height: 30vh;
+	bottom: 0;
+	overflow: auto;
+	margin-top: 100px;
 }
 
 table {
   border-collapse: collapse;
   width: 100%;
 }
+
 
 td {
   border: 0.1px solid #cccccc;
@@ -186,15 +233,6 @@ th {
   border-right: 0.1px solid #cccccc;
   font-size: 13px;
   height: 31px;
-}
-
-title {
-  display: grid;
-  grid-template-columns: 1fr 40fr 1fr;
-}
-
-hr{
-  width: 90%;
 }
 
 .register {
@@ -224,40 +262,20 @@ hr{
   font-size: 13px;
 }
 
-#timer{
-  margin-top: 100px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-style: solid;
-  border-color: #f7f7f7;
-  font-size: 100px;
-  color: #5D5D5D;
-  background-color: white;
+.waitingArea {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.4);
 }
 
-.timerLoc{
-  display: grid;
-  grid-template-columns: auto 650px auto;
-  text-align: center;
+.waiting {
+	position: absolute;
+	width: 500px;
+	justify-content: center;
+	align-items: center;
 }
 
-#alert{
-  margin-top: 10px;
-  color: red;
-  font-weight: 900;
-}
-
-#hope{
-  margin-top: 10px;
-  color: green;
-}
-
-#seconds{
-  color:#B42949;
-}
-
-#developerRight{
-  text-align: center;
-  display: grid;
-  grid-template-rows: 1fr auto 1fr auto;
+.unvisible{
+	display: none;
 }

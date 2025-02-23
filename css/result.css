@@ -41,3 +41,9 @@
 	text-align: end;
 	font-weight: bold;
 }
+
+.caption{
+	font-weight: 300;
+	color: gray;
+	font-size: 12px;
+}

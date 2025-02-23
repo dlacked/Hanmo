@@ -43,38 +43,37 @@
 				</ul>
 			</section>
 		</header>
-        <div class="half"> <!--메뉴(왼쪽)와 정보(오른쪽) 나눔(display: grid)-->
-            <div class="left"> <!--화면의 왼쪽 메뉴에 해당, HUFS Blue(위)과 HUFS GOLD(아래) 나눔(display: grid)-->
-                <div class="hufsBlue"> <!--HUFS Blue-->
+        <main class="half"> <!--메뉴(왼쪽)와 정보(오른쪽) 나눔(display: grid)-->
+            <section class="navigation"> <!--화면의 왼쪽 메뉴에 해당, HUFS Blue(위)과 HUFS GOLD(아래) 나눔(display: grid)-->
+                <div class="userInfo"> <!--HUFS Blue-->
 				<h1><span class='title'></span> 모의수강신청</h1>
-					<p id='practiceMode'></p>
+					<p class='practiceMode'></p>
                 </div>
-                <div class="hufsGold"> <!--HUFS GOLD부분-->
-                    <button class = "button" onclick="location.href='vsugang.html'">메인 페이지</button>
-                    <button id="noticeButton" onclick="location.href='#.html'">Notice</button>
-                    <button id="sugang" class = "button" onclick="location.href='selectZone.html'">수강신청 및 수정/삭제</button>
-                    <button class = "button">수강신청열람</button>
-                    <button class = "button">시간표조회</button>
-                    <button class = "button">강의시간표조회</button>
+                <div class="navButton"> <!--HUFS GOLD부분-->
+                    <button onclick="location.href='vsugang.html'">메인 페이지</button>
+                    <button class="noticeButton" onclick="location.href='#'">Notice</button>
+                    <button class="sugang" onclick="location.href='selectZone.html'">수강신청 및 수정/삭제</button>
+                    <button>수강신청열람</button>
+                    <button>시간표조회</button>
+                    <button>강의시간표조회</button>
                 </div>
-            </div>
-            <div class="right"> <!--화면의 오른쪽 정보 출력에 해당, 내용 가운데 배치를 위해 grid 사용-->
-                <div class="timerLoc">
-                    <div></div>
-                    <div id = "timer"><span id="hours">--:--:--</span></div>
-                    <div></div>
-                </div>
-                <div>
-                    <div id="alert">※해당 사이트는 수강신청을 연습하기 위한 모의수강신청 사이트이며, 실제 수강신청 사이트가 아닙니다.</div>
-                    <div id="alert">※사용자 개인의 실수로 인해 발생한 문제는 개발자가 책임을 지지 않습니다.</div>
-                </div>
-                <div></div>
-                <div>
-                    <ins class="kakao_ad_area" style="display:none;" data-ad-unit = "DAN-b3RfXepcKF3cMeyf" data-ad-width = "728" data-ad-height = "90"></ins>
-					<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-                </div>
-            </div>
-        </div>
+            </section>
+            <section class="mainArea"> <!--화면의 오른쪽 정보 출력에 해당, 내용 가운데 배치를 위해 grid 사용-->
+				<section class='f-dirt-down'>
+					<div class="timerLoc">
+						<div class = "timer"><span id="hours">--:--:--</span></div>
+					</div>
+					<p class='alert'>※해당 사이트는 수강신청을 연습하기 위한 모의수강신청 사이트이며, 실제 수강신청 사이트가 아닙니다.</p>
+					<p class='alert'>※사용자 개인의 실수로 인해 발생한 문제는 개발자가 책임을 지지 않습니다.</p>
+				</section>
+				<section class='f-dirt-up'>
+					<div>
+						<ins class="kakao_ad_area" style="display:none;" data-ad-unit = "DAN-b3RfXepcKF3cMeyf" data-ad-width = "728" data-ad-height = "90"></ins>
+						<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+					</div>
+				</section>
+            </section>
+        </main>
 		<script src="../js/gnb.js"></script>
         <script src="../js/practice.js"></script>
 		<script src='../js/hanmoSys.js'></script>

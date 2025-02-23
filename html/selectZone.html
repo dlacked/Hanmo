@@ -43,97 +43,78 @@
 				</ul>
 			</section>
 		</header>
-        <div class="half"> <!--메뉴(왼쪽)와 정보(오른쪽) 나눔(display: grid)-->
-            <div class="left"> <!--화면의 왼쪽 메뉴에 해당, HUFS Blue(위)과 HUFS GOLD(아래) 나눔(display: grid)-->
-                <div class="hufsBlue"> <!--HUFS Blue-->
+        <div class="half">
+			<section class='waitingArea unvisible'></section>
+            <nav class="navigation"> <!--화면의 왼쪽 메뉴에 해당, HUFS Blue(위)과 HUFS GOLD(아래) 나눔(display: grid)-->
+                <div class="userInfo"> <!--HUFS Blue-->
                     <h1><span class='title'></span> 모의수강신청</h1>
-					<p id='practiceMode'></p>
+					<p class='practiceMode'></p>
                 </div>
-                <div class="hufsGold"> <!--HUFS GOLD부분-->
-                    <button class = "button" onclick="location.href='vsugang.html'">메인 페이지</button>
-                    <button id="noticeButton" onclick="location.href='practice.html'">Notice</button>
-                    <button id="sugang" class = "button" onclick="location.href='#'">수강신청 및 수정/삭제</button>
-                    <button class = "button">수강신청열람</button>
-                    <button class = "button">시간표조회</button>
-                    <button class = "button">강의시간표조회</button>
+                <div class="navButton"> <!--HUFS GOLD부분-->
+                    <button onclick="location.href='vsugang.html'">메인 페이지</button>
+                    <button class="noticeButton" onclick="location.href='practice.html'">Notice</button>
+                    <button id="sugang" onclick="location.href='#'">수강신청 및 수정/삭제</button>
+                    <button>수강신청열람</button>
+                    <button>시간표조회</button>
+                    <button>강의시간표조회</button>
                 </div>
-            </div>
-            <div class="Course_Registeration_right"> <!--화면의 오른쪽 정보 출력에 해당, 내용 가운데 배치를 위해 grid 사용-->
-                <div><h2>수강신청 및 수정/삭제(Course Registeration[Adding/Deleting])</h2><br>
-                    <div class="menuContainer"> <!--예비수강신청함, 전공, 교차수강, 교양 박스 (display: grid)-->
-                        <div></div>
-                        <div class="menu">
-                            <div></div>
-                            <div>
-                                <input type="radio" name="수강유형" checked="checked"/>예비수강신청함
-                                <button id="Search" onclick="pyoDisplay()">Search</button>
-                            </div>
-                            <div>
-                                <input type="radio" name="수강유형"/>전공
-                            </div>
-                            <div>
-                                <input type="radio" name="수강유형"/>교차수강
-                            </div>
-                            <div>
-                                <input type="radio" name="수강유형"/>교양
-                            </div>
-                            <div></div>
-                        </div>
-                        <div></div>
-                    </div>
-                    <div id="pyo"> 
-                        <div></div>
-                        <div>
-                            <table id='subjectTable'> <!--예비수강신청함 차트-->
-                                <tr class="title">
-                                    <th>No.</th>
-                                    <th>선택</th>
-                                    <th>구분</th>
-                                    <th>학수번호</th>
-                                    <th>강좌유형</th>
-                                    <th>교과목명</th>
-                                    <th>학년</th>
-                                    <th>학점</th>
-                                    <th>담당교수</th>
-                                    <th>강의시간/강의실</th>
-                                    <th>신청/제한</th>
-                                    <th>재수강</th>
-                                    <th>비고</th>
-                                </tr>
-                            </table>
-                        </div>
-                        <div></div>
-                        
-                    </div>
-                </div>
-                <div id="pyopyo">
-                    <div></div>
-                    <div>
-                        <table style="margin: 0;"> <!--수강신청 완료된 차트, 필요없는 margin 삭제-->
-                            <caption class="doneUp">F : 원어강의(Foreign language Instruction) / O : 온라인강의(On-line)</caption>
-                                <thead>
-                                    <tr class="title" >
-                                        <th>No.</th>
-                                        <th>선택</th>
-                                        <th>구분</th>
-                                        <th>학수번호</th>
-                                        <th>강좌유형</th>
-                                        <th>교과목명</th>
-                                        <th>학년</th>
-                                        <th>학점</th>
-                                        <th>담당교수</th>
-                                        <th>강의시간/강의실</th>
-                                        <th>신청/제한</th>
-                                        <th>재수강</th>
-                                        <th>비고</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="done"></tbody>
-                        </table>
-                    </div>
-                    <div></div>
-                </div>
-            </div>
+			</nav>
+            <main class="selectZone_mainArea"> <!--화면의 오른쪽 정보 출력에 해당, 내용 가운데 배치를 위해 grid 사용-->
+                
+				<h2>수강신청 및 수정/삭제(Course Registeration[Adding/Deleting])</h2>
+				<div class='tableZone'>
+					<nav class="menu">
+						<input type="radio" name="수강유형" checked="checked"/>예비수강신청함
+						<button class="search" onclick="pyoDisplay()">Search</button>
+						<input type="radio" style='margin-left: 70px;' name="수강유형"/>전공
+						<input type="radio" style='margin-left: 70px;' name="수강유형"/>교차수강
+						<input type="radio" style='margin-left: 70px;' name="수강유형"/>교양
+					</nav>
+					<section class='vsugangTable'>
+						<img class='waiting unvisible' src='../img/waiting.svg' />
+						<table class='table'> <!--예비수강신청함 차트-->
+							<tr>
+								<th>No.</th>
+								<th>선택</th>
+								<th>구분</th>
+								<th>학수번호</th>
+								<th>강좌유형</th>
+								<th>교과목명</th>
+								<th>학년</th>
+								<th>학점</th>
+								<th>담당교수</th>
+								<th>강의시간/강의실</th>
+								<th>신청/제한</th>
+								<th>재수강</th>
+								<th>비고</th>
+							</tr>
+						</table>
+					</section>
+					<section class='vsugangedTable'>
+						<table>
+							<caption class="doneUp">F : 원어강의(Foreign language Instruction) / O : 온라인강의(On-line)</caption>
+							<thead>
+								<tr>
+									<th>No.</th>
+									<th>선택</th>
+									<th>구분</th>
+									<th>학수번호</th>
+									<th>강좌유형</th>
+									<th>교과목명</th>
+									<th>학년</th>
+									<th>학점</th>
+									<th>담당교수</th>
+									<th>강의시간/강의실</th>
+									<th>신청/제한</th>
+									<th>재수강</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody class="done"></tbody>
+						</table>
+					</section>
+				</div>
+            </main>
         </div>
 		<script src="../js/gnb.js"></script>
         <script src="../js/selectZone.js"></script>

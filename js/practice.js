@@ -1,31 +1,32 @@
 const practiceValue = localStorage.getItem('practiceSetter');
-const practiceMode = document.getElementById('practiceMode');
+const practiceMode = document.getElementsByClassName('practiceMode')[0];
+const timer = document.getElementsByClassName('timer')[0];
 
 //시간 측정값을 초기화시킴
 localStorage.setItem('TIMEtime', '0.000');
 localStorage.setItem('SELECTtime', '0.000');
 
 if (practiceValue == 3){ //SELECT MODE
+	console.log(practiceValue)
 	practiceMode.innerText = '연습 모드: SELECT MODE'
-	document.getElementById('timer').innerHTML = '<span>10:00:00</span>'
+	timer.innerHTML = '<span>10:00:00</span>'
 
 } else{ //TIME MODE
 	practiceValue == 2 ? practiceMode.innerText = '연습 모드: TIME MODE' : practiceMode.innerText = '연습 모드: BASIC MODE';
-	
-	document.getElementById('timer').innerHTML = '<span id="hours">09</span>:<span id="minutes">59</span>:<span id = "seconds">50</span>'
+	timer.innerHTML = '<span class="hours">09</span>:<span class="minutes">59</span>:<span class= "seconds">50</span>'
 	
 	let seconds = 50;
 	let minutes = 59;
 	let hours = 9;
-	let eleSeconds = document.getElementById('seconds');
-	let eleMinutes = document.getElementById('minutes');
-	let eleHours = document.getElementById('hours');
+	let eleSeconds = document.getElementsByClassName('seconds')[0];
+	let eleMinutes = document.getElementsByClassName('minutes')[0];
+	let eleHours = document.getElementsByClassName('hours')[0];
 	let interval;
-	let clickedSugang = document.getElementById('sugang');
+	let clickedSugang = document.getElementsByClassName('sugang')[0];
 	let startTime, duringTime;
 
 	window.onload = function deviceCheck(){
-		interval = setInterval(timer, 1000);
+		setInterval(timerFunc, 1000);
 		setTimeout(function(){
 			startTime = new Date();
 		}, 10000);
@@ -50,7 +51,7 @@ if (practiceValue == 3){ //SELECT MODE
 		}
 	}
 
-	function timer(){
+	function timerFunc(){
 		seconds++;
 		if(seconds <= 9) eleSeconds.innerText = '0' + seconds;
 		else eleSeconds.innerText = seconds;

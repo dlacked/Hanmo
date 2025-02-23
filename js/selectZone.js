@@ -1,6 +1,8 @@
 const practiceValue = localStorage.getItem('practiceSetter');
 const subjectValue = localStorage.getItem('subjectValue');
-const subjectTable = document.querySelector('#subjectTable');
+const subjectTable = document.querySelector('.table');
+const waiting = document.getElementsByClassName('unvisible')[0];
+const waitingArea = document.getElementsByClassName('unvisible')[1];
 
 for (var i = 1; i <= Number(subjectValue); i++){
 	subjectTable.insertAdjacentHTML('beforeend', 
@@ -22,14 +24,14 @@ for (var i = 1; i <= Number(subjectValue); i++){
    )
 }
 
-const practiceMode = document.getElementById('practiceMode');
+const practiceMode = document.getElementsByClassName('practiceMode')[0];
 
 practiceValue == 1 ? practiceMode.innerText = '연습 모드: BASIC MODE' : practiceMode.innerText = '연습 모드: SELECT MODE'
 
 
 function pyoDisplay() {
 	//Search 버튼 눌렀을 때 표 표시
-	const pyo = document.getElementById('pyo')
+	const pyo = document.getElementsByClassName('table')[0];
 	if (pyo.style.visibility !== 'hidden') {
 		pyo.style.visibility = 'visible'
 	}
@@ -39,18 +41,25 @@ function registerClick(val) {
 	//첫 번째 과목 클릭 시 실행되는 함수
 	var TorF = confirm('과목을 수강신청 하시겠습니까?')
 	if (TorF === true) {
-    	if (rc[val-1] === true) {
-			alert('201 : 이미 신청된 교과목을 신청하였습니다.\n 다시확인하시고 신청해 주십시오.')
-		} else {
-			alert('수강신청이 저장완료되었습니다.')
-			count++
-			rc[val-1] = true
-			done(val)
+		waiting.style.display = 'flex';
+		waitingArea.style.display = 'flex';
+		setTimeout(() => {
+			waiting.style.display = 'none';
+			waitingArea.style.display = 'none';
+			if (rc[val-1] === true) {
+				alert('201 : 이미 신청된 교과목을 신청하였습니다.\n 다시확인하시고 신청해 주십시오.')
+			} else {
+				alert('수강신청이 저장완료되었습니다.')
+				count++
+				rc[val-1] = true
+				done(val)
 
-			if (count == subjectValue) {
-				stopStopwatch()
+				if (count == subjectValue) {
+					stopStopwatch()
+				}
 			}
-		}
+		}, 2000)
+    	
 	}
 }
 
@@ -66,7 +75,7 @@ function deleteDone(nowCnt) {
     cnt-- //삭제 후 추가시 번호가 8이 넘어가는 현상을 막기 위함
 	rc[noObject[nowCnt]-1] = false
     
-    const parent = document.getElementById('done')
+    const parent = document.getElementsByClassName('done')[0];
     parent.deleteRow(nowCnt - 1)
     const children = parent.childNodes
     for (i = 0; i < children.length; i++) {
@@ -140,7 +149,7 @@ function done(clicked) {
   	}
   	tr.setAttribute('id', `${cnt}`)
   	//마지막으로 id='done'이라는 태그 밑에 자식 노드로 tr을 전달
-  	document.getElementById('done').appendChild(tr)
+  	document.getElementsByClassName('done')[0].appendChild(tr)
 }
 
 var noObject = {} //key: 담겨진 과목의 No., value: 예비수강신청함의 No.
