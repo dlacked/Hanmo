@@ -10,7 +10,8 @@ var isSettedValue = false;
 // 모바일 감지 시 index.html로 강제 이동 (모바일 접속을 막기 위함)
 
 setValue = () => {
-	if ((localStorage.getItem('subjectValue') >= 1 || localStorage.getItem('subjectValue') <= 15) && (localStorage.getItem('psubjectValue') >= 1 || localStorage.getItem('psubjectValue') <= 15)) {
+	console.log(localStorage.getItem('subjectValue') > localStorage.getItem('psubjectValue'))
+	if ((localStorage.getItem('psubjectValue') >= 1 && localStorage.getItem('psubjectValue') <= 15) && (localStorage.getItem('subjectValue') >= 1 && Number(localStorage.getItem('subjectValue')) <= Number(localStorage.getItem('psubjectValue'))) && (localStorage.getItem('waitingValue') === 'yes' || localStorage.getItem('waitingValue') === 'no')){
 		printValue.innerText = '올바른 설정값이 들어갔어요.'
 		printValue.style.color = 'white';
 		setting.style.background = '#001203';
@@ -47,6 +48,7 @@ function getSettingValue() {
 		localStorage.setItem('waitingValue', waitingVal);
 		
 		settingSection.style.display = 'none';
+		setValue();
 	}
 	
 }
