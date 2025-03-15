@@ -1,13 +1,17 @@
 const printValue = document.getElementsByClassName('printValue')[0];
 const setting = document.getElementsByClassName('setting')[0];
+const settingSection = document.getElementsByClassName('settingSection')[0];
+const psugangInput = document.getElementsByClassName('psugangVal')[0];
+const vsugangInput = document.getElementsByClassName('vsugangVal')[0];
+
 var isSettedValue = false;
 
 
 // 모바일 감지 시 index.html로 강제 이동 (모바일 접속을 막기 위함)
 
 setValue = () => {
-	if ((localStorage.getItem('subjectValue') >= 1 || localStorage.getItem('subjectValue') <= 20) && Number(localStorage.getItem('subjectValue'))) {
-		printValue.innerText = `과목 수를 ${localStorage.getItem('subjectValue')}개로 설정했어요.`
+	if ((localStorage.getItem('subjectValue') >= 1 || localStorage.getItem('subjectValue') <= 15) && (localStorage.getItem('psubjectValue') >= 1 || localStorage.getItem('psubjectValue') <= 15)) {
+		printValue.innerText = '올바른 설정값이 들어갔어요.'
 		printValue.style.color = 'white';
 		setting.style.background = '#001203';
 		isSettedValue = true;
@@ -28,16 +32,28 @@ function goPractice(val) {
 }
 
 //SETTING 버튼 작동 함수
-function inputValue() {
-	const val = prompt('수강신청 연습에 사용하실 과목 수를 입력해주세요.');
-	if (val === null){
-		null;
-	} else if (val < 1 || val > 20 || !Number(val)) {
-		alert('1 ~ 20 사이의 값만 입력 가능해요.');
-		inputValue();
-	}else{
-		localStorage.setItem('subjectValue', val);
-		setValue();
+function getSettingValue() {
+	const psugangVal = Number(psugangInput.value);
+	const vsugangVal = Number(vsugangInput.value);
+	const waitingVal = document.querySelector('input[name="waitingYN"]:checked').value;
+	
+	if (psugangVal < 1 || psugangVal > 15 || !Number(psugangVal)) {
+		alert('설정 값을 다시 확인해주세요.');
+	} else if (vsugangVal < 1 || psugangVal < vsugangVal || !Number(vsugangVal)) {
+		alert('설정 값을 다시 확인해주세요.');
+	} else{
+		localStorage.setItem('psubjectValue', psugangVal);
+		localStorage.setItem('subjectValue', vsugangVal);
+		localStorage.setItem('waitingValue', waitingVal);
+		
+		settingSection.style.display = 'none';
 	}
 	
+}
+
+function openSettingPanel() {
+	settingSection.style.display = 'flex';
+	
+	psugangInput.value = localStorage.getItem('psubjectValue');
+	vsugangInput.value = localStorage.getItem('subjectValue');
 }

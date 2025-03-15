@@ -1,10 +1,12 @@
 const practiceValue = localStorage.getItem('practiceSetter');
+const psubjectValue = localStorage.getItem('psubjectValue');
 const subjectValue = localStorage.getItem('subjectValue');
+const waitingValue = localStorage.getItem('waitingValue');
 const subjectTable = document.querySelector('.table');
 const waiting = document.getElementsByClassName('unvisible')[0];
 const waitingArea = document.getElementsByClassName('unvisible')[1];
 
-for (var i = 1; i <= Number(subjectValue); i++){
+for (var i = 1; i <= Number(psubjectValue); i++){
 	subjectTable.insertAdjacentHTML('beforeend', 
 		`<tr id='subject${i}'>
 		<td>${i}</td>
@@ -36,18 +38,43 @@ const waitingFunc = () => {
 	})
 	waiting.style.display = 'flex';
 	waitingArea.style.display = 'flex';
+	
 }
 
 function pyoDisplay() {
 	//Search 버튼 눌렀을 때 표 표시
 	const pyo = document.getElementsByClassName('table')[0];
 	if (pyo.style.display !== 'none') {
-		waitingFunc();
-		setTimeout(() => {
+		if (waitingValue === 'yes'){
+			waitingFunc();
+			setTimeout(() => {
+				waiting.style.display = 'none';
+				waitingArea.style.display = 'none';
+				pyo.style.display = 'table'
+			}, 2000)
+		} else{
 			waiting.style.display = 'none';
 			waitingArea.style.display = 'none';
 			pyo.style.display = 'table'
-		}, 2000)
+			
+		}
+	}
+}
+
+function saveSugang(val) {
+	waiting.style.display = 'none';
+	waitingArea.style.display = 'none';
+	if (rc[val-1] === true) {
+		alert('201 : 이미 신청된 교과목을 신청하였습니다.\n 다시확인하시고 신청해 주십시오.')
+	} else {
+		alert('수강신청이 저장완료되었습니다.')
+		count++
+		rc[val-1] = true
+		done(val)
+
+		if (count == subjectValue) {
+			stopStopwatch()
+		}
 	}
 }
 
@@ -55,24 +82,15 @@ function registerClick(val) {
 	//첫 번째 과목 클릭 시 실행되는 함수
 	var TorF = confirm(`한국외국어대학교 모의수강신청${val}과목을 수강신청 하시겠습니까?`)
 	if (TorF === true) {
-		waitingFunc();
-		setTimeout(() => {
-			waiting.style.display = 'none';
-			waitingArea.style.display = 'none';
-			if (rc[val-1] === true) {
-				alert('201 : 이미 신청된 교과목을 신청하였습니다.\n 다시확인하시고 신청해 주십시오.')
-			} else {
-				alert('수강신청이 저장완료되었습니다.')
-				count++
-				rc[val-1] = true
-				done(val)
-
-				if (count == subjectValue) {
-					stopStopwatch()
-				}
-			}
-		}, 2000)
-    	
+		if (waitingValue === 'yes'){
+			waitingFunc();
+			setTimeout(() => {
+				saveSugang(val);
+			}, 2000)
+		}
+		else {
+			saveSugang(val);
+		}
 	}
 }
 

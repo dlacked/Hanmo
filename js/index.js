@@ -13,7 +13,7 @@ const $PHONECONTAINER = document.getElementsByClassName('phoneContainer')[0];
 const nowTime = new Date();
 
 /*리스트에 공지사항 내용 적어주세요.*/
-const noticeList = ['한국외대 25학번 학우들의 첫 학기를 응원합니다!', '2025년 1월, 한모 UI 및 기능 업데이트 완료', '한국외국어대학교 70주년 (1954년 개교)']
+const noticeList = ['수강신청 연습 방식을 커스텀할 수 있도록 업데이트했어요.', '개발자의 복학을 축하해주세요! 한모 처음 써봐요 🍀']
 
 for (var i = noticeList.length-1; i >= 0; i--) {
 	$NOTICELISTQUERY.insertAdjacentHTML('afterbegin', `<li>${noticeList[i]}</li>`)
@@ -26,13 +26,10 @@ const setNotice = setInterval(() => {
 		$NOTICELIST.style.bottom = '77px';
 		cnt++;
 	} else if (cnt === 2) {
-		$NOTICELIST.style.bottom = '154px';
-		cnt++;
-	} else{
 		$NOTICELIST.style.bottom = '0px';
 		cnt=1;
-	}
-}, 3000);
+	} 
+}, 5000);
 
 check = () => {
 	if(localStorage.getItem('deviceInfo') === 'false'){
