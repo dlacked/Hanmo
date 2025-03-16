@@ -13,7 +13,7 @@ const $PHONECONTAINER = document.getElementsByClassName('phoneContainer')[0];
 const nowTime = new Date();
 
 /*리스트에 공지사항 내용 적어주세요.*/
-const noticeList = ['수강신청 연습 방식을 커스텀할 수 있도록 업데이트했어요.', '개발자의 복학을 축하해주세요! 한모 처음 써봐요 🍀']
+const noticeList = ['<a href="https://everytime.kr/375138/v/286270401">한모 업데이트 내용은 여기를 눌러 확인해주세요. (2025. 03. Update)</a>', '개발자의 복학을 축하해주세요! 한모 처음 써봐요 🍀']
 
 for (var i = noticeList.length-1; i >= 0; i--) {
 	$NOTICELISTQUERY.insertAdjacentHTML('afterbegin', `<li>${noticeList[i]}</li>`)
@@ -52,7 +52,7 @@ check = () => {
 
 setSemester = () => {
 	let hakgi = 1
-	if (nowTime.getMonth() >= 2 && nowTime.getMonth() <= 7){
+	if (nowTime.getMonth() >= 3 && nowTime.getMonth() <= 8){
 		hakgi = 2;
 	}
 	title.innerText = `${nowTime.getFullYear()}-${hakgi}학기`;

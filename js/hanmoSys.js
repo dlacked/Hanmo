@@ -11,7 +11,7 @@ restrictHanmo = () => {
 
 setSemester = () => {
 	let hakgi = 1
-	if (now.getMonth() >= 2 && now.getMonth() <= 7){
+	if (now.getMonth() >= 3 && now.getMonth() <= 8){
 		hakgi = 2;
 	}
 	title.innerText = `${now.getFullYear()}-${hakgi}학기`;
