@@ -52,10 +52,15 @@ check = () => {
 
 setSemester = () => {
 	let hakgi = 1
-	if (nowTime.getMonth() >= 3 && nowTime.getMonth() <= 8){
+	if (nowTime.getMonth() >= 6 && nowTime.getMonth() <= 11){
 		hakgi = 2;
 	}
-	title.innerText = `${nowTime.getFullYear()}-${hakgi}학기`;
+	if (nowTime.getMonth() == 10 || nowTime.getMonth() == 6){
+		title.innerText = `${nowTime.getFullYear()}-${hakgi}학기(계절)`;
+	}
+	else{
+		title.innerText = `${nowTime.getFullYear()}-${hakgi}학기`;
+	}
 
 }
 
