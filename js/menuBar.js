@@ -30,11 +30,13 @@ window.addEventListener('scroll', function() {
 $GNB.addEventListener('mouseenter', function () {
 	if (nowScrollValue === 0) {
 		$TITLE.setAttribute('src', '../img/menuLogoBlack.svg');
+		$GNB.style.color = 'black'
 	}
 })
 
 $GNB.addEventListener('mouseleave', function () {
 	if (nowScrollValue === 0) {
 		$TITLE.setAttribute('src', '../img/menuLogo.svg');
+		$GNB.style.color = 'white'
 	}
 })
