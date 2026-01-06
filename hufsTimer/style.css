@@ -1,0 +1,50 @@
+body {
+    color: white;
+    background-color: #000d1a;
+    height: 100svh;
+    font-family: "Noto Sans KR";
+}
+
+section {
+    margin-top: 80px;
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: left;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.country{
+    height: 300px;
+    width: 300px;
+    background-color: #8d704f;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+
+.country:hover{
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 1s;
+}
+
+.country img{
+    width: 120px;
+    margin-bottom: 40px;
+}
+
+.country p:nth-child(2){
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.country p:nth-child(3){
+    font-size: 20px;
+}

@@ -1,6 +1,7 @@
 main {
 	text-align: center;
-	height: 100svh;
+	height: 2000px;
+	overflow: scroll;
 }
 
 .notice{
@@ -113,4 +114,31 @@ main {
 
 .noDisplay {
 	display: none;
+}
+
+.menubar h1 {
+	padding-bottom: 10px;
+}
+
+.menubar hr{
+	width: 80%;
+}
+
+.familySites{
+	margin-top: 50px;
+	display: flex;
+}
+
+.cousinSites {
+	margin: 10px 0 10px;
+	display: flex;
+}
+
+.familySites ul, .cousinSites ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+	gap: 50px;
 }
