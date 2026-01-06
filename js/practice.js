@@ -72,7 +72,7 @@ if (practiceValue == 3){ //SELECT MODE
 			eleMinutes.innerText = '00';
 		}
 		
-		if(seconds === 00 && minutes === 00 && hours === 10){
+		if(seconds === 0 && minutes === 0 && hours === 10){
 			eleSeconds.style.color = '#5d5d5d';
 		}
 	}
