@@ -5,6 +5,7 @@ const timer = document.getElementsByClassName('timer')[0];
 //시간 측정값을 초기화시킴
 localStorage.setItem('TIMEtime', '0.000');
 localStorage.setItem('SELECTtime', '0.000');
+localStorage.setItem('SELECTWaitTime', '0.000');
 
 if (practiceValue == 3){ //SELECT MODE
 	console.log(practiceValue)

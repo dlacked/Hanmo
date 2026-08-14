@@ -57,6 +57,8 @@ const formatWaitTime = (ms) => {
 	return `00:${m}:${s}`;
 };
 
+let totalWaitedMs = 0; //대기창에 실제로 소요된 시간 누적(결과 페이지에서 SELECT 소요 시간에서 제외하기 위함)
+
 const waitingFunc = () => {
 	const triggerElement = document.activeElement;
 	searchButton.disabled = true;
@@ -79,6 +81,7 @@ const waitingFunc = () => {
 
 		const finish = (completed) => {
 			clearInterval(timer);
+			totalWaitedMs += Date.now() - startTime;
 			waiting.style.display = 'none';
 			waitingArea.style.display = 'none';
 			restoreSearchButton();
@@ -178,6 +181,7 @@ function registerClick(val) {
 function stopStopwatch() {
 	var today2 = new Date()
 	localStorage.setItem('SELECTtime', (today2-today1)/1000);
+	localStorage.setItem('SELECTWaitTime', totalWaitedMs/1000);
   	location.replace('result.html')
 }
 

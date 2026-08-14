@@ -11,7 +11,7 @@ timeCheck = () => {
 	
 	const TIMEtime = Number(localStorage.getItem('TIMEtime')).toFixed(3);
 	if (waitingValue === 'yes'){
-		SELECTtime = Number(localStorage.getItem('SELECTtime')-((2*subjectValue)+2)).toFixed(3);
+		SELECTtime = Number(localStorage.getItem('SELECTtime') - localStorage.getItem('SELECTWaitTime')).toFixed(3);
 	} else {
 		SELECTtime = Number(localStorage.getItem('SELECTtime')).toFixed(3);
 	}
