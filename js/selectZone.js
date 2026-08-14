@@ -5,6 +5,20 @@ const waitingValue = localStorage.getItem('waitingValue');
 const subjectTable = document.querySelector('.table');
 const waiting = document.getElementsByClassName('unvisible')[0];
 const waitingArea = document.getElementsByClassName('unvisible')[1];
+const searchButton = document.querySelector('.search');
+
+const keepLastClickedButtonFocused = (event) => {
+	const clickedButton = event.target.closest('button');
+	if (clickedButton) {
+		clickedButton.focus();
+	}
+};
+
+document.addEventListener('click', keepLastClickedButtonFocused, true);
+
+const restoreSearchButton = () => {
+	searchButton.disabled = false;
+};
 
 for (var i = 1; i <= Number(psubjectValue); i++){
 	subjectTable.insertAdjacentHTML('beforeend', 
@@ -30,33 +44,91 @@ const practiceMode = document.getElementsByClassName('practiceMode')[0];
 
 practiceValue == 1 ? practiceMode.innerText = '연습 모드: BASIC MODE' : practiceMode.innerText = '연습 모드: SELECT MODE'
 
+const waitingCountEl = document.querySelector('.waitingCount');
+const waitingTimeEl = document.querySelector('.waitingTime');
+const waitingBarFillEl = document.querySelector('.waitingBarFill');
+const waitingBehindEl = document.querySelector('.waitingBehind');
+const waitingCloseBtn = document.querySelector('.waitingCloseBtn');
+
+const formatWaitTime = (ms) => {
+	const totalSec = Math.ceil(ms / 1000);
+	const m = String(Math.floor(totalSec / 60)).padStart(2, '0');
+	const s = String(totalSec % 60).padStart(2, '0');
+	return `00:${m}:${s}`;
+};
+
 const waitingFunc = () => {
-	window.addEventListener('keydown', (e) => {
-		if(e.keyCode == 13){
-			e.preventDefault();
-		}
-	})
+	const triggerElement = document.activeElement;
+	searchButton.disabled = true;
 	waiting.style.display = 'flex';
 	waitingArea.style.display = 'flex';
-	
+
+	const totalWaitTime = Math.floor(Math.random() * 10000) + 1000; //10초 내 랜덤 대기 시간(최소 1초)
+	const initialAhead = Math.floor(Math.random() * 2000) + 1; //최대 2000명
+	const startTime = Date.now();
+	let currentAhead = initialAhead;
+	let currentBehind = 0;
+
+	waitingCountEl.textContent = currentAhead;
+	waitingTimeEl.textContent = formatWaitTime(totalWaitTime);
+	waitingBarFillEl.style.width = '0%';
+	waitingBehindEl.textContent = currentBehind;
+
+	return new Promise((resolve) => {
+		let timer;
+
+		const finish = (completed) => {
+			clearInterval(timer);
+			waiting.style.display = 'none';
+			waitingArea.style.display = 'none';
+			restoreSearchButton();
+			if (triggerElement && typeof triggerElement.focus === 'function') {
+				triggerElement.focus();
+			}
+			resolve(completed);
+		};
+
+		waitingCloseBtn.onclick = () => finish(false);
+
+		timer = setInterval(() => {
+			const elapsed = Date.now() - startTime;
+			const remaining = Math.max(totalWaitTime - elapsed, 0);
+			const progress = Math.min((elapsed / totalWaitTime) * 100, 100);
+			const remainingRatio = remaining / totalWaitTime;
+			const jitter = 0.7 + Math.random() * 0.6; //0.7~1.3 사이로 흔들리며 감소
+			const target = Math.floor(initialAhead * remainingRatio * jitter);
+
+			currentAhead = remaining <= 0 ? 0 : Math.max(0, Math.min(currentAhead, target));
+
+			if (remaining > 0) {
+				currentBehind += Math.floor(Math.random() * 30); //0~29명씩 랜덤으로 증가
+			}
+
+			waitingBarFillEl.style.width = `${progress}%`;
+			waitingTimeEl.textContent = formatWaitTime(remaining);
+			waitingCountEl.textContent = currentAhead;
+			waitingBehindEl.textContent = currentBehind;
+
+			if (remaining <= 0) {
+				finish(true);
+			}
+		}, 1000);
+	});
 }
 
-function pyoDisplay() {
+async function pyoDisplay() {
 	//Search 버튼 눌렀을 때 표 표시
 	const pyo = document.getElementsByClassName('table')[0];
 	if (pyo.style.display !== 'none') {
 		if (waitingValue === 'yes'){
-			waitingFunc();
-			setTimeout(() => {
-				waiting.style.display = 'none';
-				waitingArea.style.display = 'none';
-				pyo.style.display = 'table'
-			}, 2000)
+			const completed = await waitingFunc();
+			if (completed) {
+				pyo.style.display = 'table';
+			}
 		} else{
 			waiting.style.display = 'none';
 			waitingArea.style.display = 'none';
 			pyo.style.display = 'table'
-			
 		}
 	}
 }
@@ -78,17 +150,26 @@ function saveSugang(val) {
 	}
 }
 
+const processingRegistrations = new Set(); //대기 중 엔터 등으로 REGISTER가 중복 실행되는 것을 막기 위한 집합
+
 function registerClick(val) {
 	//첫 번째 과목 클릭 시 실행되는 함수
 	var TorF = confirm(`한국외국어대학교 모의수강신청${val}과목을 수강신청 하시겠습니까?`)
 	if (TorF === true) {
+		if (processingRegistrations.has(val)) {
+			return; //이미 처리 중이면 최초 클릭만 적용
+		}
+		processingRegistrations.add(val);
 		if (waitingValue === 'yes'){
-			waitingFunc();
-			setTimeout(() => {
-				saveSugang(val);
-			}, 2000)
+			waitingFunc().then((completed) => {
+				processingRegistrations.delete(val);
+				if (completed) {
+					saveSugang(val);
+				}
+			});
 		}
 		else {
+			processingRegistrations.delete(val);
 			saveSugang(val);
 		}
 	}

@@ -64,14 +64,33 @@
 				<h2>수강신청 및 수정/삭제(Course Registeration[Adding/Deleting])</h2>
 				<div class='tableZone'>
 					<nav class="menu">
-						<input type="radio" name="수강유형" checked="checked"/>예비수강신청함
-						<button class="search" onclick="pyoDisplay()">Search</button>
+						<input type="radio" name="수강유형" checked="checked"/>관심강좌
+						<button class="search" type="button" onclick="pyoDisplay()">Search</button>
 						<input type="radio" style='margin-left: 70px;' name="수강유형"/>전공
 						<input type="radio" style='margin-left: 70px;' name="수강유형"/>교차수강
 						<input type="radio" style='margin-left: 70px;' name="수강유형"/>교양
 					</nav>
 					<section class='vsugangTable'>
-						<img class='waiting unvisible' src='../img/waiting.png' />
+						<div class='waiting unvisible'>
+							<img class='waitingLogo' src='../img/hanmo_color.png'/>
+							<h3 class='waitingTitle'>한국외국어대학교 모의수강신청</h3>
+							<hr class='waitingDivider' />
+							<p class='waitingLabel'>내 앞의 대기자 수</p>
+							<p class='waitingCount'>0</p>
+							<div class='waitingBar'><div class='waitingBarFill'></div></div>
+							<div class='waitingInfoRow'>
+								<span>예상 대기 시간</span>
+								<span class='waitingTime'>00:00:00</span>
+							</div>
+							<div class='waitingInfoRow'>
+								<span>내 뒤의 대기자 수</span>
+								<span class='waitingBehind'>0</span>
+							</div>
+							<p class='waitingNotice'>해당 대기 창은 가상의 창입니다.</p>
+							<button type='button' class='waitingCloseBtn'>닫기</button>
+							<p class='waitingFooterNotice'>새로고침, 뒤로가기, 또는 임의 창 닫기를 할 경우 순번이 초기화될 수 있어요.</p>
+							<p class='waitingFooterCredit'>chnyon</span></p>
+						</div>
 						<table class='table'> <!--예비수강신청함 차트-->
 							<tr>
 								<th>No.</th>

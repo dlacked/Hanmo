@@ -273,10 +273,130 @@ th {
 }
 
 .waiting {
-	position: absolute;
-	width: 500px;
-	justify-content: center;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 20;
+	width: 320px;
+	box-sizing: border-box;
+	flex-direction: column;
 	align-items: center;
+	background-color: #fff;
+	border-radius: 16px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+	padding: 28px 24px 20px;
+	text-align: center;
+	font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', Sans-serif;
+}
+
+.waitingLogo {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-bottom: 10px;
+}
+
+.waitingTitle {
+	margin: 0 0 14px;
+	font-size: 16px;
+	font-weight: 700;
+	color: #222;
+}
+
+.waitingDivider {
+	width: 100%;
+	border: none;
+	border-top: 1px solid #e5e5e5;
+	margin: 0 0 14px;
+}
+
+.waitingLabel {
+	margin: 0 0 4px;
+	font-size: 13px;
+	color: #666;
+}
+
+.waitingCount {
+	margin: 0 0 12px;
+	font-size: 40px;
+	font-weight: 800;
+	color: #003366;
+}
+
+.waitingBar {
+	width: 100%;
+	height: 6px;
+	background-color: #e5e5e5;
+	border-radius: 3px;
+	overflow: hidden;
+	margin-bottom: 14px;
+}
+
+.waitingBarFill {
+	width: 0%;
+	height: 100%;
+	background-color: #003366;
+	border-radius: 3px;
+	transition: width 0.1s linear;
+}
+
+.waitingInfoRow {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	font-size: 13px;
+	color: #444;
+	margin-bottom: 6px;
+}
+
+.waitingInfoRow .waitingTime,
+.waitingInfoRow .waitingBehind {
+	font-weight: 700;
+	color: #222;
+}
+
+.waitingNotice {
+	width: 100%;
+	box-sizing: border-box;
+	margin: 10px 0 16px;
+	padding: 10px;
+	background-color: #eef3f8;
+	color: #003366;
+	font-size: 13px;
+	border-radius: 8px;
+}
+
+.waitingCloseBtn {
+	width: 100%;
+	padding: 10px 0;
+	text-align: center;
+	border: none;
+	border-radius: 8px;
+	background-color: #e5e5e5;
+	color: #888;
+	font-size: 14px;
+	font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', Sans-serif;
+	cursor: pointer;
+	margin-bottom: 14px;
+}
+
+.waitingCloseBtn:hover {
+	background-color: #d8d8d8;
+}
+
+.waitingFooterNotice {
+	font-size: 11px;
+	color: #999;
+	margin: 0 0 8px;
+	line-height: 1.4;
+}
+
+.waitingFooterCredit {
+	font-size: 11px;
+	color: #aaa;
+	margin: 0;
 }
 
 .unvisible{
