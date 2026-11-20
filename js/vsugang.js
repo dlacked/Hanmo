@@ -9,13 +9,20 @@ var isSettedValue = false;
 
 // 모바일 감지 시 index.html로 강제 이동 (모바일 접속을 막기 위함)
 
+function isValidSetting(preselected, requested, waiting) {
+	return Number.isInteger(preselected) && preselected >= 1 && preselected <= 15
+		&& Number.isInteger(requested) && requested >= 1 && requested <= preselected
+		&& (waiting === 'yes' || waiting === 'no');
+}
+
 setValue = () => {
-	console.log(localStorage.getItem('subjectValue') > localStorage.getItem('psubjectValue'))
-	if ((localStorage.getItem('psubjectValue') >= 1 && localStorage.getItem('psubjectValue') <= 15) && (localStorage.getItem('subjectValue') >= 1 && Number(localStorage.getItem('subjectValue')) <= Number(localStorage.getItem('psubjectValue'))) && (localStorage.getItem('waitingValue') === 'yes' || localStorage.getItem('waitingValue') === 'no')){
+	const preselected = Number(localStorage.getItem('psubjectValue'));
+	const requested = Number(localStorage.getItem('subjectValue'));
+	isSettedValue = isValidSetting(preselected, requested, localStorage.getItem('waitingValue'));
+	if (isSettedValue){
 		printValue.innerText = '올바른 설정값이 들어갔어요.'
 		printValue.style.color = 'white';
 		setting.style.background = '#001203';
-		isSettedValue = true;
 	} else{
 		setting.style.background = '#120000';
 	}
@@ -38,9 +45,7 @@ function getSettingValue() {
 	const vsugangVal = Number(vsugangInput.value);
 	const waitingVal = document.querySelector('input[name="waitingYN"]:checked').value;
 	
-	if (psugangVal < 1 || psugangVal > 15 || !Number(psugangVal)) {
-		alert('설정 값을 다시 확인해주세요.');
-	} else if (vsugangVal < 1 || psugangVal < vsugangVal || !Number(vsugangVal)) {
+	if (!isValidSetting(psugangVal, vsugangVal, waitingVal)) {
 		alert('설정 값을 다시 확인해주세요.');
 	} else{
 		localStorage.setItem('psubjectValue', psugangVal);
